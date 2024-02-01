@@ -29,6 +29,7 @@
 
 \RequirePackage{babel}
 \RequirePackage{inputenc}
+\RequirePackage{graphicx}
 
 %
 % Do not change
@@ -84,7 +85,8 @@
     \vskip -55mm
     \hskip -5mm
     \begin{picture}(40,20)%
-      \special{psfile=mau-logo.eps}%
+      %\special{psfile=mau-logo.eps}%
+      \includegraphics{mau-logo}
     \end{picture}%
     \vskip -13mm
     \hfill
