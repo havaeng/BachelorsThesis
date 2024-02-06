@@ -19,10 +19,10 @@ Fördelarna med C-DAS är många:
     \item Bättre komfort för resenärer~\cite{Lindmark2022}
 \end{itemize}
 \linebreak[4]
-Ett system för att operativt planera och styra järnvägstrafiken kallas \emph{TMS - traffic management system} och styrningssystemet \emph{Digital graf} är ett exempel på ett sådant.
+Ett system för att operativt planera och styra järnvägstrafik kallas \emph{TMS - traffic management system} och styrningssystemet \emph{Digital graf} som utvecklas, används och underhålles av Trafikverket är ett exempel på ett sådant.
 Användarna är Trafikverkets tågklarerare.
 När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera ett tågs körplan för att optimera dess hålltider genom att rita om dess graf i Digital graf.
-Det kan till exempel vara att vid enkelspårsdrift justera två mötande tågs hastighet så att de kan möta varandra utan att stanna.
+Det kan till exempel vara att vid enkelspårsdrift justera två mötande tågs hastighet så att de kan möta varandra på en mötesstation utan att stanna.
 Digital graf är ännu inte implementerat i sin helhet hos Trafikverket; det är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
 För att den nya uppdaterade körplanen ska kunna verkställas måste den delges föraren på tåget vars körplan förändrades via ett gränssnitt.
 Detta görs genom att Trafikverkets TMS skickar datat till berört tågs C-DAS-ombordenhet via ett protokoll som är snarlikt UIC IRS-standarden för SFERA-protokollet.
@@ -31,6 +31,7 @@ Nya grafer ritas för hand med penna och papper, och informationen till föraren
 C-DAS-konceptet omsluter hela denna kedja
 En förutsättning för att dessa anpassningar ska kunna verkställas utan att något tåg tappar tid och blir försenat är förekomsten av s.k. \emph{slack} i tidtabellen.
 Slack betyder att ett tåg inte behöver hålla sin \emph{STH}\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering} för att vara i tid till nästa uppehåll - med eller utan trafikutbyte (resenärer på/av)~\cite{Lindmark2022}.
+\linebreak[4]
 Det finns en intressekonflikt i förarens prioritering av att vidmakthålla rättidghet enligt tidtabell mot att köra ekonomiskt och med minimalt slitage.
 De av Trafikverket genomförda pilottesterna visar även på en stark ovilja bland lokförarkåren att följa anvisningarna som presenteras i C-DAS ombordenhet ~\cite{Angel2020, Lindmark2022}
 
