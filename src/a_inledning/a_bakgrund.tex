@@ -1,8 +1,16 @@
 \paragraph{}
-Trafikverket vill optimera sin operativa trafikledningsförmåga för att bättre kunna hantera trafikstörningar, förbättra kapacitet och minska slitage på infrastrukturen~\cite{Angel2020,Joborn2023,Lindmark2022}.
-En nyckelfaktor i detta är att möjliggöra för trafikledningscentralernas tågklarerare att i realtid kunna planera om ett enskilt tågs körplan~\cite{Joborn2023}.
-För att realisera detta krävs omfattande förändringar i Trafikverkets operativa ledningssystem (hädanefter kallat TMS), samt i järnvägsföretagens tekniska utrustning ombord på tågen (ombordenhet)~\cite{Joborn2023}.
-En lämplig strategi är att implementera ett s.k. \emph{"connected driver advisory system"}, även kallat C-DAS~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
+Trafikverket vill optimera sin operativa trafikledningsförmåga för att bättre kunna hantera trafikstörningar, förbättra kapacitet och minska slitage på infrastruktur~\cite{Angel2020,Joborn2023,Lindmark2022}.
+En nyckelfaktor i detta är att möjliggöra för trafikledningscentralernas tågklarerare att i realtid kunna planera om ett enskilt tågs körprofil~\cite{Joborn2023}.
+Genom att justera, optimera och synkronisera tågens körprofiler kan inbromsningar tidigareläggas och reduceras, hastigheter sänkas, effektuttag minskas, och timing i tågmöten optimeras - utan att tågen tappar tid.
+För att realisera detta krävs omfattande förändringar i Trafikverkets operativa ledningssystem så att realtidsjusteringar kan genomföras och push:as ut till systemklienter ombord på tågen.
+Järnvägsföretagen ansvarar för att utrusta sina tåg med maskinvara som kan ta emot denna information - antingen som inbyggd komponent i förarpanelen eller via en applikation på en mobil enhet~\cite{Joborn2023}.
+\paragraph{}
+En lämplig strategi är att implementera ett s.k. \emph{connected driver advisory system} (C-DAS), som följer SFERA-protokollet.
+Protokollet är en EU-standard (UIC IRS 90940) för datautbyte mellan TMS och C-DAS-ombordenhet, dvs standardiserad digital kommunikation mellan tågklarerare och lokförare.
+Ett dylikt system skulle möjliggöra att tågklarerarna direkt kan kommunicera med lokförarna genom datameddelanden och därmed uppmana förarna att hålla sig inom en viss tidskorridor i tågets körprofil~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
+Protokollet är definierat som XML-schema.
+C-DAS-systemet är uppdelat i två delar: en server-sida som tar emot datat som skickas ut från infrastrukturförvaltaren och klient-sidan som tar emot nämnd data från C-DAS-servern.
+Trafikverkets
 %\hspace{40em}
 \paragraph{}
 Fördelarna med C-DAS är många:
@@ -22,13 +30,14 @@ Fördelarna med C-DAS är många:
 \paragraph{}
 Ett system för att operativt planera och styra järnvägstrafik kallas \emph{TMS - traffic management system} och styrningssystemet \emph{Digital graf} som utvecklas, används och underhålles av Trafikverket är ett exempel på ett sådant.
 Användarna är av detta system Trafikverkets tågklarerare.
-När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera ett tågs körplan för att optimera dess hålltider genom att rita om dess graf i Digital graf.
+När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera ett tågs körprofil för att optimera dess hålltider.
+Detta görs i Digital graf.
 Det kan till exempel vara att vid enkelspårsdrift justera två mötande tågs hastighet så att de kan möta varandra på en mötesstation utan att stanna.
 Digital graf är ännu inte implementerat i sin helhet hos Trafikverket; det är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
 För att den nya uppdaterade körplanen ska kunna verkställas måste den delges föraren på tåget vars körplan förändrades via ett gränssnitt.
-Detta görs genom att Trafikverkets TMS skickar datat till berört tågs C-DAS-ombordenhet via ett protokoll som är snarlikt UIC IRS-standarden för SFERA-protokollet.
-Det nuvarande systemet för planering som ämnas ersättas av Digital graf har inte stöd för att varken justera grafer manuellt i realtid eller delge en uppdaterad graf elektroniskt.
-Nya grafer ritas för hand med penna och papper, och informationen till föraren delges muntligen via GSM-R-telefon.
+Detta görs genom att Trafikverkets TMS skickar datat till berört tågs C-DAS-ombordenhet via C-DAS-servern.
+Det nuvarande systemet för planering som ämnas ersättas av Digital graf har inte stöd för att varken justera grafer manuellt i realtid eller digitalt delge förare en uppdaterade körprofiler.
+Nya grafer ritas för hand med penna och papper, och informationen till föraren delges muntligen via GSM-R-telefonsamtal.
 C-DAS-konceptet omsluter hela denna kedja
 En förutsättning för att dessa anpassningar ska kunna verkställas utan att något tåg tappar tid och blir försenat är förekomsten av s.k. \emph{slack} i tidtabellen.
 Slack betyder att ett tåg inte behöver hålla sin \emph{STH}\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.} för att vara i tid till nästa uppehåll - med eller utan trafikutbyte (resenärer på/av)~\cite{Lindmark2022}.
@@ -40,7 +49,5 @@ Förutom förarnas animositet har C-DAS-konceptet fler utmaningar kopplat till \
 Säkerheten är alltid av högsta prioritering för en lokförare; hen måste upprätthålla ett koncentrerat fokus framåt under sitt körpass.
 Förutom att fokusera på banan framåt måste även tågets framförande (pådrag, rullning, broms), status på ombordsystem, diverse inkommande och utgående samtal och meddelanden (från JF-trafikledning, TRV-trafikledning samt tjänstgörande ombordpersonal) skänkas fokus och det är upp till föraren att prioritera och göra rätt beroende på vad situationen kräver.
 När då ytterligare ett moment som har hög prioritet tillförs bland nämnda distraktioner bör det ske på ett sådant sätt att föraren \emph{vill} och \emph{kan} följa de anvisningar som förordas via C-DAS\@.
-
-
 
 Paradigmskifte etc
