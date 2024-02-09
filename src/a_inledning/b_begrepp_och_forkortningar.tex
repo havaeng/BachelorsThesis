@@ -6,6 +6,7 @@ Behövs källa här?
 \paragraph{TS}
 Transportstyrelsen.
 Svensk statlig tillsynsmyndighet som utövar regelgivning, tillstånds-prövning och tillsyn inom transportområdet.
+Behövs källa här?
 \paragraph{Infrastrukturförvaltare}
 Organisation eller organ som förvaltar järnvägsinfrastruktur.
 I Sverige kräver uppdraget som infrastrukturförvaltare godkännande från TS\@.
@@ -14,8 +15,8 @@ Trafikverket är ett exempel.
 \paragraph{Körplan}
 Villkorat dokument som fordras för att få genomföra tågfärd.
 Innehåller en unik identifierande beteckning som tilldelas av vederbörande infrastrukturförvaltare.
-Anger bland annat vid vilken driftplats\footnote{Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen~\cite{TTJ2015}.} eller driftplatsdel\footnote{Avgränsad del av en driftplats ~\cite{TTJ2015}.} tågfärden påbörjas respektive avslutas, samt vid vilka trafikplatser\footnote{Gemensam term för driftplats, driftplatsdel, linjeplats, hållplats och hållställe\cite{TTJ2015}.} tågfärden passerar och vid vilka tidpunkter.
-~\cite{TTJ2015}
+Anger bland annat vid vilken driftplats\footnote{Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen~\cite{TTJ2015}.} eller driftplatsdel\footnote{Avgränsad del av en driftplats ~\cite{TTJ2015}.} tågfärden påbörjas respektive avslutas, samt vid vilka trafikplatser\footnote{Gemensam term för driftplats, driftplatsdel, linjeplats, hållplats och hållställe\cite{TTJ2015}.} tågfärden passerar och vid vilka tidpunkter~\cite{TTJ2015}.
+Körplaner baseras på kapacitetsfördelning av Trafikverket efter att JF ansökt om tågläge inför den årliga tågplanen.
 \paragraph{TKL}
 Tågklarerare.
 Person som från en tågtrafikledningscentral övervakar och leder trafikverksamheter på järnväg.\cite{TTJ2015}
@@ -27,6 +28,8 @@ De företag som innehar ett av Transportstyrelsen utfärdat trafikeringstillstå
 \paragraph{Trafikeringstillstånd}
 Tillstånd som fordras av järnvägsföretag för att få bedriva trafik på svensk järnväg.
 Utfärdas av TS~\cite{Trafikeringstillstand2024}.
+\paragraph{Graf}
+Här beskrivs en graf.
 \paragraph{GSM-R}
 Global system for mobile communications - railway.
 Tillägg till den internationella mobiltelefonistandarden GSM och som specifikt avser järnvägskommunikation.
@@ -34,16 +37,18 @@ GSM-R har ett reserverat frekvensspektrum som bara får användas inom järnväg
 Via antenner längs med järnvägen säkerställs att tåg alltid kan nås med radiokommunikation på frekvenser som är garanterat tillgängliga.
 Erbjuder säker överföring av både röst (samtal) och data (passagerarinformationssystem, lastspårning, videoövervakning m.m).
 ~\cite{Malux2019}
+
 \subsubsection{SFERA}
 \paragraph{DAS}
 Driver advisory system.
-System eller applikation som kan beräkna och återge en rekommenderad hastighetskurva.
+Förarstödsystem eller applikation som kan beräkna och återge en rekommenderad hastighetskurva.
 Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet som kör applikationen (tåglängd, bromskraft, motorers effektpotential etc.), eller GPS-position.
 ~\cite{Yao2022}
 \paragraph{S-DAS}
 Standalone driver advisory system.
-Avser DAS i form av system eller applikation som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med ett TMS~\cite{Joborn2023}.
+Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med TMS~\cite{Joborn2023}.
 Systemet kan dock kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-bastjänster och Trafikverkets öppna data.
+Behövs källa här?
 Används av majoriteten av JF idag\footnote{Baserat på samtal med Peter Olsson, Trafikverket.}.
 \paragraph{C-DAS}
 Connected driver advisory system.
@@ -65,6 +70,27 @@ Railway undertaking.
 SFERA-benämning för \emph{trafikeringstillstånd}~\cite{Olsson2023}.
 \paragraph{RTTP}
 Real time traffic plan.
-\paragraph{Målpunkt}
-Definitionen av en målpunkt enligt SFERA\@.
+Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
+En RTTP kan även ersätta en tidigare förrättad RTTP\@.
+När en RTTP tas fram för ett tåg ska den delges dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
+RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå~\cite{Joborn2023, Olsson2023}.
+\paragraph{Segment profile}
+~\cite{Olsson2023}
+\paragraph{Timing point}
+Geografisk målpunkt på banan som kan tillskrivas attribut med specifika tidpunkter eller tidsfönster samt hastighetsanvisning eller hastighetsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
+\paragraph{JP}
+Journey profile.
+~\cite{Olsson2023}
+\paragraph{TPE}
+Train path envelope.
+\lq{}Tidskorridor\rq{}/svängrum/manöverutrymme i grafen ett tåg kan röra sig fritt inom utan att avvika från sin RTTP\@.
+Består av en lista av TP:er (målpunkter) med tillskrivna tidpunkter eller tidsfönster samt hastighetsanvisning eller hastighetsfönster.
+~\cite{Olsson2023}
+\paragraph{Grått tåg}
+Trafikverkets benämning på tågfärd som framförs utan C-DAS\@.
 ~\cite{Joborn2023}
+\paragraph{Train trajectory}
+Den av C-DAS beräknade optimala körprofilen som tåget i praktiken kan efterleva, dvs tids- och hastighetsprofil över en viss sträcka.
+Uträkning görs utifrån tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesion etc.).
+För att garantera konfliktfri realisering måste train trajectory rymmas inom TPE\@.
+Om ett tåg inte kör med DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs.

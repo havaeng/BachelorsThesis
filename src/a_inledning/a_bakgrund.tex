@@ -1,7 +1,7 @@
 \paragraph{}
 Trafikverket vill optimera sin operativa trafikledningsförmåga för att bättre kunna hantera trafikstörningar, förbättra kapacitet och minska slitage på infrastruktur~\cite{Angel2020,Joborn2023,Lindmark2022}.
 En nyckelfaktor i detta är att möjliggöra för trafikledningscentralernas tågklarerare att i realtid kunna planera om ett enskilt tågs körprofil~\cite{Joborn2023}.
-Genom att justera, optimera och synkronisera tågens körprofiler kan inbromsningar tidigareläggas och reduceras, hastigheter sänkas, effektuttag minskas, och timing i tågmöten optimeras - utan att tågen tappar tid.
+Genom att justera, optimera och synkronisera tågens körprofiler kan inbromsningar tidigareläggas och reduceras, hastigheter sänkas, effektuttag begränsas, och timing i tågmöten optimeras - utan att tågen tappar tid.
 För att realisera detta krävs omfattande förändringar i Trafikverkets operativa ledningssystem så att realtidsjusteringar kan genomföras och push:as ut till systemklienter ombord på tågen.
 Järnvägsföretagen ansvarar för att utrusta sina tåg med maskinvara som kan ta emot denna information - antingen som inbyggd komponent i förarpanelen eller via en applikation på en mobil enhet~\cite{Joborn2023}.
 \paragraph{}
@@ -15,14 +15,16 @@ Trafikverkets
 \paragraph{}
 Fördelarna med C-DAS är många:
 \begin{itemize}
+    \item Möjliggör planering.
+    \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Lindmark2022, Ketech2022, Verstappen2022, Olsson2023}
     \item Förbättrad hantering vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}
     \item Förbättrad punktlighet vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}
-    \item Reducerat effektuttag av energi från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}
-    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022}
-    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022}
-    \item Minskade kostnader för järnvägsföretag att framföra sina fordon~\cite{Ketech2022}
+    \item Reducerat effektuttag av energi från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022, Olsson2023}
+    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Olsson2023}
+    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Olsson2023}
+    \item Minskade verksamhetskostnader för järnvägsföretag till följ av minskat slitage och energikonsumtion~\cite{Ketech2022}
+    \item Ökad säkerhet med anledning av lägre hastigheter samt färre antal restriktiva signaler och stoppsignaler ~\cite{Olsson2023}
     \item Förbättrad trafikinformation till järnvägsföretagens kunder~\cite{Angel2020, Lindmark2022, Ketech2022}
-    \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Lindmark2022, Ketech2022, Verstappen2022}
     \item Förbättrat beslutsstöd för tågklarerare~\cite{Lindmark2022, Ketech2022}
     \item Gemensam lägesbild mellan lokförare och tågklarerare~\cite{Lindmark2022, Ketech2022}
     \item Bättre komfort för resenärer~\cite{Lindmark2022}
@@ -51,3 +53,4 @@ Förutom att fokusera på banan framåt måste även tågets framförande (pådr
 När då ytterligare ett moment som har hög prioritet tillförs bland nämnda distraktioner bör det ske på ett sådant sätt att föraren \emph{vill} och \emph{kan} följa de anvisningar som förordas via C-DAS\@.
 
 Paradigmskifte etc
+Man går till att kunna planera
