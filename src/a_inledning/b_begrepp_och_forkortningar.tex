@@ -13,21 +13,21 @@ I Sverige kräver uppdraget som infrastrukturförvaltare godkännande från TS\@
 Anläggningens delsystem fordrar tekniskt godkännande av TS~\cite{Infrastrukturforvaltare2024}.
 Trafikverket är ett exempel.
 \paragraph{Körplan}
-Villkorat dokument som fordras för att få genomföra tågfärd.
-Innehåller en unik identifierande beteckning som tilldelas av vederbörande infrastrukturförvaltare.
-Anger bland annat vid vilken driftplats\footnote{Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen~\cite{TTJ2015}.} eller driftplatsdel\footnote{Avgränsad del av en driftplats ~\cite{TTJ2015}.} tågfärden påbörjas respektive avslutas, samt vid vilka trafikplatser\footnote{Gemensam term för driftplats, driftplatsdel, linjeplats, hållplats och hållställe\cite{TTJ2015}.} tågfärden passerar och vid vilka tidpunkter~\cite{TTJ2015}.
-Körplaner baseras på kapacitetsfördelning av Trafikverket efter att JF ansökt om tågläge inför den årliga tågplanen.
+Dokument som bland annat innehåller en unik identifierande beteckning och tilldelas av vederbörande infrastrukturförvaltare.
+%Villkorat dokument som fordras av TRV för att få genomföra tågfärd.
+På TRV:s körplaner anges vid vilken driftplats\footnote{Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen~\cite{TTJ2015}.} eller driftplatsdel\footnote{Avgränsad del av en driftplats ~\cite{TTJ2015}.} tågfärden påbörjas respektive avslutas, samt vid vilka trafikplatser\footnote{Gemensam term för driftplats, driftplatsdel, linjeplats, hållplats och hållställe\cite{TTJ2015}.} tågfärden passerar och vid vilka tidpunkter, samt för vilket datum dokumentet gäller~\cite{TTJ2015}.
+Körplaner på TRV:s infrastruktur baseras på kapacitetsfördelning efter att JF ansökt om tågläge inför den årliga tågplanen.
 \paragraph{TKL}
 Tågklarerare.
-Person som från en tågtrafikledningscentral övervakar och leder trafikverksamheter på järnväg.\cite{TTJ2015}
+Person som från en tågtrafikledningscentral övervakar och leder trafikverksamheter på järnväg\cite{TTJ2015}.
 \paragraph{JF}
 Järnvägsföretag.
 Ibland kallat \emph{tågoperatör}.
 Behövs källa här?
-De företag som innehar ett av Transportstyrelsen utfärdat trafikeringstillstånd på järnvägsinfrastruktur hos en infrastrukturförvaltare~\cite{Jarnvagsforetag2024}.
+De företag som innehar ett trafikeringstillstånd på järnvägsinfrastruktur hos en infrastrukturförvaltare~\cite{Jarnvagsforetag2024}.
 \paragraph{Trafikeringstillstånd}
-Tillstånd som fordras av järnvägsföretag för att få bedriva trafik på svensk järnväg.
-Utfärdas av TS~\cite{Trafikeringstillstand2024}.
+Tillstånd som fordras av järnvägsföretag för att få bedriva trafik på järnväg~\cite{Trafikeringstillstand2024}.
+I Sverige är TS ansvarig myndighet för utfärdande av trafikeringstillstånd~\cite{Jarnvagsforetag2024, Trafikeringstillstand2024}.
 \paragraph{Graf}
 Här beskrivs en graf.
 \paragraph{GSM-R}
@@ -37,37 +37,38 @@ GSM-R har ett reserverat frekvensspektrum som bara får användas inom järnväg
 Via antenner längs med järnvägen säkerställs att tåg alltid kan nås med radiokommunikation på frekvenser som är garanterat tillgängliga.
 Erbjuder säker överföring av både röst (samtal) och data (passagerarinformationssystem, lastspårning, videoövervakning m.m).
 ~\cite{Malux2019}
+\paragraph{Digital graf}
+\paragraph{STEG}
 
 \subsubsection{SFERA}
-\paragraph{DAS}
-Driver advisory system.
-Förarstödsystem eller applikation som kan beräkna och återge en rekommenderad hastighetskurva.
-Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet som kör applikationen (tåglängd, tågvikt, bromskraft, motorers effektpotential etc.), eller GPS-position.
-~\cite{Yao2022}
-\paragraph{S-DAS}
-Standalone driver advisory system.
-Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med TMS~\cite{Joborn2023}.
-Systemet kan dock kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-bastjänster och Trafikverkets öppna data.
-Behövs källa här?
-Används av majoriteten av JF idag\footnote{Baserat på samtal med Peter Olsson, Trafikverket.}.
-\paragraph{C-DAS}
-Connected driver advisory system.
 \paragraph{TMS}
 Traffic management system.
 SFERA-benämning på system som används av tågklarerare för operativ planering av kapacitet på järnväg i EU\@.
 Har förmågan att delge C-DAS-system ny/uppdaterad RTTP för verkställande av ändringar i ett tågs RTTP~\cite{Joborn2023}.
 TRV:s TMS är Digital graf/STEG\@.
+\paragraph{DAS}
+Driver advisory system.
+Förarstödsystem eller applikation som kan beräkna och återge en rekommenderad hastighetskurva.
+Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet som kör applikationen (tåglängd, tågvikt, bromskraft, motorers effektpotential etc.), eller GPS-position.
+~\cite{Yao2022}
+\paragraph{C-DAS}
+Connected driver advisory system.
+\paragraph{S-DAS}
+Standalone driver advisory system.
+Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med TMS~\cite{Joborn2023}.
+Systemet kan dock kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-bastjänster och Trafikverkets öppna data.
+Behövs källa här?
+Majoriteten av JF i Sverige använder idag S-DAS i någon form\footnote{Baserat på samtal med Peter Olsson, Trafikverket.}.
 \paragraph{SFERA}
 Smart communications For Efficient Rail Activities.
 Ett protokoll för kommunikation mellan TMS och C-DAS\@.
-För närvarande under införande i Sverige.
-\cite{Joborn2023}
+För närvarande under införande i Sverige\cite{Joborn2023}.
 \paragraph{IM}
 Infrastructure manager.
 SFERA-benämning för \emph{infrastrukturförvaltare}~\cite{Olsson2023}.
 \paragraph{RU}
 Railway undertaking.
-SFERA-benämning för \emph{trafikeringstillstånd}~\cite{Olsson2023}.
+SFERA-benämning för \emph{JF med trafikeringstillstånd}~\cite{Olsson2023}.
 \paragraph{RTTP}
 Real time traffic plan.
 Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
