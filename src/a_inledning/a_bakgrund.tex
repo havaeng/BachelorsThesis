@@ -41,10 +41,10 @@ Fördelarna med C-DAS är många:
 Ett system för att operativt planera och styra järnvägstrafik kallas \emph{traffic management system} (TMS).
 Styrningssystemet \emph{Digital graf} som utvecklas, används och förvaltas av Trafikverket är ett exempel.
 Användarna är av detta system är främst Trafikverkets tågklarerare.
-När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera tågs överskådliga körprofil för att optimera dess hålltider.
-Det kan till exempel vara att vid enkelspårsdrift justera ned två mötande tågs hastighet så att de kan möta varandra på en mötesstation \emph{utan} att stanna och \emph{utan} att tappa tid, trots att den ursprungliga körplanen kanske säger att den ena ska vänta på den andre.
+När en avvikelse eller trafikstörning uppstår kan en tågklarerare digitalt justera tågs överskådliga körprofil för att optimera dess hålltider.
+Det kan till exempel vara att vid enkelspårsdrift anpassa två mötande tågs hastigheter så att de kan möta varandra på en mötesstation \emph{utan} att stanna och \emph{utan} att tappa tid, trots att den ursprungliga körplanen kanske säger att den ena ska vänta på den andre.
 På så vis sparas en inbromsning och effektpådrag in för ett eller båda tågen; inbromsning till stopp och acceleration tillbaka till marschfart uteblir.
-Digital graf är ännu inte implementerat i sin helhet hos Trafikverket; det är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
+Digital graf är ännu inte implementerat i sin helhet hos Trafikverket; systemet är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
 \paragraph{}
 För att den nya uppdaterade körplanen ska kunna verkställas måste den delges föraren på tåget vars körplan förändrades via ett gränssnitt.
 Detta görs genom att Trafikverkets TMS skickar datat till berört tågs C-DAS-ombordenhet via C-DAS-servern.
