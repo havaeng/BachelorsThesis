@@ -1,10 +1,8 @@
 \paragraph{}
 Trafikverket vill optimera sin operativa trafikledningsförmåga för att bättre kunna hantera trafikstörningar, förbättra kapacitet och minska slitage på infrastruktur~\cite{Angel2020,Joborn2023,Lindmark2022}.
-En nyckelfaktor i detta är att möjliggöra för trafikledningscentralernas tågklarerare att i realtid kunna planera om ett enskilt tågs körprofil~\cite{Joborn2023}.
-Genom att justera, optimera och synkronisera tågens körprofiler kan kapaciteten på järnvägen förbättras, inbromsningar tidigareläggas och reduceras, hastigheter sänkas, effektuttag begränsas, och timing i tågmöten optimeras - utan att tågen tappar tid.
-För att realisera detta krävs omfattande förändringar i Trafikverkets operativa ledningssystem så att realtidsjusteringar kan genomföras och push:as ut till systemklienter ombord på tågen.
-Trafikverket vill nu verkställa detta systemskifte genom att tillhandahålla nödvändig och önskvärd information på ett tjänligt och gynnsamt vis.
-Järnvägsföretagen ansvarar för att utrusta sina tåg med maskinvara som kan ta emot och återge denna information - antingen som inbyggd komponent i förarpanelen eller via en applikation på en mobil enhet~\cite{Joborn2023}.
+En nyckelfaktor i detta är att möjliggöra för trafikledningscentralernas tågklarerare att i realtid kunna omplanera ett enskilt tågs körprofil~\cite{Joborn2023}.
+Genom att justera, optimera och synkronisera tågens körprofiler kan kapaciteten på järnvägen förbättras, inbromsningar tidigareläggas och reduceras, hastigheter sänkas, effektuttag begränsas, och timing i tågmöten optimeras - utan att tågen tappar tid~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Olsson2023, Yao2022}.
+För att realisera detta krävs omfattande förändringar i Trafikverkets operativa ledningssystem så att realtidsjusteringar kan genomföras och push:as ut till systemklienter ombord på tågen~\cite{Joborn2023}.
 \paragraph{}
 En lämplig strategi är att implementera ett s.k. \emph{connected driver advisory system} (C-DAS), som följer \emph{SFERA-protokollet}~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
 UIC, \emph{Union internationale des chemins de fer} (Internationella järnvägsunionen) är ett organ för järnvägsföretag som ska verka för att underlätta internationell järnvägstrafik.
@@ -15,49 +13,57 @@ Ett dylikt system skulle möjliggöra att tågklarerarna direkt kan kommunicera 
 Protokollet definieras som XML-schema\cite{Olsson2023}.
 C-DAS-systemet i sig konsumerar datat som förses av trafikledningscentralen\cite{Joborn2023, Olsson2023}.
 Det är uppdelat i två delar: en server-sida som tar emot datat direkt och vidarebefordrar det till vederbörande klienter, och klient-sidan som tar emot nämnd data från C-DAS-servern och återger för föraren\cite{Yao2022, Olsson2023, Joborn2023}.
-C-DAS-ombordenhet (klientsidan) kan i sin tur skicka bekräftelse till tågklareraren på att informationen är mottagen\cite{Joborn2023}.
+C-DAS-ombordenhet (klientsidan) kan i sin tur skicka bekräftelse till tågklareraren på att informationen är mottagen~\cite{Joborn2023}.
+\paragraph{}
+Trafikverket vill nu verkställa detta systemskifte så att de direkt från trafikledningscentralerna kan tillhandahålla nödvändig och önskvärd information på ett tjänligt och gynnsamt vis för järnvägsföretagens lokförare att följa~\cite{Angel2020, Joborn2023, Lindmark2022}.
+Järnvägsföretagen ansvarar för att utrusta sina tåg eller förare med maskinvara som kan ta emot och återge denna information - antingen som inbyggd komponent i förarpanelen eller via en applikation på en mobil enhet~\cite{Joborn2023}.
 %\hspace{40em}
 \paragraph{}
 Fördelarna med C-DAS är många:
 \begin{itemize}
     \item Möjliggör effektiv planering av operativ järnvägstrafik - något som är svårt i Sverige idag~\cite{Joborn2023}.
+    \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Ketech2022, Verstappen2022, Olsson2023, Verstappen2022}
     \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Lindmark2022, Ketech2022, Verstappen2022, Olsson2023}
-    \item Förbättrad hantering vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}
-    \item Förbättrad punktlighet vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}
-    \item Reducerat effektuttag av energi från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022, Olsson2023}
-    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Olsson2023}
-    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Olsson2023}
+    \item Förbättrad hantering vid trafikstörningar~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Verstappen2022}
+    \item Förbättrad punktlighet vid trafikstörningar~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Verstappen2022}
+    \item Reducerat effektuttag av energi från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Olsson2023, Verstappen2022}
+    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Olsson2023}
+    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Ketech2022, Lindmark2022, Olsson2023}
     \item Minskade verksamhetskostnader för järnvägsföretag till följ av minskat slitage och energikonsumtion~\cite{Ketech2022}
-    \item Ökad säkerhet med anledning av lägre hastigheter samt färre antal restriktiva signaler och stoppsignaler ~\cite{Olsson2023}
-    \item Förbättrad trafikinformation till järnvägsföretagens kunder~\cite{Angel2020, Lindmark2022, Ketech2022}
+    \item Ökad säkerhet till följd av lägre hastigheter samt färre antal restriktiva signaler och stoppsignaler ~\cite{Olsson2023}
+    \item Förbättrad trafikinformation till järnvägsföretagens kunder~\cite{Angel2020, Ketech2022, Lindmark2022}
     \item Förbättrat beslutsstöd för tågklarerare~\cite{Lindmark2022, Ketech2022}
     \item Gemensam lägesbild mellan lokförare och tågklarerare~\cite{Lindmark2022, Ketech2022}
     \item Bättre komfort för resenärer~\cite{Lindmark2022}
     \item Harmoniserat trafikflöde
 \end{itemize}
 \paragraph{}
-Ett system för att operativt planera och styra järnvägstrafik kallas \emph{TMS - traffic management system}.
-Styrningssystemet \emph{Digital graf} som utvecklas, används och underhålles av Trafikverket är ett exempel på ett sådant.
-Användarna är av detta system Trafikverkets tågklarerare.
-När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera ett tågs körprofil för att optimera dess hålltider.
-Detta görs i Digital graf.
-Det kan till exempel vara att vid enkelspårsdrift justera två mötande tågs hastighet så att de kan möta varandra på en mötesstation utan att stanna.
+Ett system för att operativt planera och styra järnvägstrafik kallas \emph{traffic management system} (TMS).
+Styrningssystemet \emph{Digital graf} som utvecklas, används och förvaltas av Trafikverket är ett exempel.
+Användarna är av detta system är främst Trafikverkets tågklarerare.
+När en avvikelse eller trafikstörning uppstår kan en tågklarerare manuellt justera tågs överskådliga körprofil för att optimera dess hålltider.
+Det kan till exempel vara att vid enkelspårsdrift justera ned två mötande tågs hastighet så att de kan möta varandra på en mötesstation \emph{utan} att stanna och \emph{utan} att tappa tid, trots att den ursprungliga körplanen kanske säger att den ena ska vänta på den andre.
+På så vis sparas en inbromsning och effektpådrag in för ett eller båda tågen; inbromsning till stopp och acceleration tillbaka till marschfart uteblir.
 Digital graf är ännu inte implementerat i sin helhet hos Trafikverket; det är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
+\paragraph{}
 För att den nya uppdaterade körplanen ska kunna verkställas måste den delges föraren på tåget vars körplan förändrades via ett gränssnitt.
 Detta görs genom att Trafikverkets TMS skickar datat till berört tågs C-DAS-ombordenhet via C-DAS-servern.
-Det nuvarande systemet för planering som ämnas ersättas av Digital graf har inte stöd för att varken justera grafer manuellt i realtid eller digitalt delge förare en uppdaterade körprofiler.
-Nya grafer ritas för hand med penna och papper, och informationen till föraren delges muntligen via GSM-R-telefonsamtal.
-C-DAS-konceptet omsluter hela denna kedja
+Det nuvarande systemet för planering som ämnas ersättas av Digital graf saknar stöd för att varken justera grafer digitalt i realtid eller digitalt delge tåg uppdaterad körprofil.
+Nya grafer ritas istället för hand med penna och papper, och informationen delges föraren muntligen via GSM-R-telefonsamtal.
+C-DAS-konceptet omsluter hela kedjan av kommunikation från tågklarerarens omplanerade körprofiler för tåg, till berörd C-DAS-server, till C-DAS-ombordenhet, till förare tillbaka med bekräftelse från förare till tågklarerare att information mottagits.
 En förutsättning för att dessa anpassningar ska kunna verkställas utan att något tåg tappar tid och blir försenat är förekomsten av s.k. \emph{slack} i tidtabellen.
 Slack betyder att ett tåg inte behöver hålla sin \emph{STH}\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.} för att vara i tid till nästa uppehåll - med eller utan trafikutbyte (resenärer på/av)~\cite{Lindmark2022}.
 \paragraph{}
 Det finns en intressekonflikt i förarens prioritering av att vidmakthålla rättidghet enligt tidtabell mot att köra ekonomiskt och med minimalt slitage.
 \paragraph{}
-De av Trafikverket genomförda pilottesterna visar även på en stark ovilja bland lokförarkåren att följa anvisningarna som presenteras i C-DAS ombordenhet~\cite{Angel2020, Lindmark2022}.
-Förutom förarnas animositet har C-DAS-konceptet fler utmaningar kopplat till \emph{human factors}.
-Säkerheten är alltid av högsta prioritering för en lokförare; hen måste upprätthålla ett koncentrerat fokus framåt under sitt körpass.
-Förutom att fokusera på banan framåt måste även tågets framförande (pådrag, rullning, broms), status på ombordsystem, diverse inkommande och utgående samtal och meddelanden (från JF-trafikledning, TRV-trafikledning samt tjänstgörande ombordpersonal) skänkas fokus och det är upp till föraren att prioritera och göra rätt beroende på vad situationen kräver.
+De av Trafikverket genomförda pilottesterna visar även på en ovilja bland lokförarkåren att följa anvisningarna som presenteras i C-DAS ombordenhet~\cite{Angel2020, Lindmark2022}.
+Förutom förarnas animositet mot mjukvara som uppmanar om en särskild körprofil har C-DAS-konceptet fler utmaningar kopplat till \emph{human factors}.
+Säkerheten är alltid av högsta prioritering för en lokförare; hen måste upprätthålla ett koncentrerat fokus framåt under körning.
+Förutom att fokusera på banan framåt måste även tågets framförande (pådrag, rullning, broms etc.), status på ombordsystem, diverse inkommande och utgående samtal och meddelanden (från JF-trafikledning, TRV-trafikledning samt tjänstgörande ombordpersonal) skänkas fokus och det är upp till föraren att prioritera och göra rätt beroende på vad situationen kräver.
 När då ytterligare ett moment som har hög prioritet tillförs bland nämnda distraktioner bör det ske på ett sådant sätt att föraren \emph{vill} och \emph{kan} följa de anvisningar som förordas via C-DAS\@.
+Trafikverkets pilottester har även påvisat att förarens förståelse av kontexten för den nya angivna hastighetskorridoren spelar in i viljan att realisera den~\cite{Angel2020, Lindmark2022}.
+Att framföra tåg är ett hantverk; en skicklig förare har efter flera års yrkesutövande djuplodande kännedom om fordonet som framförs och banans särskilda egenskaper och därmed vilken körning som fordras därefter [källa behövs].
+En förare som förstår \emph{varför} inlärd erfarenhetsbaserad hastighetsprofil måste frångås har större vilja att köra inom den mottagna anvisningen.
 
 Paradigmskifte etc
 Man går till att kunna planera
