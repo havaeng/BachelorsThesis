@@ -65,11 +65,14 @@ Har förmågan att delge C-DAS-system ny/uppdaterad RTTP för verkställande av 
 TRV:s TMS är Digital graf/STEG\@.
 \paragraph{DAS}
 Driver advisory system.
-Förarstödsystem eller applikation som kan beräkna och återge en rekommenderad hastighetskurva.
+Förarstödsystem i form av en applikation som kan beräkna och återge en rekommenderad hastighetskurva.
 Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet applikationen körs ombord på (tåglängd, tågvikt, bromskraft, motorers effektpotential etc.), eller GPS-position.
 ~\cite{Yao2022}
 \paragraph{C-DAS}
 Connected driver advisory system.
+DAS som kan ta emot data ifrån ett TMS~\cite{Olsson2023}.
+Med detta system kan tågklarerare planera, påverka och styra en tågfärd i nära realtid.
+C-DAS-ombordsystemet kan även skicka data till TMS som t.~ex~positioneringsdata.
 \paragraph{S-DAS}
 Standalone driver advisory system.
 Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med något TMS~\cite{Joborn2023}.
@@ -77,6 +80,8 @@ Hastighetsrekommendation kan beräknas t.~ex.~utifrån rättidighet i förhålla
 Systemet kan dock kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-tjänster och Trafikverkets öppna data.
 Behövs källa på det?
 Majoriteten av JF i Sverige använder idag S-DAS i någon form~\cite{Systemdefinition2019}.
+\paragraph{Grått tåg}
+Trafikverkets benämning på tågfärd som framförs utan C-DAS\@~\cite{Joborn2023}.
 \paragraph{SFERA}
 Smart communications For Efficient Rail Activities.
 Ett protokoll för kommunikation mellan TMS och C-DAS\@.
@@ -93,26 +98,26 @@ Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett t
 En RTTP kan även ersätta en tidigare förrättad RTTP\@.
 När en RTTP tas fram för en tågfärd delges dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
 RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå~\cite{Joborn2023, Olsson2023}.
-\paragraph{Segment profile}
-~\cite{Olsson2023}
+\paragraph{SP}
+Segment profile.
+Statisk data om terräng och infrastruktur, t.~ex~banans STH, lutning, kurvradie etc~\cite{Olsson2023}.
 \paragraph{Timing point}
 Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster samt hastighetsanvisning eller hastighetsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
 TP:er används som villkor vid uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
 ~\cite{Olsson2023}
-\paragraph{Grått tåg}
-Trafikverkets benämning på tågfärd som framförs utan C-DAS\@.
-~\cite{Joborn2023}
 \paragraph{TPE}
 Train path envelope.
 \lq{}Tidskorridor\rq{}/svängrum/manöverutrymme ett tåg kan röra sig fritt inom utan att avvika från sin RTTP\@.
-Består av en lista av TP:er (målpunkter) med tillskrivna tidpunkter eller tidsfönster samt hastighetsanvisningar eller hastighetsfönster.
+Består av en lista av TP:er (målpunkter) med tillskrivna tidpunkter eller tidsfönster samt hastighetsanvisningar eller hastighetsfönster för dessa.
+TPE skickas till C-DAS-klienten som en del av JP~\cite{Olsson2023}
 \paragraph{JP}
 Journey profile.
 Abstraherad körplan som inkluderar uppehåll och spårval~\cite{Olsson2023} för ett C-DAS-utrustat tåg.
-Trafikverket tolkar JP som TP:er med planerade stopp eller med tågmöten.
-Enligt SFERA innefattas även senaste passagetider för trafikplatser vid vilka tågfärden \emph{inte} har uppehåll vid.
-Sammantaget är skillnaden mellan journey profile och train path envelope att JP är TPE plus planerade stopp/uppehåll samt spårval.
-De två sistnämnda ingår inte i TPE\@.
+Innehåller en lista av TP:er som måste uppfyllas för att tågfärden ska kunna fullfölja sin RTTP~\cite{Olsson2023} samt en lista av SP:er.
+Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten.
+Enligt SFERA innefattas även TP:er med senaste passagetider för samtliga trafikplatser, dvs~även de vid vilka tågfärden \emph{inte} har uppehåll.
+JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Olsson2023}.
+Sammantaget är JP ett informationspaket som består av: TPE, en lista av TP:er samt en lista av SP:er.
 \paragraph{TT}
 Train trajectory.
 Den av C-DAS beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
