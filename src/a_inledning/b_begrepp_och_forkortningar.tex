@@ -12,11 +12,6 @@ Organisation eller organ som förvaltar järnvägsinfrastruktur.
 I Sverige kräver uppdraget som infrastrukturförvaltare godkännande från TS\@.
 Anläggningens delsystem fordrar tekniskt godkännande av TS~\cite{Infrastrukturforvaltare2024}.
 Trafikverket är ett exempel.
-\paragraph{Körplan}
-Dokument som bland annat innehåller en unik identifierande beteckning och tilldelas av vederbörande infrastrukturförvaltare.
-%Villkorat dokument som fordras av TRV för att få genomföra tågfärd.
-På TRV:s körplaner anges vid vilken driftplats\footnote{Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen~\cite{TTJ2015}.~} eller driftplatsdel\footnote{Avgränsad del av en driftplats ~\cite{TTJ2015}.} tågfärden påbörjas respektive avslutas, samt vid vilka trafikplatser\footnote{Gemensam term för driftplats, driftplatsdel, linjeplats, hållplats och hållställe~\cite{TTJ2015}.} tågfärden passerar och vid vilka tidpunkter, samt för vilket datum dokumentet gäller~\cite{TTJ2015}.
-Körplaner på TRV:s infrastruktur baseras på kapacitetsfördelning efter att JF ansökt om tågläge inför den årliga tågplanen.
 \paragraph{TKL}
 Tågklarerare.
 Person som från en tågtrafikledningscentral övervakar och leder trafikverksamheter på järnväg~\cite{TTJ2015}.
@@ -40,7 +35,8 @@ Erbjuder säker överföring av både röst (samtal) och data (passagerarinforma
 \paragraph{Trafikplats}
 Samlingsbegrepp för för driftplats, driftplatsdel, linjeplats, hållplats och hållställe~\cite{TTJ2015}.
 \paragraph{Linjen}
-Banan utanför driftplatsernas gränser~\cite{TTJ2015}.
+Avsnitt av järnvägsbana utanför en driftplats gränser~\cite{TTJ2015}.
+För att jämföra med en graf såsom de ser ut inom grafteori kan man se trafikplatser som hörn och linjen som kanter.
 \paragraph{Driftplats}
 Ett från linjen avgränsat område av banan som kan övervakas av tågklarerare mer detaljerat än vad som krävs för linjen.
 Kallas i folkmun \lq{}station\rq{}.
@@ -50,6 +46,11 @@ Avgränsad del av driftplats~\cite{TTJ2015}.
 Plats inom en driftplats avsedd för av- och påstigning~\cite{TTJ2015}.
 \paragraph{Hållplats}
 Plats på linjen avsedd för av- och påstigning~\cite{TTJ2015}.
+\paragraph{Körplan}
+Dokument som bland annat innehåller en unik identifierande beteckning och tilldelas av vederbörande infrastrukturförvaltare.
+%Villkorat dokument som fordras av TRV för att få genomföra tågfärd.
+På TRV:s körplaner anges vid vilken driftplats eller driftplatsdel tågfärden påbörjas respektive avslutas samt vid vilka trafikplatser tågfärden passerar och vid vilka tidpunkter, samt för vilket datum dokumentet gäller~\cite{TTJ2015}.
+Körplaner på TRV:s infrastruktur baseras på årsvis kapacitetsfördelning efter att JF ansökt om tågläge inför den årliga tågplanen.
 \paragraph{Tågmöte}
 Situation som innebär att två mötande tåg kör förbi varandra på en (mötes-)driftplats vid enkelspårsdrift.
 \paragraph{Digital graf}
@@ -87,7 +88,7 @@ Systemet skapar s.k.~SFERA-meddelanden, dvs.~datapaket som kommer från TMS och 
 Kan även ta emot data från C-DAS-ombordsystem och skicka till TMS\@~\cite{Olsson2023}.
 \paragraph{C-DAS-OB}
 C-DAS On-Board.
-Klient som körs på digital enhet ombord på tågfärd och kommunicerar med C-DAS-TS\@~\cite{Olsson2023}.
+Klient som körs på digital enhet ombord på tåg och kommunicerar med C-DAS-TS\@~\cite{Olsson2023}.
 Beräkning av hastighetsrekommendation kan ske av antingen C-DAS-OB eller C-DAS-TS\@~\cite{Olsson2023}.
 C-DAS-OB kan antingen vara en integrerad del av tåget i förarpanelen eller köras på en mobil enhet, t.~ex~surfplatta eller telefon~\cite{Olsson2023}.
 \paragraph{Grått tåg}
@@ -103,25 +104,25 @@ SFERA-benämning för \emph{infrastrukturförvaltare}~\cite{Olsson2023}.
 Railway undertaking.
 SFERA-benämning för \emph{JF med trafikeringstillstånd}~\cite{Olsson2023}.
 \paragraph{RTTP}
-Real time traffic plan.
+Real Time Traffic Plan.
 Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
 En RTTP kan även ersätta en tidigare förrättad RTTP\@.
 När en RTTP tas fram för en tågfärd delges dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
 RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå~\cite{Joborn2023, Olsson2023}.
 \paragraph{SP}
-Segment profile.
+Segment Profile.
 Statisk data om terräng och infrastruktur, t.~ex~banans STH, lutning, kurvradie etc~\cite{Olsson2023}.
 \paragraph{Timing point}
 Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster samt hastighetsanvisning eller hastighetsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
 TP:er används som villkor vid uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
 ~\cite{Olsson2023}
 \paragraph{TPE}
-Train path envelope.
+Train Path Envelope.
 \lq{}Tidskorridor\rq{}/svängrum/manöverutrymme ett tåg kan röra sig fritt inom utan att avvika från sin RTTP\@.
 Består av en lista av TP:er (målpunkter) med tillskrivna tidpunkter eller tidsfönster samt hastighetsanvisningar eller hastighetsfönster för dessa.
 TPE skickas till C-DAS-klienten som en del av JP~\cite{Olsson2023}
 \paragraph{JP}
-Journey profile.
+Journey Profile.
 Abstraherad körplan som inkluderar uppehåll och spårval~\cite{Olsson2023} för ett C-DAS-utrustat tåg.
 Innehåller en lista av TP:er som måste uppfyllas för att tågfärden ska kunna fullfölja sin RTTP~\cite{Olsson2023} samt en lista av SP:er.
 Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten.
@@ -129,7 +130,7 @@ Enligt SFERA innefattas även TP:er med senaste passagetider för samtliga trafi
 JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Olsson2023}.
 Sammantaget är JP ett informationspaket som består av: TPE, en lista av TP:er samt en lista av SP:er.
 \paragraph{TT}
-Train trajectory.
+Train Trajectory.
 Den av C-DAS beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
 Uträkning görs utifrån tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesionsförhållanden etc.).
 För att garantera konfliktfri realisering av operativ planering måste train trajectory rymmas inom TPE\@.
