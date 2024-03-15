@@ -105,16 +105,21 @@ Internationell benämning för infrastrukturförvaltare~\cite{Olsson2023}.
 \paragraph{RU}
 Railway undertaking.
 Internationell benämning för JF med trafikeringstillstånd~\cite{Olsson2023}.
-\paragraph{RTTP}
+\paragraph{RTTP (felaktig beskrivning)}
 Real Time Traffic Plan.
 Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
-En RTTP kan även ersätta en tidigare förrättad RTTP\@.
-När en RTTP tas fram för en tågfärd delges dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
+En RTTP kan ersätta en tidigare förrättad RTTP\@.
+När en RTTP tas fram för en tågfärd delges den dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
 RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå~\cite{Joborn2023, Olsson2023}.
 \paragraph{SP}
 Segment Profile.
 Statisk data om terräng och infrastruktur, t.~ex~banans STH, lutning, kurvradie etc~\cite{Olsson2023}.
-\paragraph{Timing point}
+\paragraph{TC}
+Train characteristics.
+Data om fordonet som framförs, i synnerhet begränsningar som påverkar tågets förmåga att upprätthålla rättidighet såsom STH, adhesionsförhållanden, längd och vikt.
+Data:t delges IM DAS-TS av C-DAS-TS\@.
+\paragraph{TP}
+Timing Point.
 Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster samt hastighetsanvisning eller hastighetsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
 TP:er används som villkor vid C-DAS-OB:s uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
 \paragraph{TPE}
@@ -126,17 +131,24 @@ TPE skickas från TMS (via IM-DAS-TS) till C-DAS-OB (via C-DAS-TS) som en del av
 \paragraph{JP}
 Journey Profile.
 Datapaket som inkluderar uppehåll och spårval för ett C-DAS-utrustat tåg~\cite{Olsson2023}.
-Innehåller en lista av TP:er som måste uppfyllas för att tågfärden ska kunna fullfölja sin RTTP samt en lista av SP:er~\cite{Olsson2023}.
+Innehåller en lista av TP som måste uppfyllas för att tågfärden ska kunna fullfölja sin RTTP samt en lista av SP:er~\cite{Olsson2023}.
 Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten.
-Enligt SFERA innefattas även TP:er med senaste passagetider för samtliga trafikplatser, dvs~även de vid vilka tågfärden \emph{inte} har uppehåll.
+Enligt SFERA innefattas även TP:er med senaste passagetider för \emph{samtliga} trafikplatser, dvs~även de vid vilka tågfärden inte har uppehåll.
 JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Olsson2023}.
 Sammantaget är JP ett informationspaket som består av: TPE, en lista av TP:er samt en lista av SP:er.
 Utifrån detta beräknar ombordutrustningen hastighetsprofilen.
 \paragraph{TT}
 Train Trajectory.
-Den av C-DAS beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
+Den av C-DAS-OB beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
 Uträkning görs utifrån JP.
 %tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesionsförhållanden etc.).
 För att garantera konfliktfri realisering av operativ planering måste train trajectory rymmas inom TPE\@.
 Om ett tåg inte kör med C-DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs~\cite{Olsson2023}.
+\paragraph{Driving profile}
+Körprofil.
+Hastighetsanvisningar eller råd från C-DAS-OB som presenteras för lokföraren under färd för att trafikoptimering ska uppnås.
+Driving profile baseras på realtidsdata, TPE och andra begränsande faktorer.
+Anvisningar/råd kan exempelvis bestå av \lq{}pådrag\rq{}, \lq{}farthållning\rq{}, \lq{}frirull\rq{}, \lq{}broms\rq{} eller en specifik hastighet.
+Driving profile beräknas av en algoritm som järnvägsföretaget implementerar i sin C-DAS-lösning.
+
 
