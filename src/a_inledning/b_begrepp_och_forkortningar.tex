@@ -2,13 +2,13 @@
 \paragraph{TRV}
 Trafikverket.
 Svensk statlig förvaltningsmyndighet med ansvar för planering, byggande samt drift av statliga vägar och järnvägar.
-Behövs källa här?
+%Behövs källa här?
 \paragraph{TS}
 Transportstyrelsen.
 Svensk statlig tillsynsmyndighet som utövar regelgivning, tillståndsprövning och tillsyn inom transportområdet.
-Behövs källa här?
+%Behövs källa här?
 \paragraph{Infrastrukturförvaltare}
-Organisation eller organ som förvaltar järnvägsinfrastruktur.
+Organisation eller organ som förvaltar (järnvägs-) infrastruktur.
 I Sverige kräver uppdraget som infrastrukturförvaltare godkännande från TS\@.
 Anläggningens delsystem fordrar tekniskt godkännande av TS~\cite{Infrastrukturforvaltare2024}.
 Trafikverket är ett exempel.
@@ -18,13 +18,12 @@ Person som från en tågtrafikledningscentral övervakar och leder trafikverksa
 \paragraph{JF}
 Järnvägsföretag.
 Ibland kallat tågoperatör.
-Behövs källa på det?
-De företag som innehar ett trafikeringstillstånd på järnvägsinfrastruktur hos en infrastrukturförvaltare~\cite{Jarnvagsforetag2024}.
-\paragraph{Trafikeringstillstånd}
-Tillstånd som fordras av järnvägsföretag för att få bedriva trafik på järnväg~\cite{Trafikeringstillstand2024}.
-I Sverige är TS ansvarig myndighet för utfärdande av trafikeringstillstånd~\cite{Jarnvagsforetag2024, Trafikeringstillstand2024}.
+Företag som innehar tillstånd att bedriva verksamhet på järnvägsinfrastruktur hos en infrastrukturförvaltare~\cite{Jarnvagsforetag2024}.
+%\paragraph{Trafikeringstillstånd}
+%Tillstånd som fordras av järnvägsföretag för att få bedriva trafik på järnväg~\cite{Trafikeringstillstand2024}.
+%I Sverige är TS ansvarig myndighet för utfärdande av trafikeringstillstånd~\cite{Jarnvagsforetag2024, Trafikeringstillstand2024}.
 \paragraph{Graf}
-Grafisk representation av en tågfärds tidtabell.
+Grafisk representation av en planerad tågfärds tidtabell.
 \paragraph{GSM-R}
 Global system for mobile communications - railway.
 Tillägg till den internationella mobiltelefonistandarden GSM och som specifikt avser järnvägskommunikation.
@@ -56,72 +55,83 @@ Situation som innebär att två mötande tåg måste passera varandra samtidigt 
 \paragraph{Digital graf}
 Förmågan att kunna utföra digital operativ planering av tågtrafik~\cite{Systemdefinition2019}.
 \paragraph{STEG}
-System/applikation som förvaltas av TRV varuti digital operativ planering utföres~\cite{Systemdefinition2019}.
+System/applikation som förvaltas av TRV varuti digital operativ planering utförs~\cite{Systemdefinition2019}.
 \subsubsection{SFERA}
 \paragraph{TMS}
 Traffic Management System.
-Benämning på system som används av tågklarerare för operativ planering av kapacitet på järnväg i EU~\cite{Joborn2023}.
-Har förmågan att delge C-DAS-ombordsystem ny/uppdaterad RTTP för beräkning verkställande~\cite{Joborn2023}.
+Benämning på system som används av tågklarerare för operativ planering av kapacitet på järnväg~\cite{Joborn2023}.
+Har förmågan att delge C-DAS-ombordsystem ny tidtabell för beräkning och verkställande~\cite{Joborn2023}.
 TRV:s TMS är Digital graf/STEG\@.
 \paragraph{DAS}
 Driver Advisory System.
-Förarstödsystem i form av en applikation som kan beräkna och återge en rekommenderad hastighetskurva.
-Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet applikationen körs ombord på (tåglängd, tågvikt, bromskraft, motorers effektpotential etc.), eller GPS-position.
+Förarstödsystem i form av en applikation som utifrån givna parametrar kan beräkna och återge en rekommenderad hastighetskurva.
+Beräkningen görs utifrån exempelvis data om infrastrukturen (lutning, signalplaceringar, STH etc.), data om fordonet applikationen körs ombord på (tåglängd, tågvikt, bromskraft, motorers effektpotential etc.), och GPS-position.
 ~\cite{Yao2022}
 \paragraph{C-DAS}
 \emph{Connected} Driver Advisory System.
-DAS som kan ta emot och beräkna data ifrån ett TMS~\cite{Olsson2023}.
-Med detta system kan tågklarerare planera, påverka och styra en tågfärd i nära realtid.
-C-DAS-ombordsystemet kan även skicka data till TMS som t.~ex~positioneringsdata.
+%DAS som kan ta emot och beräkna data ifrån ett TMS~\cite{Olsson2023}.
+DAS som har en direktlänk till ett TMS och kan ta emot data för beräkning av körprofil~\cite{Olsson2023}.
+När järnvägsföretag använder detta system kan tågklarerare planera, påverka och styra tågtrafik i nära realtid genom att pusha:a ut ny tidtabellsinformation från TMS till C-DAS-klienter.
+C-DAS-ombordsystemet kan även skicka data till TMS som t.~ex~positioneringsdata eller fordonsegenskaper (tågvikt, tåglängd, STH m.m).
 \paragraph{S-DAS}
 \emph{Standalone} driver advisory system.
-Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som inte interagerar med något TMS~\cite{Joborn2023}.
-Hastighetsrekommendation kan beräknas t.~ex.~utifrån rättidighet i förhållande till tidtabell, befintlig hastighet eller GPS-position~\cite{Systemdefinition2019}.
-Systemet kan dock kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-tjänster och Trafikverkets öppna data.
-Behövs källa på det?
+Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som \emph{inte} interagerar med något TMS~\cite{Joborn2023}.
+Hastighetsrekommendation kan beräknas t.~ex.~utifrån rättidighet i förhållande till tidtabell för tåget, befintlig hastighet och GPS-position~\cite{Systemdefinition2019}.
+Systemet kan kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-tjänster och Trafikverkets öppna data.
+%Behövs källa på det?
 Majoriteten av JF i Sverige använder idag S-DAS i någon form~\cite{Systemdefinition2019}.
-\paragraph{C-DAS-TS}
+\paragraph{IM DAS-TS}
 C-DAS Trackside System.
-System som etablerar kontakt mellan TMS och C-DAS-ombordsystem.
-Kan vara en direkt integrerad del av TMS eller ett delsystem inom TMS.
+System som etablerar kontakt mellan TMS och C-DAS-ombordsystem\cite{Olsson2023}.
+%Kan vara en direkt integrerad del av TMS eller ett delsystem inom TMS.
 Systemet skapar s.k.~SFERA-meddelanden, dvs.~datapaket som kommer från TMS och vidarebefordrar till C-DAS-ombordsystem.
 Kan även ta emot data från C-DAS-ombordsystem och skicka till TMS\@~\cite{Olsson2023}.
 \paragraph{C-DAS-OB}
-C-DAS On-Board.
-Klient som körs på digital enhet ombord på tåg och kommunicerar med C-DAS-TS\@~\cite{Olsson2023}.
-Beräkning av hastighetsrekommendation kan ske av antingen C-DAS-OB eller C-DAS-TS\@~\cite{Olsson2023}.
-C-DAS-OB kan antingen vara en integrerad del av tåget i förarpanelen eller köras på en mobil enhet, t.~ex~surfplatta eller telefon~\cite{Olsson2023}.
+C-DAS On Board.
+Applikation som körs på digital enhet ombord på tåg och kommunicerar med RU DAS-TS\@~\cite{Olsson2023}.
+Tar emot datapaket från TMS och utför beräkning av körprofil.
+Körprofilen presenteras för föraren för verkställande.
+%Beräkning av hastighetsrekommendation kan ske av antingen C-DAS-OB eller C-DAS-TS\@~\cite{Olsson2023}.
+%C-DAS-OB kan antingen vara en integrerad del av tåget i förarpanelen eller köras på en mobil enhet, t.~ex~surfplatta eller telefon~\cite{Olsson2023}.
+\paragraph{RU DAS-TS}
+Railway Undertaking DAS Track Side.
+Järnvägsföretagets system (server-sida) som förser C-DAS-OB med data från IM DAS-TS\@.
 \paragraph{IM DAS-TS}
-Beskrivning.
+Infrastructure Manager DAS Track Side.
+Infrastrukturförvaltarens system som tillhandahåller data från TMS åt RU DAS-TS\@.
 \paragraph{Grått tåg}
-Trafikverkets benämning på tågfärd som framförs utan C-DAS och således inte kan kommunicera med TMS DAS-TS~\cite{Joborn2023, Lindmark2022}.
+Trafikverkets benämning på tågfärd som framförs utan verksam C-DAS och därmed inte kommunicerar med TMS/IM-DAS-TS~\cite{Joborn2023, Lindmark2022}.
+Tåg som är utrustat och framförs med C-DAS men vars förare inte följer tilldelad körprofil kan också vara ett \lq{}grått tåg\rq{}.
 \paragraph{SFERA}
 Smart communications For Efficient Rail Activities.
-Ett protokoll för bland annat kommunikation mellan TMS och C-DAS\@.
-För närvarande under införande i Sverige\cite{Joborn2023}.
+Protokoll för digital kommunikation mellan TMS och C-DAS\@.
+System som tillämpar SFERA-standarden för kommunikation mellan tågklarerare och lokförare är för närvarande under införande i Sverige\cite{Joborn2023}.
 \paragraph{IM}
 Infrastructure manager.
 Internationell benämning för infrastrukturförvaltare~\cite{Olsson2023}.
 \paragraph{RU}
 Railway undertaking.
-Internationell benämning för JF med trafikeringstillstånd~\cite{Olsson2023}.
-\paragraph{RTTP (felaktig beskrivning)}
+Internationell benämning för järnvägsföretag~\cite{Olsson2023}.
+\paragraph{RTTP}
 Real Time Traffic Plan.
-Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
-En RTTP kan ersätta en tidigare förrättad RTTP\@.
-När en RTTP tas fram för en tågfärd delges den dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
-RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå~\cite{Joborn2023, Olsson2023}.
+%Operativ körplan/tidtabell som uppstår när en tågklarerare planerat om ett tågs ursprungliga körplan~\cite{Joborn2023, Olsson2023}.
+%En RTTP kan ersätta en tidigare förrättad RTTP\@.
+%När en RTTP tas fram för en tågfärd delges den dess förare genom C-DAS~\cite{Joborn2023, Olsson2023}.
+Den aktuella \lq{}nu gällande\rq{} realtidstidtabellen för tågtrafiken.
+Jämfört med tågplanen som innehåller statisk data om tåglägen (tidtabeller) för innevarande trafikeringsår kan man säga att RTTP är en dynamisk nulägesbild av tåglägen.
+RTTP innehåller exempelvis uppgifter om passagetider vid trafikplatser, spårval och prioritetsnivå för tågen~\cite{Joborn2023, Olsson2023}.
 \paragraph{SP}
 Segment Profile.
-Statisk data om terräng och infrastruktur, t.~ex~banans STH, lutning, kurvradie etc~\cite{Olsson2023}.
+Statisk data om terräng och infrastruktur, t.~ex~banors STH, lutning, kurvradie etc~\cite{Olsson2023}.
 \paragraph{TC}
 Train characteristics.
-Data om fordonet som framförs, i synnerhet begränsningar som påverkar tågets förmåga att upprätthålla rättidighet såsom STH, adhesionsförhållanden, längd och vikt.
-Data:t delges IM DAS-TS av C-DAS-TS\@.
+Data om fordon som framförs, i synnerhet begränsningar som påverkar tågens förmåga att upprätthålla rättidighet såsom STH, adhesionsförhållanden, längd och vikt.
+Data:t delges IM DAS-TS av RU DAS-TS\@.
 \paragraph{TP}
 Timing Point.
-Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster samt hastighetsanvisning eller hastighetsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
-TP:er används som villkor vid C-DAS-OB:s uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
+Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
+Om ett tåg ska göra ett uppehåll av en eller annan anledning listas det i TP för en viss trafikplats.
+TP:er används som villkor vid C-DAS- OB:s uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
 \paragraph{TPE}
 Train Path Envelope.
 %\lq{}Tidskorridor\rq{}/svängrum/manöverutrymme ett tåg kan röra sig fritt inom utan att avvika från sin RTTP\@.
@@ -130,25 +140,25 @@ Består av en lista av TP:er (geografiska målpunkter) med tillskrivna tidpunkte
 TPE skickas från TMS (via IM-DAS-TS) till C-DAS-OB (via C-DAS-TS) som en del av JP~\cite{Olsson2023}.
 \paragraph{JP}
 Journey Profile.
-Datapaket som inkluderar uppehåll och spårval för ett C-DAS-utrustat tåg~\cite{Olsson2023}.
-Innehåller en lista av TP som måste uppfyllas för att tågfärden ska kunna fullfölja sin RTTP samt en lista av SP:er~\cite{Olsson2023}.
-Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten.
-Enligt SFERA innefattas även TP:er med senaste passagetider för \emph{samtliga} trafikplatser, dvs~även de vid vilka tågfärden inte har uppehåll.
+Ett specifikt tågs kapacitetsutrymme i RTTP.
+Datapaket som inkluderar uppehåll och spårval för ett visst tåg~\cite{Olsson2023}.
+Innehåller en lista av TP som måste uppfyllas för att tågfärden ska kunna fullfölja sin optimering\footnote{Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten. Enligt SFERA innefattas även TP:er med senaste passagetider för \emph{samtliga} trafikplatser, dvs~även de vid vilka tågfärden inte har uppehåll~\cite{Joborn2023}.}~\cite{Olsson2023}.
 JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Olsson2023}.
 Sammantaget är JP ett informationspaket som består av: TPE, en lista av TP:er samt en lista av SP:er.
-Utifrån detta beräknar ombordutrustningen hastighetsprofilen.
+Utifrån JP beräknar C-DAS-OB en körprofil.
+JP delges C-DAS OB via IM DAS-TS och RU DAS-TS\@.
 \paragraph{TT}
 Train Trajectory.
 Den av C-DAS-OB beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
-Uträkning görs utifrån JP.
+Uträkning görs utifrån JP\@.
 %tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesionsförhållanden etc.).
 För att garantera konfliktfri realisering av operativ planering måste train trajectory rymmas inom TPE\@.
 Om ett tåg inte kör med C-DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs~\cite{Olsson2023}.
 \paragraph{Driving profile}
 Körprofil.
-Hastighetsanvisningar eller råd från C-DAS-OB som presenteras för lokföraren under färd för att trafikoptimering ska uppnås.
-Driving profile baseras på realtidsdata, TPE och andra begränsande faktorer.
-Anvisningar/råd kan exempelvis bestå av \lq{}pådrag\rq{}, \lq{}farthållning\rq{}, \lq{}frirull\rq{}, \lq{}broms\rq{} eller en specifik hastighet.
+Hastighetsanvisningar eller råd från C-DAS-OB som presenteras för lokföraren under färd för att trafikoptimering ska uppnås~\cite{IRS90940}.
+Driving profile baseras på realtidsdata, TPE och andra begränsande faktorer~\cite{IRS90940}.
+Anvisningar/råd kan exempelvis bestå av \lq{}pådrag\rq{}, \lq{}farthållning\rq{}, \lq{}frirull\rq{}, \lq{}broms\rq{} eller en specifik hastighet~\cite{IRS90940}.
 Driving profile beräknas av en algoritm som järnvägsföretaget implementerar i sin C-DAS-lösning.
 
 
