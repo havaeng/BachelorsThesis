@@ -16,18 +16,20 @@ Trafikverket ser att trafikkapacitet på järnväg kan frigöras med en IT-lösn
 %Något om utmaningar/begränsningar med nuvarande system.
 %Har fått matnyttig systemrapport från TRV\@.
 \paragraph{}
-\hspace{-11}En lämplig strategi är att implementera ett s.k. \emph{connected driver advisory system} (C-DAS), som följer SFERA-protokollet~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
-Detta protokoll har tagits fram av UIC\footnote{Union Internationale des Chemins de fer} (Internationella järnvägsunionen) specifikt för att standardisera digital kommunikation mellan tågtrafikledningssystem och lokförare~\cite{Joborn2023, Olsson2023, Lindmark2022}.
-UIC, som verkar för att underlätta internationell järnvägstrafik, har tagit fram SFERA-standarden för detta ändamål.
+\hspace{-11}En lämplig strategi är att implementera ett s.k. \emph{connected driver advisory system} (C-DAS)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
+Syftet med en C-DAS är att understödja lokförare i att ankomma i tid till stationer med minskad energikonsumtion\cite{IRS90940}.
+Ett protokoll har tagits fram av UIC\footnote{Union Internationale des Chemins de fer (Internationella järnvägsunionen)} specifikt för att standardisera digital kommunikation mellan tågtrafikledningssystem och lokförare i en C-DAS-miljö~\cite{Joborn2023, Olsson2023, Lindmark2022}.
+%UIC, som verkar för att underlätta internationell järnvägstrafik, har tagit fram SFERA-standarden för detta ändamål.
+Standarden benämns \emph{SFERA}, och skapades för att underlätta och främja internationell och gränsöverskridande järnvägstrafik\cite{IRS90940}.
 %Genom att ta fram och ge ut normer för t.~ex.~hur järnvägsfordon ska karaktäriseras gynnar man trafik mellan olika länder.
-Protokollet har beteckningen UIC IRS 90940~\cite{Joborn2023}.
+Protokollet definieras i dokumentet UIC IRS 90940 som förutom att ge en bakgrund till systemet och dess syfte även beskriver datameddelandens uppsättning i XML-format~\cite{Joborn2023, IRS90940}.
 %I det definieras hur datautbytet ska se ut mellan TMS och C-DAS-ombordenhet, dvs standardiserad digital kommunikation mellan tågklarerare och lokförare.
 Ett system som tillämpar denna standard skulle möjliggöra för tågklarerarna att direkt kunna kommunicera med lokförarna genom datameddelanden och därmed tilldela tågen nya tidtabeller i ett operativt läge~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
-Protokollet definieras som XML-schema~\cite{Olsson2023}.
-C-DAS-systemet i sig konsumerar datat som förses av trafikledningscentralen och räknar ut en rekommenderad hastighetsprofil baserat på flera olika datapunkter~\cite{Joborn2023, Olsson2023}.
+%Protokollet definieras som XML-schema~\cite{Olsson2023}.
+C-DAS-systemet i sig konsumerar datat som förses av trafikledningscentralen och räknar i slutändan ut en rekommenderad hastighetsprofil baserat på flera olika datapunkter och begränsande faktorer~\cite{Joborn2023, Olsson2023}.
 Arkitekturen är uppdelat i flera delar: en server-sida hos infrastrukturförvaltaren som tolkar tågklarerarens nya, uppdaterade, tidtabell för ett visst tåg och tillhandahåller detta för en server hos berört järnvägsföretag.
 Järnvägsföretagets server vidarebefordrar sedan datapaketet åt vederbörande klient ombord på ett tåg, som i sin tur beräknar en hastighetsprofil och återger för lokföraren~\cite{Yao2022, Olsson2023, Joborn2023}.
-Beräkning kan även ske direkt på järnvägsföretagets server.
+%Beräkning kan även ske direkt på järnvägsföretagets server.
 Se vidare avsnitt X (ej beskrivet ännu) för utförligare beskrivning av dataflödet.
 Järnvägsföretagen ansvarar för att utrusta sina tåg eller förare med system som kan ta emot, beräkna och återge denna information - antingen som inbyggd komponent i förarpanelen eller via en applikation på digital mobil enhet~\cite{Joborn2023}.
 Trafikverket vill nu verkställa detta systemskifte så att de direkt från trafikledningscentralerna kan tillhandahålla nödvändig och önskvärd information på ett tjänligt och gynnsamt vis för järnvägsföretagens att följa~\cite{Angel2020, Joborn2023, Lindmark2022}.
