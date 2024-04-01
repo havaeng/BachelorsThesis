@@ -74,7 +74,7 @@ DAS som har en direktlänk till ett TMS och kan ta emot data för beräkning av 
 När järnvägsföretag använder detta system kan tågklarerare planera, påverka och styra tågtrafik i nära realtid genom att pusha:a ut ny tidtabellsinformation från TMS till C-DAS-klienter.
 C-DAS-ombordsystemet kan även skicka data till TMS som t.~ex~positioneringsdata eller fordonsegenskaper (tågvikt, tåglängd, STH m.m).
 \paragraph{S-DAS}
-\emph{Standalone} driver advisory system.
+\emph{Standalone} Driver Advisory System.
 Avser DAS i form av förarstödsystem som kan ge hastighetsrekommendationer, och presentera annan data men som \emph{inte} interagerar med något TMS~\cite{Joborn2023}.
 Hastighetsrekommendation kan beräknas t.~ex.~utifrån rättidighet i förhållande till tidtabell för tåget, befintlig hastighet och GPS-position~\cite{Systemdefinition2019}.
 Systemet kan kommunicera med och inhämta information ifrån exempelvis ett JF:s IT-tjänster och Trafikverkets öppna data.
@@ -131,13 +131,13 @@ Data:t delges IM DAS-TS av RU DAS-TS\@.
 Timing Point.
 Geografisk målpunkt på banan (t.~ex.~trafikplats) som kan tillskrivas attribut med specifik tidpunkt (dvs.~senaste passagetid) eller tidsfönster ett tåg ska hålla sig inom~\cite{Olsson2023}.
 Om ett tåg ska göra ett uppehåll av en eller annan anledning listas det i TP för en viss trafikplats.
-TP:er används som villkor vid C-DAS- OB:s uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
+TP:er används som villkor vid C-DAS-OB:s uträkning av hastighetsprofil så att de uppfylls~\cite{Olsson2023}.
 \paragraph{TPE}
 Train Path Envelope.
 %\lq{}Tidskorridor\rq{}/svängrum/manöverutrymme ett tåg kan röra sig fritt inom utan att avvika från sin RTTP\@.
 %Består av en lista av TP:er (målpunkter) med tillskrivna tidpunkter eller tidsfönster samt hastighetsanvisningar eller hastighetsfönster för dessa.
 Består av en lista av TP:er (geografiska målpunkter) med tillskrivna tidpunkter eller tidsfönster som ett tåg måste respektera.
-TPE skickas från TMS (via IM-DAS-TS) till C-DAS-OB (via C-DAS-TS) som en del av JP~\cite{Olsson2023}.
+TPE skickas från TMS (via IM DAS-TS) till C-DAS-OB (via RU DAS-TS) som en del av JP~\cite{Olsson2023}.
 \paragraph{JP}
 Journey Profile.
 Ett specifikt tågs kapacitetsutrymme i RTTP.
@@ -147,25 +147,26 @@ JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Ol
 Sammantaget är JP ett informationspaket som består av: TPE, en lista av TP:er samt en lista av SP:er.
 Utifrån JP beräknar C-DAS-OB en körprofil.
 JP delges C-DAS OB via IM DAS-TS och RU DAS-TS\@.
-\paragraph{TT}
-Train Trajectory.
-Den av C-DAS-OB beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
-Uträkning görs utifrån JP\@.
-%tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesionsförhållanden etc.).
-För att garantera konfliktfri realisering av operativ planering måste train trajectory rymmas inom TPE\@.
-Om ett tåg inte kör med C-DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs~\cite{Olsson2023}.
+%\paragraph{TT}
+%Train Trajectory.
+%Den av C-DAS-OB beräknade optimala körprofilen som tåget i praktiken \emph{kan efterleva}, dvs tids- och hastighetsprofil över en viss sträcka.
+%Uträkning görs utifrån JP\@.
+%%tågets egenskaper (motoreffekt, tågvikt etc.) och banans egenskaper (lutning, banans STH, adhesionsförhållanden etc.).
+%För att garantera konfliktfri realisering av operativ planering måste train trajectory rymmas inom TPE\@.
+%Om ett tåg inte kör med C-DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs~\cite{Olsson2023}.
 \paragraph{Driving profile}
 Körprofil.
-Hastighetsanvisningar eller råd från C-DAS-OB som presenteras för lokföraren under färd för att trafikoptimering ska uppnås~\cite{IRS90940}.
-Driving profile baseras på realtidsdata, TPE och andra begränsande faktorer~\cite{IRS90940}.
+%Hastighetsanvisningar eller råd från C-DAS-OB som presenteras för lokföraren under färd för att trafikoptimering ska uppnås~\cite{IRS90940}.
+Den av C-DAS-OB beräknade optimala hastighetsprofilen som presenteras för lokföraren under färd för att trafikoptimering ska uppnås~\cite{IRS90940}.
+Driving profile baseras på realtidsdata, TPE och andra begränsande faktorer (banors egenskaper, motoreffekt, tågvikt etc.)~\cite{IRS90940}.
 Anvisningar/råd kan exempelvis bestå av \lq{}pådrag\rq{}, \lq{}farthållning\rq{}, \lq{}frirull\rq{}, \lq{}broms\rq{} eller en specifik hastighet~\cite{IRS90940}.
 Driving profile beräknas av en algoritm som järnvägsföretaget implementerar i sin C-DAS-lösning.
+Om ett tåg inte kör med C-DAS i någon form (dvs grått tåg) är körprofilen den faktiska körningen så som tåget framförs~\cite{Olsson2023}
 \subsubsection{Dataflödet inom C-DAS}
-
 \begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.8\textwidth]
-    {sfera-communication}
-    \caption{Kommunikationsdiagram C-DAS}
-    \label{fig:Kommunikationsdiagram}
+    {c-das-comms}
+    \caption{Sekvensdiagram som visar C-DAS-kommunikation när en tågklarerare planerar om ett tågs tidtabell. Egen framställning/Wikimedia Commons Public Domain.}
+    \label{fig:C-DAS-kommunikation}
 \end{figure}
