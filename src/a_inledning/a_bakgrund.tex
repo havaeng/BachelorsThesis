@@ -1,3 +1,4 @@
+\subsubsection{Introduktion}
 \paragraph{}
 \hspace{-11}Trafikverket vill stärka sin operativa trafikledningsförmåga genom att effektivisera samspelet mellan tågklarerare och lokförare~\cite{Angel2020}.
 Målet med optimeringen är att genom en IT-lösning förbättra trafikkapacitet, punktlighet, förmågan att hantera trafikstörningar samt minska slitage på järnvägsfordon och infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019}.
@@ -15,6 +16,7 @@ Trafikverket ser att trafikkapacitet på järnväg kan frigöras med en IT-lösn
 %\paragraph{}
 %Något om utmaningar/begränsningar med nuvarande system.
 %Har fått matnyttig systemrapport från TRV\@.
+\subsubsection{C-DAS}
 \paragraph{}
 \hspace{-11}En lämplig strategi är att implementera ett s.k. \emph{connected driver advisory system} (C-DAS)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
 Syftet med en C-DAS är att understödja lokförare i att ankomma i tid till stationer med minskad energikonsumtion\cite{IRS90940}.
@@ -56,6 +58,7 @@ Möjligheterna med C-DAS är många:
     \item Minskad miljöpåverkan~\cite{Lindmark2022}
     \item Harmoniserat trafikflöde~\cite{Systemdefinition2019}
 \end{itemize}
+\subsubsection{TMS}
 \paragraph{}
 \hspace{-11}Ett system för att operativt planera och styra järnvägstrafik kallas \emph{traffic management system} (TMS)~\cite{Joborn2023}.
 Styrningssystemet Digital graf/STEG som utvecklas, används och förvaltas av Trafikverket är ett exempel.
@@ -78,7 +81,16 @@ Nya grafer (grafiska representationer av tidtabeller) ritas istället för hand 
 C-DAS-konceptet omsluter istället hela kedjan av kommunikation från tågklarerarens omplanerade tidtabeller för tåg, till TMS datadistributionssystem, till berörd C-DAS-server, till C-DAS-ombordenhet, till förare tillbaka med bekräftelse från förare till tågklarerare att information mottagits.
 En förutsättning för att dessa anpassningar ska kunna verkställas utan att något tåg tappar tid och blir försenat är förekomsten av s.k. \emph{slack} i tidtabellen.
 Slack betyder att ett tåg inte behöver hålla sin \emph{STH}\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.} för att vara i tid till nästa uppehåll - med eller utan trafikutbyte (resenärer på/av)~\cite{Lindmark2022}.
-\paragraph{}
+\subsubsection{Dataflödet inom C-DAS}
+Expandera avsnitt med information om dataflödet.
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.8\textwidth]
+    {c-das-comms}
+    \caption{Sekvensdiagram som visar C-DAS-kommunikation när en tågklarerare planerar om ett tågs tidtabell. Egen framställning/Wikimedia Commons Public Domain.}
+    \label{fig:C-DAS-kommunikation}
+\end{figure}
+%\paragraph{}
 %Det finns en intressekonflikt i förarens prioritering av att vidmakthålla rättidighet enligt tidtabell mot att köra ekonomiskt och med minimalt slitage.
 %Expandera avsnitt med~\cite{Verstappen2022}.
 %\paragraph{}
