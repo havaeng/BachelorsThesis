@@ -154,6 +154,13 @@
   \newpage
 }
 
+\renewenvironment{tack}{
+  \ifodd\value{page}\else\mbox{}\newpage\fi
+  \section*{Tack}
+  }{
+  \newpage
+}
+
 % end marker
 \endinput
 

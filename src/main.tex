@@ -27,12 +27,16 @@
 \maketitle %
 
 \begin{sammanfattning}
-\lipsum[1-2]
+\lipsum[1]
 \end{sammanfattning}
 
 \begin{abstract}
-\lipsum[3-4]
+\lipsum[1]
 \end{abstract}
+
+\begin{tack}
+\lipsum[1]
+\end{tack}
 
 % This is sort of magic, do not touch
 \ifodd\value{page}\else\mbox{}\newpage\fi
@@ -41,59 +45,41 @@
 \startpagecount
 
 \section{Begrepp och förkortningar}
-\input{a_begrepp_och_forkortningar/a_begrepp_och_forkortningar}
-
+    \input{a_begrepp_och_forkortningar/a_begrepp_och_forkortningar}
 \section{Inledning}
-
-\subsection{Bakgrund}
-\input{a_inledning/a_bakgrund}
-
-\subsection{Problemformulering}
-\input{a_inledning/b_problemformulering}
-
-\subsection{Frågeställning och syfte}
-\input{a_inledning/c_fragestallning_och_syfte}
-
-%\subsection{Hypotes}
-%\input{a_inledning/e_hypotes}
-
+    \subsection{Bakgrund}
+        \input{a_inledning/a_bakgrund}
+    \subsection{Problemformulering}
+        \input{a_inledning/b_problemformulering}
+    \subsection{Frågeställning och syfte}
+        \input{a_inledning/c_fragestallning_och_syfte}
 \section{Litteraturstudie}
-
-\subsection{Urval}
-\input{b_litteraturstudie/a_urval}
-
-\subsection{Forskningsläget idag}
-\input{b_litteraturstudie/b_forskningslaget_idag}
-
+    \subsection{Urval}
+        \input{b_litteraturstudie/a_urval}
+    \subsection{Forskningsläget idag}
+        \input{b_litteraturstudie/b_forskningslaget_idag}
 \section{Metod och etisk analys}
-
-\subsection{Metodbeskrivning}
-
-\input{c_metod/a_dsr}
-\input{c_metod/b_urval}
-\input{c_metod/c_datainsamling}
-
-\subsection{Metoddiskussion}
-\input{c_metod/d_metoddiskussion}
-
-\subsection{Etisk analys}
-\input{c_metod/e_etisk_analys}
-
+    \subsection{Metodbeskrivning}
+        \input{c_metod/a_dsr}
+        \input{c_metod/b_urval}
+        \input{c_metod/c_datainsamling}
+    \subsection{Metoddiskussion}
+        \input{c_metod/d_metoddiskussion}
+    \subsection{Etisk analys}
+        \input{c_metod/e_etisk_analys}
 \section{Resultat}
-\input{d_resultat/a_resultat_dokumentanalys}
-\input{d_resultat/b_resultat_intervjuer}
-\input{d_resultat/c_resultat_validering}
-
+    \input{d_resultat/a_resultat_dokumentanalys}
+    \input{d_resultat/b_resultat_intervjuer}
+    \input{d_resultat/c_resultat_validering}
 \section{Analys}
-\lipsum[2]
-
+    \input{e_analys/a_analys_sfera}
+    \input{e_analys/b_analys_gamification}
 \section{Diskussion}
-\lipsum[3]
-
+    \input{f_diskussion/a_diskussion}
+    \input{f_diskussion/b_diskussion_gamification}
 \section{Slutsatser och vidare forskning}
-\lipsum[4]
+\lipsum[1]
 
-%
 % Do not change
 \newpage
 \addcontentsline{toc}{section}{Referenser}
