@@ -30,7 +30,7 @@ Vidare innehåller JP tidskorridoren ett tåg måste hålla sig inom för att up
     \centering
     \begin{tabular}{|l|}
         \hline
-        Journey profile \\
+        \textbf{Journey profile} \\
         \hline
         - Unikt ID för berörd tågfärd \\
         - Tidskorridor \\
@@ -47,11 +47,11 @@ Det består av tågets position i förhållande till referenspunkter från tilld
 Lokförare kan även rapportera in om förändringar i adhesionsförhållanden.
 Detta kommer skickas till TSM som sedan delger andra C-DAS-OB om detta via related train information.
 Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden avbryts och förseningsorsaker.
-\begin{table}[hbt!]
+\begin{table}
     \centering
     \begin{tabular}{|l|}
         \hline
-        Status report \\
+        \textbf{Status report} \\
         \hline
         - Position \\
         - Hastighet \\
@@ -65,16 +65,39 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
     \caption{Datastruktur, status report}
     \label{tab:sr}
 \end{table}
-\begin{table}[hbt!]
+\begin{table}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Segment profile} & & \\
+        \hline
+        - Unikt ID & & \\
+        - Version & & \\
+        - Längd & & \\
+        \hline
+        SP-punkter & SP-karaktäristik & SP-områden \\
+        - Trafikplats & - Banans STH för ett visst segment & - Station, plattform \\
+        - Uppehåll\footnote{Plats för exempelvis resandeutbyte eller tågmöte.} & - Unikt ID för aktuell bana & - Tunnel \\
+        - Signalplacering & - Kurvradie, lutning & - Strömlös sektion \\
+        - Balisplacering & - Kontaktledningsspänning & - Tillåten axellast \\
+        - Referenspunkt (kilometer) & - Infrastrukturbegränsningar &  \\
+        - Oövervakad plankorsning & - Tillgänglig(a) tågskyddssystem & \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, segment profile}
+    \label{tab:sp}
+\end{table}
+\begin{table}
     \centering
     \begin{tabular}{|l|}
         \hline
-        Train characteristics \\
+        \textbf{Train characteristics} \\
         \hline
         Obligatoriskt: \\
         - Unikt ID \\
         - Version \\
         - Järnvägsföretags unika ID \\
+        \hline
         Valfritt: \\
         - Typ av tågfärd\footnote{Persontåg, godståg, tjänstetåg, underhållsfordon} \\
         - STH \\
@@ -91,28 +114,6 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
     \end{tabular}
     \caption{Datastruktur, train characteristics}
     \label{tab:tc}
-\end{table}
-\begin{table}[hbt!]
-    \centering
-    \begin{tabular}{|l|l|l|}
-        \hline
-        Segment profile \\
-        \hline
-        Unikt ID \\
-        Version \\
-        Längd \\
-        \hline
-        SP-punkter & SP-karaktäristik & SP-områden \\
-        - Trafikplats & - Banans STH för ett visst segment & - Station, plattform \\
-        - Uppehåll\footnote{Plats för exempelvis resandeutbyte eller tågmöte.} & - Unikt ID för aktuell bana & - Tunnel \\
-        - Signalplacering & - Kurvradie, lutning & - Strömlös sektion \\
-        - Balisplacering & - Kontaktledningsspänning & - Tillåten axellast \\
-        - Referenspunkt (kilometer) & - Infrastrukturbegränsningar &  \\
-        - Oövervakad plankorsning & - Tillgänglig(a) tågskyddssystem & \\
-        \hline
-    \end{tabular}
-    \caption{Datastruktur, segment profile}
-    \label{tab:sp}
 \end{table}
 \subsubsection{Gamification}
 Detta avsnitt är kopplat till forskningsfråga 4 som lyder \emph{\lq{}Hur kan gamification användas för att stödja och motivera lokförare i deras användande av C-DAS-verktyg?\rq{}}.

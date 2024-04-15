@@ -1,4 +1,4 @@
-\subsection{SFERA utökat}
+\subsection{SFERA utökat}\label{subsec:sfera-utokat}
 Genom att studera SFERA-standardens dataupsättning och lokförarnas kommunikations- och informationsbehov har de kunnat jämföras med varandra.
 De överlapp som finns argumenterar för att dessa delar från lokförarnas behov täcks upp av SFERA\@.
 För de delar i intervjuerna som uppdagats rörande lokförarnas nämnda behov men som inte täcks av SFERA har en utökning av SFERA tagits fram.
@@ -31,14 +31,17 @@ Idag kan information om trafikstörningar gå en lång omväg från en driftledn
 Om lokföraren får information direkt från ursprungskällan med plats, tid, påverkan och prognos för trafikstörningar kan information istället ges snabbt till kunder.
 Ett TMS många tåg inom ett avgränsat område.
 Denna funktionalitet införs därför som en ny form av meddelande.
-\paragraph{Context awareness}
-GPS-position av tåg tillhandahålls TMS som därför borde kunna återge en grupp av kringliggande tågs GPS-position för ett särskilt tåg.
-Att öka lokförarnas situationsmedvetenhet har pekats ut både i litteraturstudie och intervjuer som en viktig informationspunkt.
-Därför kompletteras SFERA med information från TMS till C-DAS-OB om GPS-positioner av tåg i ett enskilt tågs omgivning.
 \paragraph{Meddelande om uppdaterad tåglängd}
-Enligt utsagor från intervjuobjekten kan tvära kast i fordonsplanering förekomma av flera olika skäl.
+Enligt utsagor från intervjuobjekten kan tvära kast i fordonsplanering som innebär förändring av tåglängd förekomma, av flera olika skäl.
 Det vore därför av intresse för förarna att kunna se vilken tåglängd tågklarerarna \emph{tror} att en viss tågfärd har.
 Om detta visar sig inte överensstämma med verkligheten kan lokföraren kontakta tågklareraren med GMS-R-telefonsamtal och delge korrekt information.
+Det framgår inte helt av analyserad dokumentation om lokförarna direkt kan skicka information om förändringar i tåglängd.
+Informationen finns i TC, men om C-DAS-OB kan skicka förändringar i tc genom status report är inte helt tydligt.
+Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
+%\paragraph{Context awareness}
+%GPS-position av tåg tillhandahålls TMS som därför borde kunna återge en grupp av kringliggande tågs GPS-position för ett särskilt tåg.
+%Att öka lokförarnas situationsmedvetenhet har pekats ut både i litteraturstudie och intervjuer som en viktig informationspunkt.
+%Därför kompletteras SFERA med information från TMS till C-DAS-OB om GPS-positioner av tåg i ett enskilt tågs omgivning.
 \subsubsection{C-DAS-OB till TMS}
 \paragraph{Kvittens av JP}
 När ett JP skickas ut bör det göras tydligt för föraren att ny tidtabell är aktuell.
@@ -75,8 +78,12 @@ Från en respondent som suttit i samrådsmöten med räddningstjänst, ambulans 
 Därför föreslås en funktion där C-DAS-OB kan delge GPS-position till SOS Alarm direkt eller via IM DAS-TS\@.
 I dagsläget passeras informationen i många led muntligen från lokförare till operativ blåljuspersonal med flera led emellan vilket potentiellt kan leda till att information tappas på vägen.
 Det har enligt respondenten visat sig hänt flera gånger i verkligheten samtidigt som nämnda samhällsfunktioner efterfrågan denna typ av funktionalitet.
+Detta förslag går eventuellt lite långt ifrån ämnet, men oavsett är det tågklarerarna som kontaktar SOS Alarm och om systemet möjliggör distribution av GPS-information skulle det potentiellt kunna vara av intresse för polis, ambulans och räddningstjänst.
 \paragraph{Meddelande om att samtal önskas}
 Det framgick under intervjuerna att lokförare ibland behöver kontakta tågklarerare, men i ärenden som inte är akuta.
 När de då ringer driftledningscentralen i dessa ärenden kan det ibland gå så lång tid att föraren väljer att lägga på och istället försöka senare.
 Respondenten tillade att detta inte är något konstigt i sig, utan att tågklareraren förmodligen är upptagen.
 Att då kunna skicka ett meddelande om att samtal önskas kan avlasta tågklarerarens uppmärksamhet.
+\paragraph{Reducerad dragkraft}
+Information om dragkraft görs tillgängligt för TMS via RU DAS-TS men C-DAS-OB förefaller inte ha någon möjlighet att skicka detta direkt till TMS i status report.
+Därför läggs denna meddelandetyp till och består av en andelsangivelse i förhållande till den fulla potential som finns i fordon enligt train characteristics.
