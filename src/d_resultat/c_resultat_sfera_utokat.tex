@@ -5,7 +5,7 @@ För de delar i intervjuerna som uppdagats rörande lokförarnas nämnda behov m
 En illustration av detta ges i figur~\ref{fig:sferabehov}.
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=0.8\textwidth]
+    \includegraphics[width=0.5\textwidth]
     {sferabehov}
     \caption{Venndiagram som illustrerar förbättringspotential utifrån jämförelsen mellan datainsamlingsresultat och SFERA:s datauppsättning. Egen framställning.}
     \label{fig:sferabehov}
@@ -32,7 +32,51 @@ Om lokföraren får information direkt från ursprungskällan med plats, tid, p�
 Ett TMS många tåg inom ett avgränsat område.
 Denna funktionalitet införs därför som en ny form av meddelande.
 \paragraph{Context awareness}
-GPS-position av tåg tillhandahålls ett TMS som därför borde kunna återge kringliggande tågs GPS-position för ett särskilt tåg.
+GPS-position av tåg tillhandahålls TMS som därför borde kunna återge en grupp av kringliggande tågs GPS-position för ett särskilt tåg.
 Att öka lokförarnas situationsmedvetenhet har pekats ut både i litteraturstudie och intervjuer som en viktig informationspunkt.
-Därför kompletteras SFERA med information från IM till RU om GPS-positioner av tåg i ett enskilt tågs omgivning.
+Därför kompletteras SFERA med information från TMS till C-DAS-OB om GPS-positioner av tåg i ett enskilt tågs omgivning.
+\paragraph{Meddelande om uppdaterad tåglängd}
+Enligt utsagor från intervjuobjekten kan tvära kast i fordonsplanering förekomma av flera olika skäl.
+Det vore därför av intresse för förarna att kunna se vilken tåglängd tågklarerarna \emph{tror} att en viss tågfärd har.
+Om detta visar sig inte överensstämma med verkligheten kan lokföraren kontakta tågklareraren med GMS-R-telefonsamtal och delge korrekt information.
 \subsubsection{C-DAS-OB till TMS}
+\paragraph{Kvittens av JP}
+När ett JP skickas ut bör det göras tydligt för föraren att ny tidtabell är aktuell.
+Denna kan då bekräftas eller avvisas om föraren uppenbart märker att tågklarerarens plan inte kommer att kunna realiseras i praktiken.
+\paragraph{Rapportering av balisinformationsfel}
+När balisinformationsfel\footnote{Baliser är signalsystemets gränssnitt för informationsöverföring från signalsystem till tågets hastighetsövervakningssystem. De tar emot information banutrustningen och strömsätts när ett tåg passerar dem, varpå information kan överföras till tågen. Om information tåget emottager inte är fullständig \lq{}vet inte\rq{} längre tågets skyddssystem vilken information som gäller och kommer begränsa tågets STH till 80 km/h eller 40 km/h beroende på var tåget befinner sig, och lokföraren måste köra under restriktioner\cite{TTJ2015}.} inträffar ska lokföraren delge tågklarerare om var det inträffat, vilka konsekvenser som gavs samt vilken felkod som presenterades.
+Förarna uppgav i intervjuer att det kan vara svårt att veta exakt var det inträffade och vilken balisgrupp som avses.
+En del förare uppgav också att de och deras kollegor ibland slarvar med att rapportera in balisinformationsfel till driftledningscentralen.
+Längden STH begränsas vara upp till 3800 m \emph{plus} tågsättets längd, vilket skulle kunna påverka en tågfärds rättidighetsförmåga.
+Om lokföraren inte rapporterat detta till driftledningscentralen kan tågklareraren fatta beslut baserat på felaktigt informationsunderlag.
+För att underlätta för både lokförare och tågklarerare införs därför ett meddelande där lokföraren kan skicka GPS-position, ja/nej för driftbroms och släcka indikatorer samt felkod.
+Tågklareraren kan då snabbt få reda på att ett tågs STH begränsas, frekvensen av inrapportering kan öka och inrapportering kan bli en enklare process för lokföraren.
+\paragraph{Plattformsbehov}
+För persontåg kan det vara aktuellt med särskilt behov av plattform vid antingen höger eller vänster sida av tåget.
+Det kan röra sig om ett större antal avstängda in- och avstigningsdörrar på ena sidan eller om en dörr är avstängd vid en handikapplift.
+Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda till snabbare trafikutbyte.
+\paragraph{Meddelande om plötsligt stopp}
+Ibland uppstår fordonsfel som kan leda till att ett tåg gör ett oplanerat stopp.
+Det händer enligt respondenterna att driftledningscentralen inte svarar direkt när man ringer, och om man har ett akut fordonsfel kan det vara stressande att vänta på att någon svarar.
+En funktion som meddelar driftledningscentralen att ett tåg har fått ett stoppande fel är sannolikt av intresse för en tågklarerare då de skulle kunna delges information att ett tåg står still även om de är upptagna med andra uppgifter.
+Det skulle möjliggöra att en lokförare snabbt kan meddela tågklarerare att tåget står still, eventuell prognos och sedan direkt påbörja felsökning och åtgärd utan att först behöva ringa och delge information muntligen.
+Information kan kompletteras i efterhand via GSM-R-samtal.
+\paragraph{Meddelande om signal i stopp}
+Under intervjuerna framgick det att förarna var av åsikten att bra järnvägstrafik var konsekvensen av ett bra samspel mellan lokförare och tågklarerare.
+Det fanns en förståelse för att båda parter är människor och ibland gör fel.
+Att tågklarerare ibland glömmer bort tåg för en kort period föreföll oundvikligt, och då kunde det hända att tåg blir ståendes vid röda signaler som visar stopp.
+Då kunde förarna känna sig påträngande eller onödigt ivriga vid samtal i dessa lägen då orsaken kanske var enkel eller kortvarig.
+Om förarna å andra sidan avstod från att ringa i dessa lägen kanske det skulle leda till att de stod i dessa lägen onödigt länge ifall tågklareraren faktiskt glömde bort tåget.
+Ett meddelande med en notis om att ett tåg håller för stopp vid en viss signal införs därför.
+Meddelandet kan besvaras med mottagningsbekräftelse med eventuell orsak och prognos vid händelser av lägre dignitet såsom korsande tågväg.
+\paragraph{Meddelande till SOS}
+Från en respondent som suttit i samrådsmöten med räddningstjänst, ambulans och polis framgick det att den här typen av samhällsfunktioner har svårt att identifiera exakt position för tåg de ska undsätta, i synnerhet för poliser.
+Är det tågstopp kan många tåg befinna sig nära varandra vilket kan försvåra lokalisering.
+Därför föreslås en funktion där C-DAS-OB kan delge GPS-position till SOS Alarm direkt eller via IM DAS-TS\@.
+I dagsläget passeras informationen i många led muntligen från lokförare till operativ blåljuspersonal med flera led emellan vilket potentiellt kan leda till att information tappas på vägen.
+Det har enligt respondenten visat sig hänt flera gånger i verkligheten samtidigt som nämnda samhällsfunktioner efterfrågan denna typ av funktionalitet.
+\paragraph{Meddelande om att samtal önskas}
+Det framgick under intervjuerna att lokförare ibland behöver kontakta tågklarerare, men i ärenden som inte är akuta.
+När de då ringer driftledningscentralen i dessa ärenden kan det ibland gå så lång tid att föraren väljer att lägga på och istället försöka senare.
+Respondenten tillade att detta inte är något konstigt i sig, utan att tågklareraren förmodligen är upptagen.
+Att då kunna skicka ett meddelande om att samtal önskas kan avlasta tågklarerarens uppmärksamhet.
