@@ -1,14 +1,17 @@
-\subsection{Dokumentanalys}\label{subsec:dokumentanalys}
+\subsection{Dokumentanalys: SFERA och gamification}\label{subsec:dokumentanalys}
+För att fastställa SFERA-protokollets tekniska uppsättning har en sammanställning gjorts utifrån de verk från litteraturstudien som berörde detta.
+För att ge en introduktion till gamification och hur det har tillämpats i DAS-applikationer har en sammanfattning gjorts.
+
 \subsubsection{SFERA-kommunikation}
 Kommunikationsprotokollet som används inom C-DAS kallas SFERA och är som nämnt tidigare i avsnitt~\ref{subsubsec:c-das} av UIC för att stärka järnvägsbranschens genom teknisk vägledning i hur datautbyte i detta sammanhang bör se ut~\cite{IRS90940}.
 Syftet är att energieffektivisera tågkörning, förbättra punktlighet, och förenkla internationell järnvägstrafik~\cite{IRS90940}.
 DAS-verktyg är en nyckelfaktor i effektiviseringprocessen som dessutom inte kostar stora summon pengar i investeringskostnader~\cite{IRS90940}.
 Så mycket som 5--15\% energi kan sparas in med DAS-verktyg~\cite{IRS90940}.
 Vidare spås C-DAS och SFERA bidra till förbättringar inom energibesparing, punktlighet, kapacitet, kraftförsörjning, trafikstörningshantering, trafiksäkerhet och koldioxidutsläpp~\cite{IRS90940}.
-\subsubsection{Avgränsning}
+\subsubsection{SFERA:s avgränsning}
 SFERA sträcker sig inte bortom datautbyte och avhandlar exempelvis inte presentation av data för lokförare, kvaliteten av hastighetsrekommendationer eller information för lokförare, lokförarens beteende eller handlingar, algoritmer för beräkning av körprofil och så vidare~\cite{IRS90940}.
 Istället tar SFERA sikte på att definiera data längst bak i informationskedjan så att andra infrastrukturförvaltare och järnvägsföretag får så bra beslutsunderlag som möjligt~\cite{IRS90940}.
-\subsubsection{Datauppställning}
+\subsubsection{SFERA:s datauppställning}
 Mycket av kommunikationen mellan TMS och C-DAS-OB består av journey profile och status reports.
 Det är detta som i praktiken skiljer S-DAS från C-DAS - det standardiserade kommunikationsprotokollet samt möjligheten att utöva det~\cite{IRS90940}.
 Journey profile innehåller alla data som krävs för att C-DAS-OB ska kunna beräkna en bra körprofil~\cite{IRS90940}.
@@ -20,7 +23,7 @@ Vidare är en följd av related train information good-will hos förarna~\cite{I
 Datameddelanden inom SFERA är överlag designade att vara så små som möjligt för att öka flexibiliteten~\cite{IRS90940}.
 \paragraph{}
 \hspace{-11}En journey profile (se figur~\ref{tab:jp}) består av flera delar.
-Tågfärdens unika referens-ID\footnote{Vanligtvis ett nummer, som är unikt för innevarande trafikdygn.}~och information om tågets fysiska egenskaper (train characteristics, TC).
+Tågfärdens unika referens-ID\footnote{Ett för det innevarande trafikdygnet unikt nummer mellan en och sex siffror.}~och information om tågets fysiska egenskaper (train characteristics, TC).
 Se beskrivning av TC i figur(se figur~\ref{tab:tc}).
 Den innehåller även statisk och dynamisk data om tågfärdens innehåll.
 Statisk data benämns segment profile (se figur~\ref{tab:sp}) och är bland annat trafikplatser, lutningsförhållanden, kurvradier, ID för aktuella bana/banor, hastighetsbegränsningar, referenspunkter för C-DAS-OB:s positioneringssystem), signal- och balisplaceringar och mycket mer.

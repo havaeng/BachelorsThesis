@@ -1,7 +1,7 @@
-\subsection{SFERA utökat}\label{subsec:sfera-utokat}
-Genom att studera SFERA-standardens dataupsättning och lokförarnas kommunikations- och informationsbehov har de kunnat jämföras med varandra.
+\subsection{Förbättringsförslag som resultat av intervjuer}\label{subsec:sfera-utokat}
+Genom att studera SFERA-protokollets datauppsättning (avsnitt~\ref{subsec:dokumentanalys}) och lokförarnas kommunikations- och informationsbehov (~\ref{subsec:dokumentanalys}) har de kunnat jämföras med varandra.
 De överlapp som finns argumenterar för att dessa delar från lokförarnas behov täcks upp av SFERA\@.
-För de delar i intervjuerna som uppdagats rörande lokförarnas nämnda behov men som inte täcks av SFERA har en utökning av SFERA tagits fram.
+För de delar i intervjuerna som uppdagats rörande lokförarnas nämnda behov men som inte täcks av SFERA har ett utökningsförslag av SFERA tagits fram.
 En illustration av detta ges i figur~\ref{fig:sferabehov}.
 \begin{figure}[hbt!]
     \centering
@@ -10,13 +10,13 @@ En illustration av detta ges i figur~\ref{fig:sferabehov}.
     \caption{Venndiagram som illustrerar förbättringspotential utifrån jämförelsen mellan datainsamlingsresultat och SFERA:s datauppsättning. Egen framställning.}
     \label{fig:sferabehov}
 \end{figure}
-\subsubsection{TMS till C-DAS-OB}
+\subsubsection{Kommunikation från TMS till C-DAS-OB}
 Följande förbättringsförslag ges som går utöver SFERA-protokollet för kommunikation från tågklarerare till lokförare.
-\paragraph{Journey package}
+\paragraph{Journey profile}
 Ett JP består idag av train characteristics (data om fordon), en lista över segment profile:r (data om aktuell(a) bana/banors egenskaper) samt avgångs- och ankomsttider för dessa, tillfälliga begränsningar (för exempelvis pådrag).
 För att bättre möta lokförarnas behov inkluderas utöver nämn data försenings- eller omplaneringsorsak(er), avsändare av JP - vilken bandel och driftledningscentral meddelandet kommer från samt telefonnummer till denne.
-Försenings- och omplaneringsinformation efterfrågas uttryckligen av förarna under intervjusessioner.
-Att exempelvis veta var ett tåg ska gå om ett annat eller gå in på sidan för att släppa förbi ett tåg är ett gynnsamt sätt att bygga förtroende sett till respondenternas utsagor.
+Försenings- och omplaneringsinformation eller -orsak(er) efterfrågas uttryckligen av flera förare under intervjusessioner.
+Att exempelvis veta var ett tåg ska gå om ett annat eller gå in på sidan på en driftplats för att släppa förbi ett tåg är ett gynnsamt sätt att bygga förtroende sett till respondenternas utsagor.
 \paragraph{Blankettförberedelse}
 Före muntlig ordergivning måste blanketter förberedas som lokföraren är ålagd att medtaga under tågfärd.
 Ordergivning genom diktamen sker genom att lokföraren upprepar vad tågklareraren säger samtidigt som denne noterar på en blankett vilken information som tas emot.
@@ -42,7 +42,7 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
 %GPS-position av tåg tillhandahålls TMS som därför borde kunna återge en grupp av kringliggande tågs GPS-position för ett särskilt tåg.
 %Att öka lokförarnas situationsmedvetenhet har pekats ut både i litteraturstudie och intervjuer som en viktig informationspunkt.
 %Därför kompletteras SFERA med information från TMS till C-DAS-OB om GPS-positioner av tåg i ett enskilt tågs omgivning.
-\subsubsection{C-DAS-OB till TMS}
+\subsubsection{Kommunikation från C-DAS-OB till TMS}
 Följande förbättringsförslag ges som går utöver SFERA-protokollet för kommunikation från lokförare till tågklarerare.
 \paragraph{Kvittens av JP}
 När ett JP skickas ut bör det göras tydligt för föraren att ny tidtabell är aktuell.
