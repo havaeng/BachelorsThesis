@@ -139,7 +139,8 @@
   \renewcommand{\thepage}{\remembered@page}
 }
 
-% Define \begin{sammanfattning} \end{sammanfattning} % to be used for abstract in swedish
+% Define \begin{sammanfattning} \end{sammanfattning}
+% % to be used for abstract in swedish
 \newenvironment{sammanfattning}{
   \ifodd\value{page}\else\mbox{}\newpage\fi
   \section*{Sammanfattning}

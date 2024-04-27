@@ -17,11 +17,49 @@ Ett JP består idag av train characteristics (data om fordon), en lista över se
 För att bättre möta lokförarnas behov inkluderas utöver nämn data försenings- eller omplaneringsorsak(er), avsändare av JP - vilken bandel och driftledningscentral meddelandet kommer från samt telefonnummer till denne.
 Försenings- och omplaneringsinformation eller -orsak(er) efterfrågas uttryckligen av flera förare under intervjusessioner.
 Att exempelvis veta var ett tåg ska gå om ett annat eller gå in på sidan på en driftplats för att släppa förbi ett tåg är ett gynnsamt sätt att bygga förtroende sett till respondenternas utsagor.
+Rent tekniskt kan meddelandet läggas som en del av journey package så att denna information medföljer varje gång ny JP skickas ut.
+Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya datastrukturen illustreras i tabell~\ref{tab:omplanering}.
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{|l|}
+        \hline
+        \textbf{Journey profile} \\
+        \hline
+        - Unikt ID för berörd tågfärd \\
+        - Tidskorridor \\
+        - Train characteristics \\
+        - Segment profile (lista av) \\
+        - Dynamisk data \\
+        \color{blue}
+        - Omplaneringsorsak \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, journey profile (förbättringsförslag). Tillägg markerat med blå text.}
+    \label{tab:jpImproved}
+\end{table}
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{|l|}
+        \hline
+        \textbf{Omplaneringsorsak} \\
+        \hline
+        - Unikt ID för omplaneringsorsak \\
+        - Orsak \\
+        - Telefonnummer till avsändare \\
+        - Avsändares bandel \\
+        - Avsändares trafikledningscentral \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, omplaneringskontext samt kontaktuppgifter till avsändare.}
+    \label{tab:omplanering}
+\end{table}
 \paragraph{Blankettförberedelse}
 Före muntlig ordergivning måste blanketter förberedas som lokföraren är ålagd att medtaga under tågfärd.
 Ordergivning genom diktamen sker genom att lokföraren upprepar vad tågklareraren säger samtidigt som denne noterar på en blankett vilken information som tas emot.
 Om tågklareraren enkelt kan uppmana en eller fler lokförare i ett område att förbereda en specifik blankett för ordergivning kan många korta samtal potentiellt sett sparas in.
 Därför läggs en typ av meddelanden till i SFERA-protokollet som ska skickas från TMS via TS-servrar till C-DAS-OB när en fjärrtågklarerare vill uppmana lokförare att förbereda en specifik blankett.
+Idag finns inget lämpligt meddelande som blankettförberedelse kan rymmas inom då all kommunikation från TMS till C-DAS-OB sker genom JP\@, och JP skickas ut endast vid omplanering av tidtabell.
+Detta innebär att en ny meddelandetyp tas fram som kallas \emph{train message}, varuti blankettförberedelse kan rymmas.
 \paragraph{Kontaktuppgifter}
 Att veta vilket telefonnummer som går till aktuellt driftledningsområde kan vara fördelaktigt att ha lättillgängligt.
 I synnerhet vid körning utomlands där det kan vara svårare att snabbt hitta rätt information.
@@ -31,13 +69,50 @@ Idag kan information om trafikstörningar gå en lång omväg från en driftledn
 Om lokföraren får information direkt från ursprungskällan med plats, tid, påverkan och prognos för trafikstörningar kan information istället ges snabbt till kunder.
 Ett TMS många tåg inom ett avgränsat område.
 Denna funktionalitet införs därför som en ny form av meddelande.
+Trafikstörningar kan läggas till i segment profile för en aktuellt geografisk punkt.
+\begin{table}
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Segment profile} & & \\
+        \hline
+        - Unikt ID & & \\
+        - Version & & \\
+        - Längd & & \\
+        \hline
+        SP-punkter & SP-karaktäristik & SP-områden \\
+        - Trafikplats & - Banans STH för ett visst segment & - Station, plattform \\
+        - etc & - etc & - etc \\
+        \color{blue}
+        - Trafikstörningar & & \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, segment profile. För att se originalet i sin helhet, se tabell~\ref{tab:sp}.}
+    \label{tab:spImproved}
+\end{table}
 \paragraph{Meddelande om uppdaterad tåglängd}
 Enligt utsagor från intervjuobjekten kan tvära kast i fordonsplanering som innebär förändring av tåglängd förekomma, av flera olika skäl.
 Det vore därför av intresse för förarna att kunna se vilken tåglängd tågklarerarna \emph{tror} att en viss tågfärd har.
 Om detta visar sig inte överensstämma med verkligheten kan lokföraren kontakta tågklareraren med GMS-R-telefonsamtal och delge korrekt information.
 Det framgår inte helt av analyserad dokumentation om lokförarna direkt kan skicka information om förändringar i tåglängd.
-Informationen finns i TC, men om C-DAS-OB kan skicka förändringar i tc genom status report är inte helt tydligt.
+Informationen finns i TC, men om C-DAS-OB kan skicka förändringar i TC genom status report är inte helt tydligt.
 Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{|l|}
+        \hline
+        \color{blue}
+        \textbf{TMS message} \\
+        \hline
+        - Unikt ID för berörd tågfärd \\
+        - Uppmaning, blankettförberedelse (blankettnummer) \\
+        - Aktuell tåglängd \\
+        - Avsändares trafikledningscentral \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, blankettförberedelse eller återgivelse av inrapporterad tåglängd.}
+    \label{tab:tmsMessage}
+\end{table}
 %\paragraph{Context awareness}
 %GPS-position av tåg tillhandahålls TMS som därför borde kunna återge en grupp av kringliggande tågs GPS-position för ett särskilt tåg.
 %Att öka lokförarnas situationsmedvetenhet har pekats ut både i litteraturstudie och intervjuer som en viktig informationspunkt.
@@ -51,14 +126,44 @@ Denna kan då bekräftas eller avvisas om föraren uppenbart märker att tågkla
 När balisinformationsfel\footnote{Baliser är signalsystemets gränssnitt för informationsöverföring från signalsystem till tågets hastighetsövervakningssystem. De tar emot information banutrustningen och strömsätts när ett tåg passerar dem, varpå information kan överföras till tågen. Om information tåget emottager inte är fullständig \lq{}vet inte\rq{} längre tågets skyddssystem vilken information som gäller och kommer begränsa tågets STH till 80 km/h eller 40 km/h beroende på var tåget befinner sig, och lokföraren måste köra under restriktioner\cite{TTJ2015}.} inträffar ska lokföraren delge tågklarerare om var det inträffat, vilka konsekvenser som gavs samt vilken felkod som presenterades.
 Förarna uppgav i intervjuer att det kan vara svårt att veta exakt var det inträffade och vilken balisgrupp som avses.
 En del förare uppgav också att de och deras kollegor ibland slarvar med att rapportera in balisinformationsfel till driftledningscentralen.
-Längden STH begränsas vara upp till 3800 m \emph{plus} tågsättets längd, vilket skulle kunna påverka en tågfärds rättidighetsförmåga.
+Längden STH begränsas kan vara upp till 3800 m \emph{plus} tågsättets längd, vilket skulle kunna innebära måttlig påverkan en tågfärds rättidighetsförmåga.
 Om lokföraren inte rapporterat detta till driftledningscentralen kan tågklareraren fatta beslut baserat på felaktigt informationsunderlag.
 För att underlätta för både lokförare och tågklarerare införs därför ett meddelande där lokföraren kan skicka GPS-position, ja/nej för driftbroms och släcka indikatorer samt felkod.
 Tågklareraren kan då snabbt få reda på att ett tågs STH begränsas, frekvensen av inrapportering kan öka och inrapportering kan bli en enklare process för lokföraren.
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \color{blue}
+        \textbf{Balisinformationsfel} \\
+        \hline
+        - Balisinformationsfel typ 1 & bool  \\
+        - Driftbroms och 80- eller 40-övervakning & bool \\
+        - Felkod & sträng \\
+        - GPS-position & sträng \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, inrapportering av balisinformationsfel.}
+    \label{tab:bf}
+\end{table}
 \paragraph{Plattformsbehov}
 För persontåg kan det vara aktuellt med särskilt behov av plattform vid antingen höger eller vänster sida av tåget.
 Det kan röra sig om ett större antal avstängda in- och avstigningsdörrar på ena sidan eller om en dörr är avstängd vid en handikapplift.
 Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda till snabbare trafikutbyte.
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{|l|}
+        \hline
+        \color{blue}
+        \textbf{Plattformsbehov} \\
+        \hline
+        - Höger eller vänster \\
+        - Tid (minuter) \\
+        \hline
+    \end{tabular}
+    \caption{Datastruktur, äskande om särskild sida för trafikutbyte eller extra plattformstid.}
+    \label{tab:plattformsbehov}
+\end{table}
 \paragraph{Meddelande om plötsligt stopp}
 Ibland uppstår fordonsfel som kan leda till att ett tåg gör ett oplanerat stopp.
 Det händer enligt respondenterna att driftledningscentralen inte svarar direkt när man ringer, och om man har ett akut fordonsfel kan det vara stressande att vänta på att någon svarar.

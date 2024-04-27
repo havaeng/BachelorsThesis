@@ -1,4 +1,4 @@
-\subsection{Dokumentanalys: SFERA och gamification}\label{subsec:dokumentanalys}
+\usepackage{color}\subsection{Dokumentanalys: SFERA och gamification}\label{subsec:dokumentanalys}
 För att fastställa SFERA-protokollets tekniska uppsättning har en sammanställning gjorts utifrån de verk från litteraturstudien som berörde detta.
 För att ge en introduktion till gamification och hur det har tillämpats i DAS-applikationer har en sammanfattning gjorts.
 
@@ -38,16 +38,16 @@ Vidare innehåller JP tidskorridoren ett tåg måste hålla sig inom för att up
         - Unikt ID för berörd tågfärd \\
         - Tidskorridor \\
         - Train characteristics \\
-        - Segment profile \\
+        - Segment profile (lista av) \\
         - Dynamisk data \\
         \hline
     \end{tabular}
     \caption{Datastruktur, journey profile}
     \label{tab:jp}
 \end{table}
-Status report (se figur~\ref{tab:sr}) är sättet på vilket C-DAS-OB kan skicka information till TMS\@.
-Det består av tågets position i förhållande till referenspunkter från tilldelad SP (som del av JP), innevarande hastighet, senast passerade trafikplats och prognos för ankomst till nästa trafikplats, aktuell JP, förväntad energikonsumtion och -återmatning (elbroms) för kommande minuter samt statusmeddelanden.
-Lokförare kan även rapportera in om förändringar i adhesionsförhållanden.
+Status report (se figur~\ref{tab:sr}) är sättet på vilket C-DAS-OB kan skicka information till TMS\cite{IRS90940}.
+Det består av tågets position i förhållande till referenspunkter från tilldelad SP (som del av JP), innevarande hastighet, senast passerade trafikplats och prognos för ankomst till nästa trafikplats, aktuell JP, förväntad energikonsumtion och -återmatning (elbroms) för kommande minuter samt statusmeddelanden\cite{IRS90940}.
+Lokförare kan även rapportera in om förändringar i adhesionsförhållanden~\cite{IRS90940}.
 Detta kommer skickas till TSM som sedan delger andra C-DAS-OB om detta via related train information.
 Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden avbryts och förseningsorsaker.
 \begin{table}
@@ -79,8 +79,9 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
         - Längd & & \\
         \hline
         SP-punkter & SP-karaktäristik & SP-områden \\
+        \hline
         - Trafikplats & - Banans STH för ett visst segment & - Station, plattform \\
-        - Uppehåll\footnote{Plats för exempelvis resandeutbyte eller tågmöte.} & - Unikt ID för aktuell bana & - Tunnel \\
+        - Uppehåll\footnote{Plats för exempelvis resandeutbyte (ja/nej) eller tågmöte.} & - Unikt ID för aktuell bana & - Tunnel \\
         - Signalplacering & - Kurvradie, lutning & - Strömlös sektion \\
         - Balisplacering & - Kontaktledningsspänning & - Tillåten axellast \\
         - Referenspunkt (kilometer) & - Infrastrukturbegränsningar &  \\
