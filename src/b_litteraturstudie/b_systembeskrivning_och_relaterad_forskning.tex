@@ -7,7 +7,7 @@ Att som järnvägsföretag använda informationssystem för att minimera energik
 Digitala förarverktyg kallas DAS (driver advisory system) och avser applikationer som ämnar stödja lokförare i deras yrkesutövande genom att bidra med hastighetsrekommendationer och situationsmedvetenhetsstöd på ett förtroendefullt sätt.
 Det främsta syftet med DAS är dock att understödja lokförare i att ankomma i tid till stationer med minskad energikonsumtion~\cite{IRS90940}.
 Ett DAS-system beräknar en rekommenderad körprofil utifrån erhållna parametrar, exempelvis tidtabell för tåget, befintlig hastighet och GPS-position och verkar oberoende av andra aktörer och system~\cite{IRS90940}.
-%En lämplig strategi är att implementera ett connected driver advisory system (C-DAS)~\cite{Angel2020, Joborn2023, Lindmark2022, Ketech2022, Verstappen2022}.
+%En lämplig strategi är att implementera ett connected driver advisory system (C-DAS)~\cite{Angel2020, Joborn2023, Lindmark2022, Verstappen2022}.
 DAS-system som inte har en koppling till infrastrukturförvaltarens kapacitetsstyrningssystem kallas S-DAS~\cite{IRS90940, Joborn2023, Angel2020, Olsson2023}.
 S-DAS-system kan vara avancerade och sofistikerade i sig, det som särskiljer dem från C-DAS är avsaknaden av direktlänk till tågklarerare~\cite{IRS90940, Joborn2023, Angel2020, Olsson2023}.
 Den här typen av system är vanliga i Sverige idag~\cite{Systemdefinition2019}.
@@ -18,13 +18,19 @@ Idag finns flera implementerade digitala förarverktyg men de har sina begränsn
 Ofta omfattas inte kommunikation med tågklarerare eller TMS, eller så tas inte tillräcklig hänsyn till lokförarnas informationsbehov eller situationsmedvetenhet i beaktande~\cite{Bae2014, Joborn2023, Tschirner2013}.
 \paragraph{}
 \hspace{-11pt}
-Ett protokoll har tagits fram av UIC\footnote{Union Internationale des Chemins de fer (Internationella järnvägsunionen)} specifikt för att standardisera digital kommunikation mellan tågtrafikledningssystem och lokförare i en C-DAS-kontext~\cite{Joborn2023, Olsson2023, Lindmark2022}.
+För befintliga DAS-system är tillämpningen och kommunikationsflödet olika och kan skilja sig mycket åt~\cite{Konstantinos2013}.
+Systemen använder olika tillvägagångssätt för att förarnas grafiska gränssnitt, tågpositionering och kommunikationsflöde~\cite{Konstantinos2013}.
+2022 färdigställdes ett protokoll av UIC\footnote{Union Internationale des Chemins de fer (Internationella järnvägsunionen)} specifikt för att standardisera digital kommunikation mellan tågtrafikledningssystem och lokförare i en C-DAS-kontext~\cite{Joborn2023, Olsson2023, Lindmark2022}.
 %UIC, som verkar för att underlätta internationell järnvägstrafik, har tagit fram SFERA-standarden för detta ändamål.
-Standarden benämns \emph{SFERA}, och skapades för att underlätta och främja internationell och gränsöverskridande järnvägstrafik\cite{IRS90940}.
+Standarden benämns \emph{SFERA} och skapades för att underlätta och främja internationell och gränsöverskridande järnvägstrafik\cite{IRS90940}.
 %Genom att ta fram och ge ut normer för t.~ex.~hur järnvägsfordon ska karaktäriseras gynnar man trafik mellan olika länder.
-Protokollet definieras i dokumentet UIC IRS 90940 som förutom att ge en bakgrund till systemet och dess syfte även beskriver datameddelandens uppsättning i XML-format~\cite{Joborn2023, IRS90940}.
+Protokollet definieras i dokumentet UIC IRS 90940 som förutom att ge en bakgrund till systemet och dess arkitektur och syfte även beskriver datameddelandens uppsättning i XML-format~\cite{Joborn2023, IRS90940}.
 %I det definieras hur datautbytet ska se ut mellan TMS och C-DAS-ombordenhet, dvs standardiserad digital kommunikation mellan tågklarerare och lokförare.
 Ett system som tillämpar denna standard skulle möjliggöra för tågklarerarna att direkt kunna kommunicera med lokförarna genom datameddelanden och därmed tilldela tågen nya tidtabeller i ett operativt läge~\cite{Angel2020, Joborn2023, Lindmark2022, Olsson2023}.
+Innan SFERA fanns gjordes närmanden till standardiseringar av datakommunikation inom C-DAS-system~\cite{Quaglietta2015, Konstantinos2013}.
+Dessa innefattade bland annat teknisk utvärdering av flera befintliga DAS-system~\cite{Konstantinos2013} utifrån viktiga parametrar såsom hur kostsamma beräkningarna var, positioneringssystem, användargränssnitt för förare, kommunikationsflöde och var krävande logiska beräkningar gjordes~\cite{Konstantinos2013}.
+En prototyp togs fram som testades med gott resultat i flera länder, bland annat Sverige~\cite{Quaglietta2015}.
+Arbetet med mynnade ut i vad som sedan skulle komma att bli SFERA\@.
 %Protokollet definieras som XML-schema~\cite{Olsson2023}.
 \subsubsection{TMS}
 Ett system för att operativt planera och styra järnvägstrafik kallas \emph{traffic management system} (TMS)~\cite{Joborn2023}.
@@ -57,8 +63,10 @@ RU DAS-TS prenumererar på det data som förses av IM DAS-TS och när ny informa
 RU DAS-TS kan även på förhand förse IM DAS-TS med information rörande tågets statiska förutsättningar såsom tåglängd, tågvikt, dynamisk vikt, typ av fordon, STH\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.}, motoreffekt (hk), bromskraft och så vidare~\cite{IRS90940}.
 Lokföraren tar emot informationen via en applikation ombord på tåget som benämns C-DAS-OB~\cite{Joborn2023, IRS90940}\@.
 Denna applikation räknar i slutändan ut en rekommenderad hastighetsprofil baserat på flera olika datapunkter och begränsande faktorer~\cite{Joborn2023, Olsson2023}.
+Utifrån beräkningen av körprofil gör C-DAS-OB även en prognos i hur mycket energi tåget kommer förbruka och regenerera vilket sedan återges för föraren och skickas tillbaka till tågklareraren~\cite{Sfera-power-poster-2022}.
+Om tågklareraren ser att energiförbrukningen inom ett visst område blir för hög kan olika former av restriktioner skickas till C-DAS-OB~\cite{IRS90940, Joborn2023, Sfera-message-poster-2022}.
 Om körprofilen som räknas ut av C-DAS-OB ryms inom den nya tidtabellen återges den för föraren som sedan följer den~\cite{IRS90940, Sfera-usecase-poster-2022}.
-Om den beräknade körprofilen inte ryms inom den nya tidtabellen skickas ett automatiskt svar till tågklareraren som får agera därefter~\cite{Sfera-usecase-poster-2022}.
+Om den inte ryms inom den nya tidtabellen skickas ett automatiskt svar till tågklareraren som får agera därefter~\cite{Sfera-usecase-poster-2022}.
 %En server-sida hos infrastrukturförvaltaren som tolkar tågklarerarens nya, uppdaterade, tidtabell för ett visst tåg och tillhandahåller detta för en server hos berört järnvägsföretag.
 %Järnvägsföretagets server vidarebefordrar sedan datapaketet åt vederbörande klient ombord på ett tåg, som i sin tur beräknar en hastighetsprofil och återger för lokföraren~\cite{Yao2022, Olsson2023, Joborn2023, IRS90940}.
 Järnvägsföretagets server vidarebefordrar sedan datapaketet åt vederbörande klient ombord på ett tåg, som i sin tur beräknar en hastighetsprofil och återger för lokföraren~\cite{Olsson2023, Joborn2023, IRS90940}.
@@ -72,28 +80,38 @@ Se figur~\ref{fig:C-DAS-kommunikation} för visuell beskrivning av SFERA:s dataf
     \label{fig:C-DAS-kommunikation}
 \end{figure}
 \paragraph{}
+\hspace{-11pt}
+Adhesionsförhållanden har stor inverkan i tågens rättidighetsförmåga.
+Om adhesionen är låg, exempelvis vid lövhalka, regn eller isbildning krävs längre accelerations- och bromskurvor eftersom hjulen har sämre grepp~\cite{Sfera-adhesion-poster-2022}.
+Detta medför att planerad tidtabell ibland inte kan hållas.
+Det skulle även riskera att C-DAS-OB beräknar en körprofil som inte går att efterfölja.
+Därför rymmer SFERA en rapporteringsfunktion för adhesionsförhållanden som kan användas av lokförare.
+Lokförare kan rapportera in försämrade eller förbättrade adhesionsförhållanden under gång, vilket kommer vidarebefodras till TMS och de tågs C-DAS-OB som passerar aktuell geografiska punkt~\cite{Sfera-adhesion-poster-2022}.
+\paragraph{}
 Möjligheterna med C-DAS är många:
 \begin{itemize}
     \item Effektivare planering av operativ järnvägstrafik~\cite{Joborn2023}
     \item Ökad operativ precision i positionering av tåg~\cite{Systemdefinition2019}
-    \item Förbättrad och förenklad kommunikation mellan tågklarerare och lokförare~\cite{Systemdefinition2019}
-    \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Ketech2022, Lindmark2022, Olsson2023, Verstappen2022}
-    \item Förbättrad hantering vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Ketech2022, Verstappen2022}
-    \item Förbättrad punktlighet vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Ketech2022, Verstappen2022}
-    \item Reducerat effektuttag från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Ketech2022, Olsson2023, Verstappen2022}
-    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Ketech2022, Olsson2023}
-    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Systemdefinition2019, Ketech2022, Lindmark2022, Olsson2023}
-    \item Minskade verksamhetskostnader för järnvägsföretag till följ av minskat slitage och energikonsumtion~\cite{Ketech2022}
+    \item Förbättrad och förenklad kommunikation mellan tågklarerare och lokförare~\cite{Systemdefinition2019, IRS90940}
+    \item Utökad kapacitet, utan att behöva genomföra (ofta dyra) infrastrukturprojekt~\cite{Lindmark2022, Olsson2023, Verstappen2022}
+    \item Förbättrad hantering vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Verstappen2022}
+    \item Förbättrad punktlighet vid trafikstörningar~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Verstappen2022}
+    \item Reducerat effektuttag från järnvägsinfrastrukturens kraftförsörjningssystem~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Olsson2023, Verstappen2022}
+    \item Reducerat slitage på infrastruktur~\cite{Angel2020, Joborn2023, Lindmark2022, Systemdefinition2019, Olsson2023}
+    \item Minskat slitage på järnvägsfordon (bromssystem, hjul m.m.)~\cite{Angel2020, Joborn2023, Systemdefinition2019, Lindmark2022, Olsson2023}
+    \item Minskade verksamhetskostnader för järnvägsföretag till följ av minskat slitage och energikonsumtion~\cite{}
     \item Ökad trafiksäkerhet till följd av lägre hastigheter samt färre antal restriktiva signaler och stoppsignaler ~\cite{Olsson2023}
-    \item Förbättrad trafikinformation till järnvägsföretagens kunder~\cite{Angel2020, Ketech2022, Lindmark2022}
-    \item Förbättrat beslutsstöd för tågklarerare~\cite{Lindmark2022, Ketech2022}
-    \item Gemensam lägesbild mellan lokförare och tågklarerare~\cite{Lindmark2022, Ketech2022}
+    \item Förbättrad trafikinformation till järnvägsföretagens kunder~\cite{Angel2020, Lindmark2022}
+    \item Förbättrat beslutsstöd för tågklarerare~\cite{Lindmark2022}
+    \item Gemensam lägesbild mellan lokförare och tågklarerare~\cite{Lindmark2022}
     \item Bättre komfort för resenärer~\cite{Lindmark2022, Systemdefinition2019}
     \item Förbättrad arbetsmiljö för (främst) tågklarerare, lokförare och annan ombordpersonal~\cite{Systemdefinition2019}
+    \item Förbättrad situationsmedvetenhet för lokförare~\cite{IRS90940, Bae2014, Cwil2018}
     \item Minskad miljöpåverkan~\cite{Lindmark2022}
     \item Harmoniserat trafikflöde~\cite{Systemdefinition2019}
 \end{itemize}
-
+\paragraph{}
+\hspace{-11pt}
 Om inte en tågklarerare kan jobba i ett digitalt planeringsverktyg kan inte C-DAS användas som en lösning för att förbättra trafikflöden och spara tid, energi och pengar~\cite{Tschirner2013}.
 För att minska arbetsbelastningen för tågklarerare det därför viktigt att alla systemets delar integreras väl i deras digitala miljö för att minimera arbetsbelastning~\cite{Tschirner2013, Joborn2023}.
 Att behöva göra regelbundna byten mellan fönster och applikationer kan försämra arbetsmiljön och göra att de glömmer information~\cite{Tschirner2013, Lindmark2022}.
