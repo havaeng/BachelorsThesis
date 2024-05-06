@@ -88,7 +88,7 @@ Systemet kan kommunicera med och inhämta information ifrån exempelvis ett JF:s
 S-DAS-applikationer är vanligt i Sverige idag~\cite{Systemdefinition2019}.
 \paragraph{IM DAS-TS}
 C-DAS Trackside System.
-System som etablerar kontakt mellan TMS och C-DAS-ombordsystem\cite{Olsson2023}.
+System som etablerar kontakt mellan TMS och C-DAS-ombordsystem via en server på järnvägsföretaget\cite{Olsson2023}.
 %Kan vara en direkt integrerad del av TMS eller ett delsystem inom TMS.
 Systemet skapar s.k.~SFERA-meddelanden, dvs.~datapaket som kommer från TMS och vidarebefordrar till C-DAS-ombordsystem.
 Kan även ta emot data från C-DAS-ombordsystem och skicka till TMS\@~\cite{Olsson2023}.
@@ -146,7 +146,7 @@ Består av en lista av TP:er (geografiska målpunkter) med tillskrivna tidpunkte
 TPE skickas från TMS (via IM DAS-TS) till C-DAS-OB (via RU DAS-TS) som en del av JP~\cite{Olsson2023}.
 \paragraph{JP}
 Journey Profile.
-Ett specifikt tågs kapacitetsutrymme i RTTP.
+Ett specifikt tågs kapacitetsutrymme i RTTP\@.
 Datapaket som inkluderar uppehåll och spårval för ett visst tåg~\cite{Olsson2023}.
 Innehåller en lista av TP som måste uppfyllas för att tågfärden ska kunna fullfölja sin optimering\footnote{Trafikverket tolkar JP:ns TP:er som endast de med tillhörande planerade stopp eller med tågmöten. Enligt SFERA innefattas även TP:er med senaste passagetider för \emph{samtliga} trafikplatser, dvs~även de vid vilka tågfärden inte har uppehåll~\cite{Joborn2023}.}~\cite{Olsson2023}.
 JP är föremål för uppdatering närsomhelst under tågfärdens gång~\cite{Olsson2023}.
