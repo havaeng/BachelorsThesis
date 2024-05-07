@@ -7,7 +7,7 @@ För att ge en introduktion till gamification och hur det har tillämpats i DAS-
 Kommunikationsprotokollet som används inom C-DAS kallas SFERA och är som nämnt tidigare i avsnitt~\ref{subsubsec:c-das-litteraturstudie} av UIC för att stärka järnvägsbranschens genom teknisk vägledning i hur datautbyte i detta sammanhang bör se ut~\cite{IRS90940}.
 Syftet är att energieffektivisera tågkörning, förbättra punktlighet, och förenkla internationell järnvägstrafik~\cite{IRS90940}.
 DAS-verktyg är en nyckelfaktor i effektiviseringprocessen som dessutom inte kostar stora summon pengar i investeringskostnader~\cite{IRS90940}.
-Så mycket som 5--15\% energi kan sparas in med DAS-verktyg~\cite{IRS90940}.
+Så mycket som 5--15\% energi kan sparas in med DAS-verktyg~\cite{IRS90940, Yang2013} vilket är påfallande då energikostnade kan uppgå till 10\% av ett järnvägsföretags totala kostnader~\cite{Cwil2018}.
 Vidare spås C-DAS och SFERA bidra till förbättringar inom energibesparing, punktlighet, kapacitet, kraftförsörjning, trafikstörningshantering, trafiksäkerhet och koldioxidutsläpp~\cite{IRS90940}.
 \subsubsection{SFERA:s avgränsning}
 SFERA sträcker sig inte bortom datautbyte och avhandlar exempelvis inte presentation av data för lokförare, kvaliteten av hastighetsrekommendationer eller information för lokförare, lokförarens beteende eller handlingar, algoritmer för beräkning av körprofil och så vidare~\cite{IRS90940}.
@@ -120,84 +120,11 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
     \caption{Datastruktur, train characteristics}
     \label{tab:tc}
 \end{table}
-\subsubsection{Gamification}
-Detta avsnitt är kopplat till forskningsfråga 4 som lyder \emph{\lq{}Hur kan gamification användas för att stödja och motivera lokförare i deras användande av C-DAS-verktyg?\rq{}}.
-Med gamification (sv. \lq{}spelifiering\rq{}) avses brukandet av metoder och principer från dataspelsdesign såsom dataspelsmekanik (eng. \lq{}game-based mechanics\rq{}), -estetik och -tänk för att engagera, motivera samt främja inlärning och problemlösning~\cite{Bae2014, Cwil2018}.
-Spelmekanik kan ses som den högsta nivån av abstraktion och utgörs av utmaningar slutanvändaren måste ta sig an och lösa~\cite{Cwil2018}.
-Det kan tas i uttryck på många olika sätt, exempelvis genom att införa poängbaserade moment i existerande delar eller att omvandla en löptur till en interaktiv berättelse eller rollspelsaktiviteter motsvarande ett arbete eller en process~\cite{Bae2014}.
-\paragraph{}
-\hspace{-11pt}Gamification tillämpas i form av kognitivt belöningssystem för användarna av ett system.
-Belöningar kan se ut på olika sätt såsom milstolpar (eng. \lq{}achievement\rq{}), medaljer/utmärkelser, personliga (erfarenhets-) poäng, förmågan att \lq{}gå upp i level\rq{} (eng. \lq{}level up\rq{}) och ranking- eller topplistor~\cite{Bae2014}.
-Mer ingående \lq{}gamifying\rq{} kan innebära framtagandet av personliga avatarer, system med interaktiv handledning och interaktiv feedback~\cite{Bae2014, Cwil2018}.
-\paragraph{}
-\hspace{-11pt}Reflektion är ett viktigt koncept inom gamification.
-Att som användare kunna utvärdera sig själv kritiskt är viktigt och möjliggör att de lär sig av sina erfarenhet samt följa upp personlig statistik över tid~\cite{Bae2014, Cwil2018}.
-Även om detta innebär god möjlighet för management att följa upp lokförarnas efterlevnad av körprofiler finns det risk att sådan utvärdering får en stor negativ inverkan på arbetsmiljön om förare känner sig utvärderade eller övervakade~\cite{Bae2014}.
-Påståendet styrks även i uttalanden från flera respondenter i denna studies intervjuer.
-\paragraph{}
-\hspace{-11pt}Ett problem med DAS-applikationer är att de har ett fokus på exempelvis återgivelse av körprofil, algoritm för beräknad av optimal körprofil, ökad komfort och minskad energikonsumtion men kan missa både lokförarnas situationsmedvetenhet (eng. \lq{}situational awareness\rq{}) och motivation att köra punktligt~\cite{Bae2014, Cwil2018}.
-Det har visat sig att gamification-element har bra tillämplighet i DAS-applikationer och kan stärka lokförares nytta av dem.
-Att som lokförare kunna utvärdera sin körstil och sina handlingar med en gamifierad applikation kan hjälpa med förståelse för vad konsekvenserna blir för omkringliggande tåg~\cite{Bae2014}.
-Systemet bör hjälpa föraren att hitta intressanta situationer och scenarier där beslut lett till förseningar eller andra negativa konsekvenser för självreflektion eller jämförelse med hur andra förare agerat i liknande situationer.
-På så vis ges god möjlighet till reflektion~\cite{Bae2014}.
-Beträffande motivation ses fenomenet ofta ur två perspektiv: intrinsisk eller extrinsisk (eng. \lq{}intrinsic/extrinsic\rq{}) motivation~\cite{Cwil2018}.
-Motivation kan ur ett behavioristiskt perspektiv delas upp i två delar: intrinsisk och extrinsisk (eng. \lq{}intrinsic/extrinsic\rq{}) motivation~\cite{Cwil2018}.
-Intrinsisk motivation upplevs av personer som blir motivaterade av att utföra en handling, det vill säga att motivation kommer ur handlingen i sig~\cite{Cwil2018}.
-Extrinsisk motivation å andra sidan kommer av att personer känner att de behöver göra beter sig på ett visst vis för att få belöning eller undvika kritik och bestraffning, det vill säga att motivation kommer utanför handlingen~\cite{Cwil2018}.
-Dessa två perspektiv har lett till en behavioristisk syn på motivation och anses bäst stimuleras genom bestraffning och belöning~\cite{Cwil2018}.
-Negativ stimulans (bestraffning) syftar till att göra oönskat beteende eller handlingar mindre attraktiva för mottagaren.
-Positiv stimulans (belöning) å andra sidan syftar till att öka önskvärdheten av rätt form av beteende hos mottagaren~\cite{Cwil2018}.
-Båda former av stimuli påverkar människor extern och är således extrinsiska faktorer.
-\paragraph{}
-\hspace{-11pt}Även om behavioristiskt synsätt på motivation och gamification tillämpats med viss framgång i organisationer har det inte alltid visat sig räcka~\cite{Cwil2018}.
-Det kan uppmuntra önskvärt beteende och leda till förbättring men ibland inte hos tillräckligt stor del av en målgrupp.
-Därför har ett annat synsätt kompletterat behavioristisk syn på motivation; kognitivistisk.
-Ur kognitivistisk synpunkt måste försök att påverka motivation ta i beaktande hur människor tänker, förstår och agerar~\cite{Cwil2018}.
-En av de viktigaste principerna inom kognitivistisk motivation är self-determination theory (eng. \lq{}självbestämmandeteorin\rq{}, SDT)~\cite{Cwil2018}.
-\paragraph{}
-\hspace{-11pt}SDT grundar sig i att alla människor oavsett bakgrund, yrke eller utbildning drivs av en vilja att utveckla sig själva och sina relationer~\cite{Cwil2018}.
-SDT argumenterar för att motivation inte bara handlar om externa belöningar eller interna nöjen, utan snarare om hur dessa drivkrafter integreras inom individens kognitiva struktur och värdesystem~\cite{Cwil2018}.
-Det kan ses som en skala som går från avsaknad av motivation och lågt självbestämmande som kommer av lågt eller inget incitament eller påverkan till instrinsisk motivation och hög grad av självbestämmande.
-I mitten finns olika former av reglering och extrinsisk motivation där individens motivation gradvis blir mer internaliserad och självbestämd.
-Med reglering avses hur beteenden stimuleras eller initieras och riktas.
-SDT säger att ju mer beteende regleras av självbestämmande och autonomi, desto effektivare blir motivationen~\cite{Cwil2018}.
-SDT-skalan visar hur motivation kan utvecklas från att vara beroende av yttre faktorer till att bli en inre drivkraft, där individens autonomi, kompetensprövning och samhörighet tillgodoses.
-Genom att gå från extern påverkan till intrinsisk motivation, illustrerar skalan en progression mot högre självbestämmande och hur extrinsisk och intrinsisk motivation kan samverka och internaliseras inom individen.
-Detta understryker vikten av att främja en miljö som stödjer interna drivkrafter för att uppnå långvarig motivation och personlig tillväxt vilket är något som kan tänkas vara önskvärt i en DAS-applikation.
-Villkoret för internalisering av ett önskat beteende är att det mänskliga behovet för kompetensprövning, samhörighet och autonomi tillgodoses för det system vari engagemang önskas stärkas~\cite{Cwil2018}.
-Med kompetensprövning avses exempelvis utmaningar i färdigheter eller arbete, förmågan att uppnå mål; med samhörighet avses känslan av att vara delaktig i ett socialt sammanhang eller samhälle; med autonomi avses känslan av kontroll och ansvar för sitt beteende och handlingar.
-Det är bara genom att tillgodose dessa tre behov intrinsisk motivation kan uppnås i ett system eller sammanhang~\cite{Cwil2018}.
-När så sker kan goda resultat uppnås vilket gjorts inom utbildning, sport, sjukvård, transport och medarbetarmotivation~\cite{Cwil2018}.
-%Situationsmedvetenhet mäts i tre nivåer: 1 - uppfattningen av element i (kringliggande) miljö, 2 - förståelsen för nuvarande situation och 3 - förståelse för framtida situationer~\cite{Bae2014}.
-\paragraph{}
-\hspace{-11pt}Fem huvudsakliga element utgör det som kallas dynamik inom gamification.
-Begränsningar; exempelvis ramar som begränsar användaren eller tvingande avvägningar~\cite{Cwil2018}.
-Känslor; avsiktliga och av spelet framkommande känslor såsom nyfikenhet, (avsiktlig) frustration, lycka och så vidare~\cite{Cwil2018}.
-Narrativ; upplevelsen av en pågående berättelse~\cite{Cwil2018}.
-Progression; användarens utveckling~\cite{Cwil2018}.
-Relationer; sociala interaktioner som skapar en känsla av exempelvis kamratskap, altruism eller status~\cite{Cwil2018}.
-\paragraph{}
-\hspace{-11pt}Tio spelmekaniker finns som generellt sett accepterats som vedertagna.
-Utmaningar; pussel, uppgifter eller uppdrag som ska lösas, ibland med progression där svårighetsgraden ökar allteftersom~\cite{Cwil2018}.
-Chans; händelser som baseras på slump~\cite{Cwil2018}.
-Tävling; ställa användare eller grupper av spelare mot varandra~\cite{Cwil2018}.
-Samarbete; användare måste samarbete för att uppnå ett gemensamt mål~\cite{Cwil2018}.
-Återkoppling; information och status rörande hur det går för användaren~\cite{Cwil2018}.
-Resursförvärv; förmågan att kunna intjäna och spara föremål, resurser eller belöningar~\cite{Cwil2018}.
-Transaktioner; handel mellan användare eller inom systemet~\cite{Cwil2018}.
-Turer; turbaserat deltagande där spelarna inte har handlingsutrymme samtidigt utan i sekvens- och turordning~\cite{Cwil2018}.
-Vinnarläge; ett \lq{}avslut\rq{} där vinnare koras utifrån uppdragsslutförande~\cite{Cwil2018}.
-\paragraph{}
-\hspace{-11pt}Under dynamik och spelmekanik ligger komponenter som är de grundläggande element vilka slutligen möjliggör gamification.
-Några viktiga dylika är prestationsmilstopar (eng. \lq{}achievements\rq{}) som är tydligt uppsatta mål~\cite{Cwil2018}.
-Avatarer; visuella representationer av användarens karaktär i spelet~\cite{Cwil2018}.
-Pokaler; visuella representationer av prestationsmilstolpar som erhålls när uppsatta mål träffas~\cite{Cwil2018}.
-\lq{}Boss fights\rq{} (oöversättbart); särskilt svår utmaning, ofta vid slutet av en svårighetsnivå eller prestationsmilstolpe~\cite{Cwil2018}.
-Samlingar; kollektion av pokaler som även visar vilka pokaler som ej ännu erhållits~\cite{Cwil2018}.
-Vidare finns många andra komponenter såsom progressionsbaserat upplåsbart innehåll (eng. \lq{}unlockable content\rq{}), topplistor, poäng, uppdrag, sociala grupper/team, kosmetiska variationer för avatarer (skins), virtuellt gods och så vidare~\cite{Bae2014, Cwil2018}.
 \subsubsection{Gamification och DAS}
 \paragraph{}
-\hspace{-11pt}Det finns exempel på när gamification tillämpats i DAS-applikationer, men de är få till antalet~\cite{Bae2014, Cwil2018}.
+\hspace{-11pt}
+Detta avsnitt är kopplat till forskningsfråga 4 som lyder \emph{\lq{}Hur kan gamification användas för att stödja och motivera lokförare i deras användande av C-DAS-verktyg?\rq{}}.
+Det finns exempel på när gamification tillämpats i DAS-applikationer, men de är få till antalet~\cite{Bae2014, Cwil2018}.
 Två studier har berörda två olika digitala lokförarverktyg som tagits fram.
 Den ena är en applikation för ett stort polskt regionalt järnvägsföretag implementerade ett eco driving\footnote{Energieffektiv körstil som även sparar in på fordons- och infrastrukturslitage.}-verktyg i sin verksamhet 2018~\cite{Cwil2018}, och den andra en prototyp som har tagits fram i Norge för att främja lokförarnas situationsmedvetenhet~\cite{Bae2014}.
 \paragraph{}
