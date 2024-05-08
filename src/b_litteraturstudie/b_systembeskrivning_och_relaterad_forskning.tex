@@ -2,7 +2,7 @@
 %Att som järnvägsföretag använda informationssystem för att minimera energikonsumtion och öka punktlighet blir alltmer utbrett~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
 %Informationssystemet i fråga kallas C-DAS och står för \emph{driver advisory system}~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
 \paragraph{}
-\hspace{-11pt}
+\hspace{-12pt}
 Att som järnvägsföretag använda informationssystem för att minimera energikonsumtion och öka punktlighet blir alltmer utbrett i Europa~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
 Digitala förarverktyg kallas DAS (driver advisory system) och avser applikationer som ämnar stödja lokförare i deras yrkesutövande genom att bidra med hastighetsrekommendationer och situationsmedvetenhetsstöd på ett förtroendefullt sätt.
 Det främsta syftet med DAS är dock att understödja lokförare i att ankomma i tid till stationer med minskad energikonsumtion~\cite{IRS90940}.
@@ -17,7 +17,7 @@ Ett grafisk användargränssnitt med hastighetsrekommendationer och annan releva
 Idag finns flera implementerade digitala förarverktyg men de har sina begränsningar~\cite{Bae2014}.
 Ofta omfattas inte kommunikation med tågklarerare eller TMS, eller så tas inte tillräcklig hänsyn till lokförarnas informationsbehov eller situationsmedvetenhet i beaktande~\cite{Bae2014, Joborn2023, Tschirner2013}.
 \paragraph{}
-\hspace{-11pt}
+\hspace{-12pt}
 För befintliga DAS-system är tillämpningen och kommunikationsflödet olika och kan skilja sig mycket åt~\cite{Konstantinos2013}.
 Systemen använder olika tillvägagångssätt för att förarnas grafiska gränssnitt, tågpositionering och kommunikationsflöde~\cite{Konstantinos2013}.
 2022 färdigställdes ett protokoll av UIC\footnote{Union Internationale des Chemins de fer (Internationella järnvägsunionen)} specifikt för att standardisera digital kommunikation mellan tågtrafikledningssystem och lokförare i en C-DAS-kontext~\cite{Joborn2023, Olsson2023, Lindmark2022}.
@@ -47,7 +47,7 @@ Att exempelvis som tungt lastat godståg stanna \lq{}i onödan\rq{} i brant motl
 Istället kan C-DAS-ombordsystemet rekommendera frirullning, planera för en jämnare acceleration eller föreslå en lägre hastighet utifrån det data som förses från TMS för föraren~\cite{Lindmark2022}.
 Digital graf är ännu inte fullt utrullat hos Trafikverket; systemet är fortfarande i ett utvecklingsstadium~\cite{Joborn2023}.
 \paragraph{}
-\hspace{-11pt}För att den nya uppdaterade körplanen ska kunna verkställas måste den som tidigare nämnt delges föraren på tåget vars körplan förändrades via ett gränssnitt.
+\hspace{-12pt}För att den nya uppdaterade körplanen ska kunna verkställas måste den som tidigare nämnt delges föraren på tåget vars körplan förändrades via ett gränssnitt.
 Det nuvarande systemet som används i Sverige för operativ planering och ämnas ersättas av Digital graf/STEG saknar stöd för att varken ta emot digital information från lokföraren, justera tidtabeller digitalt i realtid eller digitalt delge tåg uppdaterad körprofil~\cite{Systemdefinition2019, Joborn2023}.
 Nya grafer (grafiska representationer av tidtabeller) ritas istället för hand med penna och papper, och informationen delges föraren muntligen via GSM-R-telefonsamtal.
 C-DAS-konceptet omsluter istället hela kedjan av kommunikation från tågklarerarens omplanerade tidtabeller för tåg, till TMS datadistributionssystem, till berörd C-DAS-server, till C-DAS-ombordenhet, till förare tillbaka med bekräftelse från förare till tågklarerare att information mottagits~\cite{IRS90940}.
@@ -58,9 +58,9 @@ Slack betyder att ett tåg inte behöver hålla sin STH för att vara i tid till
 \subsubsection{Dataflödet inom C-DAS enligt SFERA}
 När tågklarerare utför omplanering av tidtabeller sker detta i det TMS infrastrukturförvaltaren har implementerat.
 När en omplanering är gjord tolkas informationen av en server som skickar vidare informationen till berört järnvägsföretages server.
-Infrastrukturförvaltarens och järnvägsföretagets server kallas enligt SFERA IM DAS-TS respektive RU DAS-TS\cite{Joborn2023, IRS90940}.
+Infrastrukturförvaltarens och järnvägsföretagets server kallas IM DAS-TS respektive RU DAS-TS enligt SFERA\cite{Joborn2023, IRS90940}.
 RU DAS-TS prenumererar på det data som förses av IM DAS-TS och när ny information emottagits vidarebefordras den till berört tåg och lokförare.
-RU DAS-TS kan även på förhand förse IM DAS-TS med information rörande tågets statiska förutsättningar såsom tåglängd, tågvikt, dynamisk vikt, typ av fordon, STH\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet (om det finns någon särskild begränsning för den aktuella sträckan enligt uppgift i linjeboken), största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.}, motoreffekt (hk), bromskraft och så vidare~\cite{IRS90940}.
+RU DAS-TS kan även på förhand förse IM DAS-TS med information rörande tågets statiska förutsättningar såsom tåglängd, tågvikt, dynamisk vikt, typ av fordon, STH\footnote{Största tillåtna hastighet. Tågsättets STH är den lägsta av följande hastigheter: \emph{drivfordonets} största tillåtna hastighet, största tillåtna hastighet för det långsammaste fordonet, tillåten hastighet för den aktuella sträckan med hänsyn till tågsättets bromsförmåga enligt reglerna i TTJ-modul 11 (broms), tillåten hastighet med hänsyn till tågsättets axellast, tillåten hastighet med hänsyn till begränsningar i förarens utbildning, hastighet enligt säkerhetsorder om hastighetnedsättning utan signalering~\cite{TTJ2015}.}, motoreffekt (hk), bromskraft och så vidare~\cite{IRS90940}.
 Lokföraren tar emot informationen via en applikation ombord på tåget som benämns C-DAS-OB~\cite{Joborn2023, IRS90940}\@.
 Denna applikation räknar i slutändan ut en rekommenderad hastighetsprofil baserat på flera olika datapunkter och begränsande faktorer~\cite{Joborn2023, Olsson2023}.
 Utifrån beräkningen av körprofil gör C-DAS-OB även en prognos i hur mycket energi tåget kommer förbruka och regenerera vilket sedan återges för föraren och skickas tillbaka till tågklareraren~\cite{Sfera-power-poster-2022}.
@@ -103,6 +103,7 @@ Det skulle även riskera att C-DAS-OB beräknar en körprofil som inte går att 
 Därför rymmer SFERA en rapporteringsfunktion för adhesionsförhållanden som kan användas av lokförare.
 Lokförare kan rapportera in försämrade eller förbättrade adhesionsförhållanden under gång, vilket kommer vidarebefordras till TMS och de tågs C-DAS-OB som passerar aktuell geografiska punkt~\cite{Sfera-adhesion-poster-2022}.
 \paragraph{}
+\hspace{-12pt}
 Möjligheterna med C-DAS är många:
 %\begin{itemize}
 %    \item Effektivare planering av operativ järnvägstrafik~\cite{Joborn2023}
@@ -199,17 +200,17 @@ Med gamification (sv. \lq{}spelifiering\rq{}) avses brukandet av metoder och pri
 Spelmekanik kan ses som den högsta nivån av abstraktion och utgörs av utmaningar slutanvändaren måste ta sig an och lösa~\cite{Cwil2018}.
 Det kan tas i uttryck på många olika sätt, exempelvis genom att införa poängbaserade moment i existerande delar eller att omvandla en löptur till en interaktiv berättelse eller rollspelsaktiviteter motsvarande ett arbete eller en process~\cite{Bae2014}.
 \paragraph{}
-%\hspace{-11pt}Gamification tillämpas i form av kognitivt belöningssystem för användarna av ett system eller annan applikation som ett sätt att motivera dem genom metoder hämtade från dataspelsvärlden~\cite{Bae2014, Cwil2018}.
-\hspace{-11pt}Gamification tillämpas i form av kognitivt belöningssystem för användarna.
+%\hspace{-12pt}Gamification tillämpas i form av kognitivt belöningssystem för användarna av ett system eller annan applikation som ett sätt att motivera dem genom metoder hämtade från dataspelsvärlden~\cite{Bae2014, Cwil2018}.
+\hspace{-12pt}Gamification tillämpas i form av kognitivt belöningssystem för användarna.
 Belöningar kan se ut på olika sätt såsom milstolpar (eng. \lq{}achievement\rq{}), medaljer/utmärkelser, personliga (erfarenhets-) poäng, förmågan att \lq{}gå upp i level\rq{} (eng. \lq{}level up\rq{}) och ranking- eller topplistor~\cite{Bae2014}.
 Mer ingående \lq{}gamifying\rq{} kan innebära framtagandet av personliga avatarer, system med interaktiv handledning och interaktiv feedback~\cite{Bae2014, Cwil2018}.
 \paragraph{}
-\hspace{-11pt}Reflektion är ett viktigt koncept inom gamification.
+\hspace{-12pt}Reflektion är ett viktigt koncept inom gamification.
 Att som användare kunna utvärdera sig själv kritiskt är viktigt och möjliggör att de lär sig av sina erfarenhet samt följa upp personlig statistik över tid~\cite{Bae2014, Cwil2018}.
 Även om detta innebär god möjlighet för management att följa upp lokförarnas efterlevnad av körprofiler finns det risk att sådan utvärdering får en stor negativ inverkan på arbetsmiljön om förare känner sig utvärderade eller övervakade~\cite{Bae2014}.
 Påståendet styrks även i uttalanden från flera respondenter i denna studies intervjuer.
 \paragraph{}
-\hspace{-11pt}Ett problem med DAS-applikationer är att de har ett fokus på exempelvis återgivelse av körprofil, algoritm för beräknad av optimal körprofil, ökad komfort och minskad energikonsumtion men kan missa både lokförarnas situationsmedvetenhet (eng. \lq{}situational awareness\rq{}) och motivation att köra punktligt~\cite{Bae2014, Cwil2018}.
+\hspace{-12pt}Ett problem med DAS-applikationer är att de har ett fokus på exempelvis återgivelse av körprofil, algoritm för beräknad av optimal körprofil, ökad komfort och minskad energikonsumtion men kan missa både lokförarnas situationsmedvetenhet (eng. \lq{}situational awareness\rq{}) och motivation att köra punktligt~\cite{Bae2014, Cwil2018}.
 Det har visat sig att gamification-element har bra tillämplighet i DAS-applikationer och kan stärka lokförares nytta av dem.
 Att som lokförare kunna utvärdera sin körstil och sina handlingar med en gamifierad applikation kan hjälpa med förståelse för vad konsekvenserna blir för omkringliggande tåg~\cite{Bae2014}.
 Systemet bör hjälpa föraren att hitta intressanta situationer och scenarier där beslut lett till förseningar eller andra negativa konsekvenser för självreflektion eller jämförelse med hur andra förare agerat i liknande situationer.
@@ -223,13 +224,13 @@ Negativ stimulans (bestraffning) syftar till att göra oönskat beteende eller h
 Positiv stimulans (belöning) å andra sidan syftar till att öka önskvärdheten av rätt form av beteende hos mottagaren~\cite{Cwil2018}.
 Båda former av stimuli påverkar människor extern och är således extrinsiska faktorer.
 \paragraph{}
-\hspace{-11pt}Även om behavioristiskt synsätt på motivation och gamification tillämpats med viss framgång i organisationer har det inte alltid visat sig räcka~\cite{Cwil2018}.
+\hspace{-12pt}Även om behavioristiskt synsätt på motivation och gamification tillämpats med viss framgång i organisationer har det inte alltid visat sig räcka~\cite{Cwil2018}.
 Det kan uppmuntra önskvärt beteende och leda till förbättring men ibland inte hos tillräckligt stor del av en målgrupp.
 Därför har ett annat synsätt kompletterat behavioristisk syn på motivation; kognitivistisk.
 Ur kognitivistisk synpunkt måste försök att påverka motivation ta i beaktande hur människor tänker, förstår och agerar~\cite{Cwil2018}.
 En av de viktigaste principerna inom kognitivistisk motivation är self-determination theory (eng. \lq{}självbestämmandeteorin\rq{}, SDT)~\cite{Cwil2018}.
 \paragraph{}
-\hspace{-11pt}SDT grundar sig i att alla människor oavsett bakgrund, yrke eller utbildning drivs av en vilja att utveckla sig själva och sina relationer~\cite{Cwil2018}.
+\hspace{-12pt}SDT grundar sig i att alla människor oavsett bakgrund, yrke eller utbildning drivs av en vilja att utveckla sig själva och sina relationer~\cite{Cwil2018}.
 SDT argumenterar för att motivation inte bara handlar om externa belöningar eller interna nöjen, utan snarare om hur dessa drivkrafter integreras inom individens kognitiva struktur och värdesystem~\cite{Cwil2018}.
 Det kan ses som en skala som går från avsaknad av motivation och lågt självbestämmande som kommer av lågt eller inget incitament eller påverkan till instrinsisk motivation och hög grad av självbestämmande.
 I mitten finns olika former av reglering och extrinsisk motivation där individens motivation gradvis blir mer internaliserad och självbestämd.
@@ -244,14 +245,14 @@ Det är bara genom att tillgodose dessa tre behov intrinsisk motivation kan uppn
 När så sker kan goda resultat uppnås vilket gjorts inom utbildning, sport, sjukvård, transport och medarbetarmotivation~\cite{Cwil2018}.
 %Situationsmedvetenhet mäts i tre nivåer: 1 - uppfattningen av element i (kringliggande) miljö, 2 - förståelsen för nuvarande situation och 3 - förståelse för framtida situationer~\cite{Bae2014}.
 \paragraph{}
-\hspace{-11pt}Fem huvudsakliga element utgör det som kallas dynamik inom gamification.
+\hspace{-12pt}Fem huvudsakliga element utgör det som kallas dynamik inom gamification.
 Begränsningar; exempelvis ramar som begränsar användaren eller tvingande avvägningar~\cite{Cwil2018}.
 Känslor; avsiktliga och av spelet framkommande känslor såsom nyfikenhet, (avsiktlig) frustration, lycka och så vidare~\cite{Cwil2018}.
 Narrativ; upplevelsen av en pågående berättelse~\cite{Cwil2018}.
 Progression; användarens utveckling~\cite{Cwil2018}.
 Relationer; sociala interaktioner som skapar en känsla av exempelvis kamratskap, altruism eller status~\cite{Cwil2018}.
 \paragraph{}
-\hspace{-11pt}Tio spelmekaniker finns som generellt sett accepterats som vedertagna.
+\hspace{-12pt}Tio spelmekaniker finns som generellt sett accepterats som vedertagna.
 Utmaningar; pussel, uppgifter eller uppdrag som ska lösas, ibland med progression där svårighetsgraden ökar allteftersom~\cite{Cwil2018}.
 Chans; händelser som baseras på slump~\cite{Cwil2018}.
 Tävling; ställa användare eller grupper av spelare mot varandra~\cite{Cwil2018}.
@@ -262,7 +263,7 @@ Transaktioner; handel mellan användare eller inom systemet~\cite{Cwil2018}.
 Turer; turbaserat deltagande där spelarna inte har handlingsutrymme samtidigt utan i sekvens- och turordning~\cite{Cwil2018}.
 Vinnarläge; ett \lq{}avslut\rq{} där vinnare koras utifrån uppdragsslutförande~\cite{Cwil2018}.
 \paragraph{}
-\hspace{-11pt}Under dynamik och spelmekanik ligger komponenter som är de grundläggande element vilka slutligen möjliggör gamification.
+\hspace{-12pt}Under dynamik och spelmekanik ligger komponenter som är de grundläggande element vilka slutligen möjliggör gamification.
 Några viktiga dylika är prestationsmilstopar (eng. \lq{}achievements\rq{}) som är tydligt uppsatta mål~\cite{Cwil2018}.
 Avatarer; visuella representationer av användarens karaktär i spelet~\cite{Cwil2018}.
 Pokaler; visuella representationer av prestationsmilstolpar som erhålls när uppsatta mål träffas~\cite{Cwil2018}.
