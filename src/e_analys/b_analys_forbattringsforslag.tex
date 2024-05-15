@@ -45,11 +45,11 @@ Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya d
         \color{blue}
         \textbf{Omplaneringsorsak} \\
         \hline
-        - Unikt ID för omplaneringsorsak \\
-        - Orsak \\
-        - Telefonnummer till avsändare \\
-        - Avsändares bandel \\
-        - Avsändares trafikledningscentral \\
+        - Unikt ID för omplaneringsorsak & sträng \\
+        - Orsak & sträng \\
+        - Telefonnummer till avsändare & sträng \\
+        - Avsändares bandel & sträng \\
+        - Avsändares trafikledningscentral & sträng \\
         \hline
     \end{tabular}
     \caption{Datastruktur, omplaneringskontext samt kontaktuppgifter till avsändare.}
@@ -107,10 +107,10 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
         \color{blue}
         \textbf{TMS message} \\
         \hline
-        - Unikt ID för berörd tågfärd \\
-        - Uppmaning, blankettförberedelse (blankettnummer) \\
-        - Aktuell tåglängd \\
-        - Avsändares trafikledningscentral \\
+        - Unikt ID för berörd tågfärd & sträng \\
+        - Uppmaning, blankettförberedelse (blankettnummer) & sträng \\
+        - Aktuell tåglängd & integer \\
+        - Avsändares trafikledningscentral & sträng\\
         \hline
     \end{tabular}
     \caption{Datastruktur, blankettförberedelse eller återgivelse av inrapporterad tåglängd.}
@@ -165,9 +165,9 @@ Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda 
         \color{blue}
         \textbf{Plattformsbehov} \\
         \hline
-        - Driftplats \\
-        - Höger eller vänster \\
-        - Tid (minuter) \\
+        - Driftplats & sträng \\
+        - Höger eller vänster & sträng \\
+        - Tid & integer \\
         \hline
     \end{tabular}
     \caption{Datastruktur, äskande om särskild sida för trafikutbyte eller extra plattformstid.}
@@ -175,9 +175,10 @@ Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda 
 \end{table}
 \paragraph{Meddelande om plötsligt stopp}
 Ibland uppstår fordonsfel som kan leda till att ett tåg gör ett oplanerat stopp.
-Det händer enligt respondenterna att driftledningscentralen inte svarar direkt när man ringer, och om man har ett akut fordonsfel kan det vara stressande att vänta på att någon svarar.
-En funktion som meddelar driftledningscentralen att ett tåg har fått ett stoppande fel är sannolikt av intresse för en tågklarerare då de skulle kunna delges information att ett tåg står still även om de är upptagna med andra uppgifter.
-Det skulle möjliggöra att en lokförare snabbt kan meddela tågklarerare att tåget står still, eventuell prognos och sedan direkt påbörja felsökning och åtgärd utan att först behöva ringa och delge information muntligen.
+Det händer enligt respondenterna att driftledningscentralen inte svarar direkt när man ringer.
+Vid ett akut fordonsfel kan det vara stressande att vänta på att någon svarar, men om inte fjärren delges information kommer de bli stressade av utebliven information från ett stillastående tåg ute på banan.
+En funktion som meddelar driftledningscentralen att ett tåg har fått ett stoppande fel är sannolikt av intresse för en tågklarerare då de skulle kunna vidta somliga åtgärder utan muntlig kontakt.
+Meddelandet skulle möjliggöra för en lokförare att snabbt kunna meddela tågklarerare att tåget står still samt ge en preliminär prognos för sedan direkt påbörja felsökning och åtgärd utan att först behöva ringa och delge information muntligen.
 Information kan kompletteras i efterhand via GSM-R-samtal.
 \paragraph{Meddelande om signal i stopp}
 Under intervjuerna framgick det att förarna var av åsikten att bra järnvägstrafik var konsekvensen av ett bra samspel mellan lokförare och tågklarerare.
@@ -211,7 +212,7 @@ Därför läggs denna meddelandetyp till och består av en andelsangivelse i fö
         \textbf{Train message} & \\
         \hline
         - Dragkraft (kW) & integer  \\
-        - Stopp, felsökning pågår & bool \\
+        - Stopp, felsökning pågår (prognos, minuter) & integer \\
         - Signal i stopp (signalbeteckning) & sträng \\
         - Samtal önskas (önskat telefonnummer) & sträng \\
         - JP-kvittens & bool \\
