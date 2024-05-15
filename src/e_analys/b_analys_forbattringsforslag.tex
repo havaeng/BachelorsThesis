@@ -40,10 +40,10 @@ Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya d
 \end{table}
 \begin{table}[hbt!]
     \centering
-    \begin{tabular}{|l|}
+    \begin{tabular}{|l|l|}
         \hline
         \color{blue}
-        \textbf{Omplaneringsorsak} \\
+        \textbf{Omplaneringsorsak} & Datatyp\\
         \hline
         - Unikt ID för omplaneringsorsak & sträng \\
         - Orsak & sträng \\
@@ -106,7 +106,7 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
     \begin{tabular}{|l|l|}
         \hline
         \color{blue}
-        \textbf{TMS message} & \\
+        \textbf{TMS message} & Datatyp \\
         \hline
         - Unikt ID för berörd tågfärd & sträng \\
         - Uppmaning, blankettförberedelse (blankettnummer) & sträng \\
@@ -144,7 +144,7 @@ Tågklareraren kan då snabbt få reda på att ett tågs STH begränsas, frekven
     \begin{tabular}{|l|l|}
         \hline
         \color{blue}
-        \textbf{BF message} & \\
+        \textbf{BF message} & Datatyp \\
         \hline
         - Balisinformationsfel typ 1 & bool  \\
         - Driftbroms och 80- eller 40-övervakning & bool \\
@@ -165,7 +165,7 @@ Datastrukturen för plattformsbehovsmeddelande illustreras i figur~\ref{tab:plat
     \begin{tabular}{|l|l|}
         \hline
         \color{blue}
-        \textbf{Plattformsbehov} & \\
+        \textbf{Plattformsbehov} & Datatyp \\
         \hline
         - Driftplats & sträng \\
         - Höger eller vänster & sträng \\
@@ -216,7 +216,7 @@ Ofta rör det sig om att en motor slutar fungera helt och då är det lättare a
     \begin{tabular}{|l|l|}
         \hline
         \color{blue}
-        \textbf{Train message} & \\
+        \textbf{Train message} & Datatyp \\
         \hline
         - Dragkraft (\%) & integer  \\
         - Stopp, felsökning pågår (prognos, minuter) & integer \\
