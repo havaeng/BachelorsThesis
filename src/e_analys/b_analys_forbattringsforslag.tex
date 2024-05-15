@@ -87,6 +87,7 @@ Trafikstörningar kan läggas till i segment profile för en aktuellt geografisk
         - etc\ldots & - etc\ldots & - etc\ldots \\
         \color{blue}
         - Trafikstörningar & & \\
+        \color{blue}
         - Telefonnummer & & \\
         \hline
     \end{tabular}
@@ -105,7 +106,7 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
     \begin{tabular}{|l|}
         \hline
         \color{blue}
-        \textbf{TMS message} \\
+        \textbf{TMS message} & \\
         \hline
         - Unikt ID för berörd tågfärd & sträng \\
         - Uppmaning, blankettförberedelse (blankettnummer) & sträng \\
@@ -158,12 +159,13 @@ Tågklareraren kan då snabbt få reda på att ett tågs STH begränsas, frekven
 För persontåg kan det vara aktuellt med särskilt behov av plattform vid antingen höger eller vänster sida av tåget.
 Det kan röra sig om ett större antal avstängda in- och avstigningsdörrar på ena sidan eller om en dörr är avstängd vid en handikapplift.
 Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda till snabbare trafikutbyte.
+Datastrukturen för plattformsbehovsmeddelande illustreras i figur~\ref{tab:plattformsbehov} som del av meddelandet Train message.
 \begin{table}[hbt!]
     \centering
     \begin{tabular}{|l|}
         \hline
         \color{blue}
-        \textbf{Plattformsbehov} \\
+        \textbf{Plattformsbehov} & \\
         \hline
         - Driftplats & sträng \\
         - Höger eller vänster & sträng \\
@@ -179,7 +181,7 @@ Det händer enligt respondenterna att driftledningscentralen inte svarar direkt 
 Vid ett akut fordonsfel kan det vara stressande att vänta på att någon svarar, men om inte fjärren delges information kommer de bli stressade av utebliven information från ett stillastående tåg ute på banan.
 En funktion som meddelar driftledningscentralen att ett tåg har fått ett stoppande fel är sannolikt av intresse för en tågklarerare då de skulle kunna vidta somliga åtgärder utan muntlig kontakt.
 Meddelandet skulle möjliggöra för en lokförare att snabbt kunna meddela tågklarerare att tåget står still samt ge en preliminär prognos för sedan direkt påbörja felsökning och åtgärd utan att först behöva ringa och delge information muntligen.
-Information kan kompletteras i efterhand via GSM-R-samtal.
+Informationen skickas till TMS som del av Train message (figur~\ref{tab:trainmessage}) och kan kompletteras muntligen i efterhand via GSM-R-samtal.
 \paragraph{Meddelande om signal i stopp}
 Under intervjuerna framgick det att förarna var av åsikten att bra järnvägstrafik var konsekvensen av ett bra samspel mellan lokförare och tågklarerare.
 Det fanns en förståelse för att båda parter är människor och ibland gör fel.
@@ -188,6 +190,7 @@ Då kunde förarna känna sig påträngande eller onödigt ivriga vid samtal i d
 Om förarna å andra sidan avstod från att ringa i dessa lägen kanske det skulle leda till att de stod i dessa lägen onödigt länge ifall tågklareraren faktiskt glömde bort tåget.
 Ett meddelande med en notis om att ett tåg håller för stopp vid en viss signal införs därför.
 Meddelandet kan besvaras med mottagningsbekräftelse med eventuell orsak och prognos vid händelser av lägre dignitet såsom korsande tågväg.
+Informationen skickas som del av train message (fig.~\ref{tab:trainmessage}).
 \paragraph{Meddelande till SOS}
 Från en respondent som suttit i samrådsmöten med räddningstjänst, ambulans och polis framgick det att den här typen av samhällsfunktioner har svårt att identifiera exakt position för tåg de ska undsätta, i synnerhet för poliser.
 Är det tågstopp kan många tåg befinna sig nära varandra vilket kan försvåra lokalisering.
@@ -196,14 +199,18 @@ I dagsläget passeras informationen i många led muntligen från lokförare till
 Det har enligt respondenten visat sig hänt flera gånger i verkligheten samtidigt som nämnda samhällsfunktioner efterfrågan denna typ av funktionalitet.
 Detta förslag går eventuellt utanför studiens omfattning, men oavsett är det tågklarerarna som idag kontaktar SOS Alarm muntligen.
 Om systemet möjliggör distribution av GPS-information skulle denna information potentiellt kunna vara av intresse för polis, ambulans och räddningstjänst.
+Då denna kommunikation går utanför SFERA-protokollet illustreras det ej.
 \paragraph{Meddelande om att samtal önskas}
 Det framgick under intervjuerna att lokförare ibland behöver kontakta tågklarerare, men i ärenden som inte är akuta.
 När de då ringer driftledningscentralen i dessa ärenden kan det ibland gå så lång tid att föraren väljer att lägga på och istället försöka senare.
 Respondenten tillade att detta inte är något konstigt i sig, utan att tågklareraren förmodligen är upptagen.
 Att då kunna skicka ett meddelande om att samtal önskas kan avlasta tågklarerarens uppmärksamhet.
+Informationen skickas som del av train message (fig.~\ref{tab:trainmessage}).
 \paragraph{Reducerad dragkraft}
-Information om dragkraft görs tillgängligt för TMS via RU DAS-TS men C-DAS-OB förefaller inte ha någon möjlighet att skicka detta direkt till TMS i status report.
+Information om dragkraft görs tillgängligt för TMS via RU DAS-TS innan avfärd men C-DAS-OB förefaller inte ha någon möjlighet att skicka detta direkt till TMS i status report.
 Därför läggs denna meddelandetyp till och består av en andelsangivelse i förhållande till den fulla potential som finns i fordon enligt train characteristics.
+Man kan också tänka sig att effekten anges i kW, men det skulle kunna vara svårt för föraren att avgöra.
+Ofta rör det sig om att en motor slutar fungera helt och då är det lättare att räkna bort den andelen från det totala antalet motorer.
 \begin{table}[hbt!]
     \centering
     \begin{tabular}{|l|l|}
@@ -211,7 +218,7 @@ Därför läggs denna meddelandetyp till och består av en andelsangivelse i fö
         \color{blue}
         \textbf{Train message} & \\
         \hline
-        - Dragkraft (kW) & integer  \\
+        - Dragkraft (\%) & integer  \\
         - Stopp, felsökning pågår (prognos, minuter) & integer \\
         - Signal i stopp (signalbeteckning) & sträng \\
         - Samtal önskas (önskat telefonnummer) & sträng \\
