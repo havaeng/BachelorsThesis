@@ -11,11 +11,11 @@ Ett DAS-system beräknar en rekommenderad körprofil utifrån erhållna parametr
 DAS-system som inte har en koppling till infrastrukturförvaltarens kapacitetsstyrningssystem kallas S-DAS~\cite{IRS90940, Joborn2023, Angel2020, Olsson2023}.
 S-DAS-system kan vara avancerade och sofistikerade i sig, det som särskiljer dem från C-DAS är avsaknaden av direktlänk till tågklarerare~\cite{IRS90940, Joborn2023, Angel2020, Olsson2023}.
 Den här typen av system är vanliga i Sverige idag~\cite{Systemdefinition2019}.
-DAS-system som istället har en direkt koppling mellan TMS och C-DAS-OB kallas C-DAS och står för \emph{connected driver advisory system}~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
+DAS-system som istället har en direkt koppling mellan en trafikledningscentral och C-DAS-OB kallas C-DAS och står för \emph{connected driver advisory system}~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
 Dessa informationssystem kan ta emot nya tidtabeller för tåget de körs på och beräknar således körprofil utifrån uppdaterade tidtabeller erhållna direkt från tågklarerare~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023}.
 Ett grafisk användargränssnitt med hastighetsrekommendationer och annan relevant information presenteras för lokförare genom en applikation i en surfplatta eller via inbyggd skärm i förarhyttens instrumentpanel~\cite{Bae2014, Kamenicky2016, Konstantinos2013, Cwil2018, Tschirner2013, Yang2013, Joborn2023, Lindmark2022, Angel2020}.
 Idag finns flera implementerade digitala förarverktyg men de har sina begränsningar~\cite{Bae2014}.
-Ofta omfattas inte kommunikation med tågklarerare eller TMS, eller så tas inte tillräcklig hänsyn till lokförarnas informationsbehov eller situationsmedvetenhet i beaktande~\cite{Bae2014, Joborn2023, Tschirner2013}.
+Ofta omfattas inte kommunikation med tågklarerare eller trafikledningscentral, eller så tas inte tillräcklig hänsyn till lokförarnas informationsbehov eller situationsmedvetenhet i beaktande~\cite{Bae2014, Joborn2023, Tschirner2013}.
 \paragraph{}
 \hspace{-12pt}
 För befintliga DAS-system är tillämpningen och kommunikationsflödet olika och kan skilja sig mycket åt~\cite{Konstantinos2013}.
@@ -80,7 +80,7 @@ Se figur~\ref{fig:C-DAS-kommunikation} för visuell beskrivning av SFERA:s dataf
     \label{fig:C-DAS-kommunikation}
 \end{figure}
 \paragraph{}
-\hspace{-12pt}
+\hspace{-15pt}
 Kommunikationen mellan tågklarerare och lokförare sker enligt SFERA främst genom två typer av meddelanden; journey profile och status report.
 För kommunikation från tågklarerare till lokförare används journey profile, och för det omvända används status report.
 Journey profile är ett datapaket som inkluderar flera viktiga informationsdelar som krävs för att C-DAS-OB ska kunna räkna ut en körprofil.
@@ -92,10 +92,10 @@ Utifrån JP beräknar C-DAS-OB en körprofil.
 %Om körprofilen som räknas ut inte kan rymmas inom den angivna tidtabellen skickas ett meddelande tillbaka till tågklareraren~\cite{IRS90940, Sfera-usecase-poster-2022}.
 JP delges C-DAS OB via IM DAS-TS och RU DAS-TS\@.
 \paragraph{}
-\hspace{-12pt}
+\hspace{-14pt}
 Status report är ett meddelande som består av GPS-position och hastighet för tåget, senast passerade geografiska referenspunkt, aktuell JP, förändringar av de på förhand angivna fordonsuppgifterna (för kvittens), förändringar i adhesionsförhållanden, förväntad energikonsumtion inom de närmsta minuterna, samt meddelande om klart för avgång, om tåget stannat under färd och förseningsorsak(er)~\cite{IRS90940}.
 \paragraph{}
-\hspace{-12pt}
+\hspace{-14pt}
 Adhesionsförhållanden har stor inverkan i tågens rättidighetsförmåga.
 Om adhesionen är låg, exempelvis vid lövhalka, regn eller isbildning krävs längre accelerations- och bromskurvor eftersom hjulen har sämre grepp~\cite{Sfera-adhesion-poster-2022}.
 Detta medför att planerad tidtabell ibland inte kan hållas.
@@ -155,7 +155,7 @@ Möjligheterna med C-DAS är många:
         \item Gemensam lägesbild mellan lokförare och tågklarerare~\cite{Lindmark2022}
         \item Förbättrad arbetsmiljö för (främst) tågklarerare, lokförare och annan ombordpersonal~\cite{Systemdefinition2019}
         \item Förbättrad situationsmedvetenhet och \lq{}context awareness\rq{} för lokförare~\cite{IRS90940, Bae2014, Cwil2018}
-1    \end{itemize}
+    \end{itemize}
     \item Övriga möjligheter
     \begin{itemize}
         \item Ökad trafiksäkerhet till följd av lägre hastigheter samt färre antal restriktiva signaler och stoppsignaler~\cite{Olsson2023}
@@ -164,7 +164,7 @@ Möjligheterna med C-DAS är många:
     \end{itemize}
 \end{itemize}
 \paragraph{}
-\hspace{-12pt}
+\hspace{-14pt}
 Om inte en tågklarerare kan jobba i ett digitalt planeringsverktyg kan inte C-DAS användas som en lösning för att förbättra trafikflöden och spara tid, energi och pengar~\cite{Tschirner2013}.
 För att minska arbetsbelastningen för tågklarerare det därför viktigt att alla systemets delar integreras väl i deras digitala miljö för att minimera arbetsbelastning~\cite{Tschirner2013, Joborn2023}.
 Att behöva göra regelbundna byten mellan fönster och applikationer kan försämra arbetsmiljön och göra att de glömmer information~\cite{Tschirner2013, Lindmark2022}.
@@ -175,7 +175,7 @@ Om detta inte går skickas ett meddelande automatiskt till tågklarerare att den
 Att en C-DAS/TMS-lösning omfattar informationsflöde åt båda hållen, dvs.~både från tågklarerare till lokförare samt vice versa är således av stor vikt~\cite{Tschirner2013}.
 Utan dessa förutsättningar kan allt arbete med C-DAS göras obsolet~\cite{Tschirner2013}.
 \paragraph{}
-\hspace{-12pt}
+\hspace{-13pt}
 Att beräkning av körprofil i C-DAS-applikationer görs med robusta algoritmer är viktigt för effektiv energibesparing och för att skapa förtroende bland lokförare~\cite{Albrecht2013}
 Med dagens teknik och internetkapacitet finns goda möjligheter att distribuera beräkningen till enheten varpå C-DAS-applikationen körs istället för att köras på en central server~\cite{Albrecht2013, Rahn2013}.
 Järnväg som transportslag har många parametrar och restriktioner som är kritiska för tågets framförande och det är viktigt att tillämpad algoritm kan hantera alla dessa~\cite{Albrecht2013}.
