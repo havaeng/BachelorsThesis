@@ -19,7 +19,7 @@ För att bättre möta lokförarnas behov inkluderas utöver nämn data förseni
 Försenings- och omplaneringsinformation eller -orsak(er) efterfrågas uttryckligen av flera förare under intervjusessioner.
 Att exempelvis veta var ett tåg ska gå om ett annat eller gå in på sidan på en driftplats för att släppa förbi ett tåg är ett gynnsamt sätt att bygga förtroende sett till respondenternas utsagor.
 Rent tekniskt kan meddelandet läggas som en del av journey package så att denna information medföljer varje gång ny JP skickas ut.
-Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya datastrukturen illustreras i tabell~\ref{tab:omplanering}.
+Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya datamodellen illustreras i tabell~\ref{tab:omplanering}.
 \begin{table}[hbt!]
     \centering
     \begin{tabular}{|l|}
@@ -35,7 +35,7 @@ Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya d
         - Omplaneringsorsak \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, journey profile (förbättringsförslag). Tillägg markerat med blå text.}
+    \caption{Datamodell, journey profile (förbättringsförslag). Tillägg markerat med blå text.}
     \label{tab:jpImproved}
 \end{table}
 \begin{table}[hbt!]
@@ -52,11 +52,11 @@ Förbättringsförslaget illustreras i tabell~\ref{tab:jpImproved} och den nya d
         - Avsändares trafikledningscentral & sträng \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, omplaneringskontext samt kontaktuppgifter till avsändare.}
+    \caption{Datamodell, omplaneringskontext samt kontaktuppgifter till avsändare.}
     \label{tab:omplanering}
 \end{table}
 \paragraph{Blankettförberedelse}
-Före muntlig ordergivning måste blanketter förberedas som lokföraren är ålagd att medtaga under tågfärd.
+Före muntlig ordergivning måste blanketter förberedas som lokf-öraren är ålagd att medtaga under tågfärd.
 Ordergivning genom diktamen sker genom att lokföraren upprepar vad tågklareraren säger samtidigt som denne noterar på en blankett vilken information som tas emot.
 Om tågklareraren enkelt kan uppmana en enskild eller grupp av lokförare i ett område att förbereda en specifik blankett för ordergivning kan många korta samtal potentiellt sett sparas in.
 Därför läggs en typ av meddelanden till i SFERA-protokollet som ska skickas från TMS via TS-servrar till C-DAS-OB när en fjärrtågklarerare vill uppmana lokförare att förbereda en specifik blankett.
@@ -91,7 +91,7 @@ Trafikstörningar kan läggas till i segment profile för en aktuellt geografisk
         - Telefonnummer & & \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, segment profile. För att se originalet i sin helhet, se tabell~\ref{tab:sp}.}
+    \caption{Datamodell, segment profile. För att se originalet i sin helhet, se tabell~\ref{tab:sp}.}
     \label{tab:spImproved}
 \end{table}
 \paragraph{Meddelande om uppdaterad tåglängd}
@@ -114,7 +114,7 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
         - Avsändares trafikledningscentral & sträng\\
         \hline
     \end{tabular}
-    \caption{Datastruktur, blankettförberedelse eller återgivelse av inrapporterad tåglängd.}
+    \caption{Datamodell, blankettförberedelse eller återgivelse av inrapporterad tåglängd.}
     \label{tab:tmsMessage}
 \end{table}
 %\paragraph{Context awareness}
@@ -125,7 +125,7 @@ Om så är fallet kan korrekt tåglängd delges direkt till TMS\@.
 \subsubsection{Kommunikation från C-DAS-OB till TMS}
 Följande förbättringsförslag ges som går utöver SFERA-protokollet för kommunikation från lokförare till tågklarerare.
 I figurerna visas förbättringsförslaget i blå text.
-Om överskriften är i blått är hela figuren ett förbättringsförslag.
+Om överskri-ften är i blått är hela figuren ett förbättringsförslag.
 \paragraph{Kvittens av JP}
 När ett JP skickas ut bör det göras tydligt för föraren att ny tidtabell är aktuell.
 Denna kan då bekräftas eller avvisas om föraren uppenbart märker att tågklarerarens plan inte kommer att kunna realiseras i praktiken.
@@ -135,7 +135,7 @@ För lokföraren kan det även vara önskvärt att det blir tydligt när en ny J
 Positiv kvittens bekräftar att lokföraren har uppfattat att ny JP delgivits och att denne ska vara observant på ny körprofil.
 Negativ kvittens tar höjd för att föraren fångar upp en förutsättning som medför att tidtabellen inte kan respekteras.
 \paragraph{Rapportering av balisinformationsfel}
-När balisinformationsfel\footnote{Baliser är signalsystemets gränssnitt för informationsöverföring från signalsystem till tågets hastighetsövervakningssystem. De tar emot information banutrustningen och strömsätts när ett tåg passerar dem, varpå information kan överföras till tågen. Om information tåget emottager inte är fullständig \lq{}vet inte\rq{} längre tågets skyddssystem vilken information som gäller och kommer begränsa tågets STH till 80 km/h eller 40 km/h beroende på var tåget befinner sig, och lokföraren måste köra under restriktioner\cite{TTJ2015}.}~inträffar ska lokföraren delge tågklarerare om var det inträffat, vilka konsekvenser som gavs samt vilken felkod som presenterades.
+När balisinformationsfel\footnote{Baliser är signalsystemets gränssnitt för informationsöverföring från signalsystem till tågets hastighetsövervakningssystem. De tar emot information banutrustningen och strömsätts när ett tåg passerar dem, varpå information kan överföras till tågen. Om information tåget emottager inte är fullständig \lq{}vet inte\rq{} längre tågets skyddssystem vilken information som gäller och kommer begränsa tågets STH till 80 km/h eller 40 km/h beroende på var tåget befinner sig, och lokföraren måste köra under restriktioner\cite{TTJ2015}.}~inträffar ska lokför-aren delge tågklarerare om var det inträffat, vilka konsekvenser som gavs samt vilken felkod som presenterades.
 Förarna uppgav i intervjuer att det kan vara svårt att veta exakt var det inträffade och vilken balisgrupp som avses.
 En del förare uppgav också att de och deras kollegor ibland slarvar med att rapportera in balisinformationsfel till driftledningscentralen.
 Längden STH begränsas kan vara upp till 3800 m \emph{plus} tågsättets längd, vilket skulle kunna innebära måttlig påverkan en tågfärds rättidighetsförmåga.
@@ -155,14 +155,14 @@ Tågklareraren kan då snabbt få reda på att ett tågs STH begränsas, frekven
         - GPS-position & sträng \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, inrapportering av balisinformationsfel.}
+    \caption{Datamodell, inrapportering av balisinformationsfel.}
     \label{tab:bf}
 \end{table}
 \paragraph{Plattformsbehov}
 För persontåg kan det vara aktuellt med särskilt behov av plattform vid antingen höger eller vänster sida av tåget.
 Det kan röra sig om ett större antal avstängda in- och avstigningsdörrar på ena sidan eller om en dörr är avstängd vid en handikapplift.
 Om detta på enkelt vis kan meddelas i god tid till tågklareraren kan det leda till snabbare trafikutbyte.
-Datastrukturen för plattformsbehovsmeddelande illustreras i figur~\ref{tab:plattformsbehov} som del av meddelandet Train message.
+Datamodellen för plattformsbehovsmeddelande illustreras i figur~\ref{tab:plattformsbehov} som del av meddelandet Train message.
 \begin{table}[hbt!]
     \centering
     \begin{tabular}{|l|l|}
@@ -175,7 +175,7 @@ Datastrukturen för plattformsbehovsmeddelande illustreras i figur~\ref{tab:plat
         - Tid & integer \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, äskande om särskild sida för trafikutbyte eller extra plattformstid.}
+    \caption{Datamodell, äskande om särskild sida för trafikutbyte eller extra plattformstid.}
     \label{tab:plattformsbehov}
 \end{table}
 \paragraph{Meddelande om plötsligt stopp}
@@ -195,7 +195,7 @@ Ett meddelande med en notis om att ett tåg håller för stopp vid en viss signa
 Meddelandet kan besvaras med mottagningsbekräftelse med eventuell orsak och prognos vid händelser av lägre dignitet såsom korsande tågväg.
 Informationen skickas som del av train message (fig.~\ref{tab:trainmessage}).
 \paragraph{Meddelande till SOS}
-Från en respondent som suttit i samrådsmöten med räddningstjänst, ambulans och polis framgick det att den här typen av samhällsfunktioner har svårt att identifiera exakt position för tåg de ska undsätta, i synnerhet för poliser.
+Från en respondent som suttit i samrådsmöten med räddningstj-änst, ambulans och polis framgick det att den här typen av samhällsfunktioner har svårt att identifiera exakt position för tåg de ska undsätta, i synnerhet för poliser.
 Är det tågstopp kan många tåg befinna sig nära varandra vilket kan försvåra lokalisering.
 Därför föreslås en funktion där C-DAS-OB kan delge GPS-position till SOS Alarm direkt eller via IM DAS-TS\@.
 I dagsläget passeras informationen i många led muntligen från lokförare till operativ blåljuspersonal med flera led emellan vilket potentiellt kan leda till att information tappas på vägen.
@@ -229,6 +229,6 @@ Ofta rör det sig om att en motor slutar fungera helt och då är det lättare a
         - Plattformsbehov & - \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, inrapportering av balisinformationsfel.}
+    \caption{Datamodell, inrapportering av balisinformationsfel.}
     \label{tab:trainmessage}
 \end{table}

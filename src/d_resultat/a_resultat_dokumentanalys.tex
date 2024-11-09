@@ -8,9 +8,9 @@ Kommunikationsprotokollet som används inom C-DAS kallas SFERA och är som nämn
 Syftet är att energieffektivisera tågkörning, förbättra punktlighet, och förenkla internationell järnvägstrafik~\cite{IRS90940}.
 DAS-verktyg är en nyckelfaktor i effektiviseringprocessen som dessutom inte kostar stora summon pengar i investeringskostnader~\cite{IRS90940}.
 Så mycket som 5--15\% energi kan sparas in med DAS-verktyg~\cite{IRS90940, Yang2013} vilket är påfallande då energikostnade kan uppgå till 10\% av ett järnvägsföretags totala kostnader~\cite{Cwil2018}.
-Vidare spås C-DAS och SFERA bidra till förbättringar inom energibesparing, punktlighet, kapacitet, kraftförsörjning, trafikstörningshantering, trafiksäkerhet och koldioxidutsläpp~\cite{IRS90940}.
+Vidare spås C-DAS och SFERA bidra till förbättrin-gar inom energibesparing, punktlighet, kapacitet, kraftförsörjning, trafikstörningshantering, trafiksäkerhet och koldioxidutsläpp~\cite{IRS90940}.
 \subsubsection{SFERA:s avgränsning}
-SFERA sträcker sig inte bortom datautbyte och avhandlar exempelvis inte presentation av data för lokförare, kvaliteten av hastighetsrekommendationer eller information för lokförare, lokförarens beteende eller handlingar, algoritmer för beräkning av körprofil och så vidare~\cite{IRS90940}.
+SFERA sträcker sig bortom datautbyte men avhandlar exempelvis inte presentation av data för lokförare, återgivningen hastighetsrekommendationer eller information för lokförare, lokförarens beteende eller handlingar, algoritmer för beräkning av körprofil och så vidare~\cite{IRS90940}.
 Istället tar SFERA sikte på att definiera data längst bak i informationskedjan så att andra infrastrukturförvaltare och järnvägsföretag får så bra beslutsunderlag som möjligt~\cite{IRS90940}.
 \subsubsection{SFERA:s datauppställning}
 Mycket av kommunikationen mellan TMS och C-DAS-OB består av journey profile och status reports.
@@ -23,12 +23,11 @@ Informationen kan även presenteras för föraren för att stärka dennes contex
 Vidare är en följd av related train information good-will hos förarna~\cite{IRS90940} som har visat starkt intresse för denna typ av data.
 Datameddelanden inom SFERA är överlag designade att vara så små som möjligt för att öka flexibiliteten~\cite{IRS90940}.
 \paragraph{}
-\hspace{-11pt}En journey profile (se figur~\ref{tab:jp}) består av flera delar.
-Tågfärdens unika referens-ID\footnote{Ett för det innevarande trafikdygnet unikt nummer mellan en och sex siffror.}~och information om tågets fysiska egenskaper (train characteristics, TC).
-Se beskrivning av TC i figur(se figur~\ref{tab:tc}).
+\hspace{-11pt}En journey profile (se tabell~\ref{tab:jp}) består av flera delar; tågfärdens unika referens-ID\footnote{Ett för det innevarande trafikdygnet unikt nummer mellan en och sex siffror.}~och information om tågets fysiska egenskaper (train characteristics, TC).
+Se beskrivning av TC i tabell(se tabell~\ref{tab:tc}).
 Den innehåller även statisk och dynamisk data om tågfärdens innehåll.
-Statisk data benämns segment profile (se figur~\ref{tab:sp}) och är bland annat trafikplatser, lutningsförhållanden, kurvradier, ID för aktuella bana/banor, hastighetsbegränsningar, referenspunkter för C-DAS-OB:s positioneringssystem), signal- och balisplaceringar och mycket mer.
-Dynamisk data är inte en egen datastruktur men kan röra sig om information tillfälliga hastighetsnedsättningar eller dåliga adhesionsförhållanden inom ett visst område.
+Statisk data benämns segment profile (se tabell~\ref{tab:sp}) och är bland annat trafikplatser, lutningsförhållanden, kurvradier, ID för aktuella bana/banor, hastighetsbegränsningar, referenspunkter för C-DAS-OB:s positioneringssystem), signal- och balisplaceringar och mycket mer.
+Dynamisk data är inte en egen datamodell men kan röra sig om information tillfälliga hastighetsnedsättningar eller dåliga adhesionsförhållanden inom ett visst område.
 Vidare innehåller JP tidskorridoren ett tåg måste hålla sig inom för att upprätthålla sin rättidighet.
 \begin{table}[hbt!]
     \centering
@@ -43,10 +42,10 @@ Vidare innehåller JP tidskorridoren ett tåg måste hålla sig inom för att up
         - Dynamisk data \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, journey profile}
+    \caption{Datamodell, journey profile}
     \label{tab:jp}
 \end{table}
-Status report (se figur~\ref{tab:sr}) är sättet på vilket C-DAS-OB kan skicka information till TMS\cite{IRS90940}.
+Status report (se tabell~\ref{tab:sr}) är sättet på vilket C-DAS-OB kan skicka information till TMS\cite{IRS90940}.
 Det består av tågets position i förhållande till referenspunkter från tilldelad SP (som del av JP), innevarande hastighet, senast passerade trafikplats och prognos för ankomst till nästa trafikplats, aktuell JP, förväntad energikonsumtion och -återmatning (elbroms) för kommande minuter samt statusmeddelanden\cite{IRS90940}.
 Lokförare kan även rapportera in om förändringar i adhesionsförhållanden~\cite{IRS90940}.
 Detta kommer skickas till TSM som sedan delger andra C-DAS-OB om detta via related train information.
@@ -66,7 +65,7 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
         - Statusmeddelanden \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, status report}
+    \caption{Datamodell, status report}
     \label{tab:sr}
 \end{table}
 \begin{table}
@@ -89,7 +88,7 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
         - Oövervakad plankorsning & - Tillgänglig(a) tågskyddssystem & \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, segment profile}
+    \caption{Datamodell, segment profile}
     \label{tab:sp}
 \end{table}
 \begin{table}
@@ -117,7 +116,7 @@ Statusmeddelanden kan användas som notis om klart för avgång, om tågfärden 
         - Tillsättningstid för bromssystem \\
         \hline
     \end{tabular}
-    \caption{Datastruktur, train characteristics}
+    \caption{Datamodell, train characteristics}
     \label{tab:tc}
 \end{table}
 \subsubsection{Gamification och DAS}
@@ -151,8 +150,8 @@ Kompetensprövning stimulerades genom känslan av progression när uppdrag och u
 \paragraph{}
 \hspace{-11pt}I tredje fasen låg fokus på att stärka förarnas intrinsiska motivation genom laganda och samarbete.
 Förarna tävlade tillsammans i grupper som utsågs av instruktörer för att nå specifika lagorienterade mål såsom att spara 10~000~kWh på en månad.
-Tävlingsmoment och kompetensprövning riktades istället mot andra grupper samt att gruppernas poängställning offentliggjordes på en topplista.
-Genom att gå från individuella tävlingar till grupptävlingar tillgodosågs samhörighetsbehovet.
+Tävlingsmoment och kompetensprövning riktades istället mot andra grupper samt att gruppernas poängställ-ning offentliggjordes på en topplista.
+Genom att gå från individuella tävlingar till grupptäv-lingar tillgodosågs samhörighetsbehovet.
 \paragraph{}
 \hspace{-11pt}För fjärde och sista fasen låg fokus på att aktivera de bästa förarna på ett sätt så att de skulle få ett fortsatt intresse av att fortsätta använda systemet.
 Lösningen var att dem att hjälpa andra förare att bli bättre på att använda verktygen och i förlängningen eco driving och stimulera båda parters samhörighetskänsla.
