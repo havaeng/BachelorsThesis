@@ -23,10 +23,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up TeX Live
-        uses: withastro/action-setup-texlive@v3
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v4
         with:
-          cache: true
+          packages: >
+            latex
+            latex-bin
+            luatex
+            latex-bin-dev
+            bibtex
+            collection-fontsrecommended
+            collection-latexextra
+            collection-langgerman
 
       - name: Check LaTeX syntax
         run: |
@@ -54,7 +62,7 @@ jobs:
 
       - name: Upload logs on failure
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
           name: latex-logs
           path: src/*.log
