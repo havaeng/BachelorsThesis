@@ -34,6 +34,11 @@ jobs:
             lipsum
             nomencl
 
+      - name: Verify TeX Live installation
+        run: |
+          ls -la /home/runner/texlive/bin/x86_64-linux/ | head -20
+          which pdflatex || echo " bengt pdflatex not found"
+
       - name: Add TeX Live to PATH
         run: echo "/home/runner/texlive/bin/x86_64-linux" >> $GITHUB_PATH
 
