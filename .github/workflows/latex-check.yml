@@ -1,0 +1,62 @@
+name: LaTeX Syntax Check
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ develop ]
+    paths:
+      - 'src/**/*.tex'
+      - 'src/**/*.bib'
+      - '.github/workflows/latex-check.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/**/*.tex'
+      - 'src/**/*.bib'
+      - '.github/workflows/latex-check.yml'
+
+jobs:
+  latex-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up TeX Live
+        uses: withastro/action-setup-texlive@v3
+        with:
+          cache: true
+
+      - name: Check LaTeX syntax
+        run: |
+          cd src
+          # Run pdflatex in nonstop mode to check for syntax errors
+          pdflatex -interaction=nonstopmode -draftmode main.tex
+
+      - name: Compile with bibliography
+        run: |
+          cd src
+          # Full compilation with bibliography
+          pdflatex -interaction=nonstopmode -draftmode main.tex
+          bibtex main || true
+          pdflatex -interaction=nonstopmode -draftmode main.tex
+          pdflatex -interaction=nonstopmode -draftmode main.tex
+
+      - name: Check for compilation warnings
+        run: |
+          cd src
+          # Generate log summary
+          if [ -f main.log ]; then
+            echo "=== LaTeX Compilation Log Summary ==="
+            grep -E "^(Underfull|Overfull|Package|LaTeX Warning)" main.log || echo "No warnings found"
+          fi
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: latex-logs
+          path: src/*.log
+          retention-days: 7
+
