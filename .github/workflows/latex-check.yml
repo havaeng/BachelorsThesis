@@ -27,15 +27,12 @@ jobs:
         uses: zauguin/install-texlive@v4
         with:
           packages: >
-            latex
-            latex-bin
+            collection-basic
             bibtex
             babel
             hyph-utf8
             lipsum
             nomencl
-            l3kernel
-            l3packages
       - name: Check LaTeX syntax
         run: |
           cd src
