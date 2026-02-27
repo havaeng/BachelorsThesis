@@ -26,7 +26,7 @@ jobs:
       - name: Install TeX Live
         uses: zauguin/install-texlive@v4
         with:
-          cache: false
+          cache_version: ${{ github.run_id }}
           packages: >
             collection-basic
             bibtex
