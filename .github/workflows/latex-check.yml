@@ -33,6 +33,10 @@ jobs:
             hyph-utf8
             lipsum
             nomencl
+
+      - name: Add TeX Live to PATH
+        run: echo "/home/runner/texlive/bin/x86_64-linux" >> $GITHUB_PATH
+
       - name: Check LaTeX syntax
         run: |
           cd src
