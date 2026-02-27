@@ -34,28 +34,38 @@ jobs:
             lipsum
             nomencl
 
+      - name: Locate TeX Live binaries
+        id: texlive-bin
+        run: |
+          set -euo pipefail
+          TEXBIN="$(find /home/runner -type f -name pdflatex -perm -111 2>/dev/null | head -1)"
+          if [ -z "$TEXBIN" ]; then
+            echo "pdflatex not found" >&2
+            exit 1
+          fi
+          echo "bin_dir=$(dirname "$TEXBIN")" >> "$GITHUB_OUTPUT"
+
       - name: Check LaTeX syntax
         run: |
-          /home/runner/texlive/bin/x86_64-linux/pdflatex -interaction=nonstopmode -draftmode main.tex
+          "${{ steps.texlive-bin.outputs.bin_dir }}/pdflatex" -interaction=nonstopmode -draftmode main.tex
         working-directory: src
 
       - name: Compile with bibliography
         run: |
-          export PATH="/home/runner/texlive/bin/x86_64-linux:$PATH"
-          cd src
-          pdflatex -interaction=nonstopmode -draftmode main.tex
-          bibtex main || true
-          pdflatex -interaction=nonstopmode -draftmode main.tex
-          pdflatex -interaction=nonstopmode -draftmode main.tex
+          TEXBIN="${{ steps.texlive-bin.outputs.bin_dir }}"
+          "$TEXBIN/pdflatex" -interaction=nonstopmode -draftmode main.tex
+          "$TEXBIN/bibtex" main || true
+          "$TEXBIN/pdflatex" -interaction=nonstopmode -draftmode main.tex
+          "$TEXBIN/pdflatex" -interaction=nonstopmode -draftmode main.tex
+        working-directory: src
 
       - name: Check for compilation warnings
         run: |
-          export PATH="/home/runner/texlive/bin/x86_64-linux:$PATH"
-          cd src
           if [ -f main.log ]; then
             echo "=== LaTeX Compilation Log Summary ==="
             grep -E "^(Underfull|Overfull|Package|LaTeX Warning)" main.log || echo "No warnings found"
           fi
+        working-directory: src
 
       - name: Upload logs on failure
         if: failure()
@@ -64,4 +74,3 @@ jobs:
           name: latex-logs
           path: src/*.log
           retention-days: 7
-
