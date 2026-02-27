@@ -39,14 +39,14 @@ jobs:
 
       - name: Check LaTeX syntax
         run: |
+          export PATH="/home/runner/texlive/bin/x86_64-linux:$PATH"
           cd src
-          # Run pdflatex in nonstop mode to check for syntax errors
           pdflatex -interaction=nonstopmode -draftmode main.tex
 
       - name: Compile with bibliography
         run: |
+          export PATH="/home/runner/texlive/bin/x86_64-linux:$PATH"
           cd src
-          # Full compilation with bibliography
           pdflatex -interaction=nonstopmode -draftmode main.tex
           bibtex main || true
           pdflatex -interaction=nonstopmode -draftmode main.tex
@@ -54,8 +54,8 @@ jobs:
 
       - name: Check for compilation warnings
         run: |
+          export PATH="/home/runner/texlive/bin/x86_64-linux:$PATH"
           cd src
-          # Generate log summary
           if [ -f main.log ]; then
             echo "=== LaTeX Compilation Log Summary ==="
             grep -E "^(Underfull|Overfull|Package|LaTeX Warning)" main.log || echo "No warnings found"
