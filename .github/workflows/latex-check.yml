@@ -26,13 +26,11 @@ jobs:
       - name: Install TeX Live
         uses: zauguin/install-texlive@v4
         with:
-          packages: >
-            latex
-            latex-bin
-            bibtex
-            babel
-            inputenc
-            graphicx
+        packages: >
+          latex
+          latex-bin
+          bibtex
+          babel
       - name: Check LaTeX syntax
         run: |
           cd src
