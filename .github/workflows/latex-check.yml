@@ -34,7 +34,8 @@ jobs:
             hyph-utf8
             lipsum
             nomencl
-
+            l3kernel
+            l3packages
       - name: Check LaTeX syntax
         run: |
           cd src
