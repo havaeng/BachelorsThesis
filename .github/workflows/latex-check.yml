@@ -29,13 +29,10 @@ jobs:
           packages: >
             latex
             latex-bin
-            luatex
-            latex-bin-dev
             bibtex
-            collection-fontsrecommended
-            collection-latexextra
-            collection-langgerman
-
+            babel
+            inputenc
+            graphicx
       - name: Check LaTeX syntax
         run: |
           cd src
