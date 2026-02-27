@@ -31,6 +31,10 @@ jobs:
             latex-bin
             bibtex
             babel
+            hyph-utf8
+            lipsum
+            nomencl
+
       - name: Check LaTeX syntax
         run: |
           cd src
